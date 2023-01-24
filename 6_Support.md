@@ -15,3 +15,7 @@
 <br>
 
 # 6. Help & Support
+
+## FAQS
+
+## GLOSSARY
