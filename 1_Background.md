@@ -25,11 +25,11 @@ Our hypothesis was that enabling the transfer of standardised, structured, seman
 - Other NHS professionals (e.g., Urgent and Emergency Care staff) for direct care
 - NHS orgs for the management of virtual wards including reporting and cohort management (secondary uses)
 
-From our 3 month Discovery we found that the most benefit would be a hybrid approach of both unstructured and structured data. Whilst pin pointing the time the data is captured, which in this use case is a summary at the end of the patient stay. This can be seen below in the use case section.
+From our initial 3 month Discovery we found that the most benefit would be a hybrid approach of both unstructured and structured data. The other main benefit would be to capture and send a summary of the patient data, at the end of the stay on the virtual ward.
 
-In this next phase of work, we are looking to develop a first of type and we are working with a select number of sites to develop a set of standards based on this use case.
+Further information available in the use case section below.
 
-
+In this next phase of work we are looking to develop a first of type. We have engaged with a select number of sites to develop this set of standards and prove our use case by sending a data package from the RM platform to chosen clinical destination using these standards.
 
 ## Use Case
 Our initial focus is a Virtual Ward Care Record Summary (End of Patient stay).
