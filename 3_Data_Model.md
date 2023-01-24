@@ -55,7 +55,7 @@ The table below provides information about the pupose of each FHIR profile, and 
 |[**FHIR DocumentReference**](https://simplifier.net/hl7fhirukcorer4/ukcoredocumentreference)|A FHIR DocumentReference resource is used to index a document or other unstructured data to make them available to other clinical uses. It contains metadata about the document to identify it's purpose and context, as well as the document itself, or a reference to locate/retrieve the document. |
 |[**FHIR Observation Resource**](https://simplifier.net/hl7fhirukcorer4/ukcoreobservation)|A FHIR Observation resource is used to represent the results of a clinical observation or measurement, such as a blood pressure reading or a laboratory test result. A FHIR observation resource typically includes the value of the observation, along with metadata about the observation, such as the date and time it was performed, the unit of measure, and any relevant codes or references.|
 
-> *Note the links in the table above are for the generic FHIR UK Core resource definitions. For population guidance specific to this standard, please se the sections below.*
+> *Note the links in the table above are for the generic FHIR UK Core resource definitions. For population guidance specific to this standard, please see the sections below.*
 
 ## 3.4 FHIR Resource Population Guidance
 

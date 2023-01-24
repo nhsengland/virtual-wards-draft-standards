@@ -22,7 +22,9 @@ Implementations of this standard are to be owned and assured locally by the orga
 
 ## 5.1 Clinical Safety
 
+Clinical safety must be ensured in development and during implementation. Solutions must be assured by the local organisation's Clinical Safety Officer (CSO).
 
+For information on clinical safety and risk management, please see the [NHS Clinical Risk Management Standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards).
 
 ## 5.2 Information Governance
 
