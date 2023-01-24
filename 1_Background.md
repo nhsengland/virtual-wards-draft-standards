@@ -17,6 +17,18 @@
 # 1. Background and Use Case
 
 ## Background
+A small team from NHS England have been tasked with looking into interoperability to support Virtual Wards,
+
+Our hypothesis was that enabling the transfer of standardised, structured, semantically interoperable data between clinical systems would be beneficial for the delivery of local virtual wards, for:
+
+- Virtual ward staff for the provision of direct care
+- Other NHS professionals (e.g., Urgent and Emergency Care staff) for direct care
+- NHS orgs for the management of virtual wards including reporting and cohort management (secondary uses)
+
+From our 3 month Discovery we found that the most benefit would be a hybrid approach of both unstructured and structured data. Whilst pin pointing the time the data is captured, which in this use case is a summary at the end of the patient stay. This can be seen below in the use case section.
+
+In this next phase of work, we are looking to develop a first of type and we are working with a select number of sites to develop a set of standards based on this use case.
+
 
 
 ## Use Case
@@ -27,3 +39,5 @@ Structured data, such as patient demographics, and unstructured data, such as re
 The PDF is then auto transferred to the clinical IT system of the NHS organisation hosting the virtual ward as well as to the relevant IT systems outside the host organisation.
 
 ![Virtual Wards Data Flow Diagram - v0 6-SummaryReport drawio](https://user-images.githubusercontent.com/122816374/213241091-5724b2b6-ebe4-4161-9601-83f07b722e5b.png)
+
+More information about the Virtual Ward Care Record Summary can be found in the [Architecture Overview](/2_Architecture.md) section.
