@@ -16,7 +16,7 @@
 
 # 1. Background and Use Case
 
-## 1.1 Background
+## Background
 A small team from NHS England have been tasked with looking into interoperability to support Virtual Wards.
 
 From our initial 3 month Discovery we found there is a large variety of integration options and the vast majority of virtual wards programs are at different levels of technical maturity, operating in different ways.
@@ -27,7 +27,7 @@ In this next phase we are looking to develop a first of type. We have engaged wi
 
 We are looking to use this as a starting point to get data flowing in a standardised way. Our aim and Intention is to build on these standards, with the ultimate goal being a fully structured output.
 
-## 1.2 Use Case
+## Use Case
 Our initial focus is a Virtual Ward Care Record Summary (End of Patient stay).
 
 Structured data, such as patient demographics, and unstructured data, such as records of all clinical observations necessary to deliver a NEWS 2 score and additional symptoms, is generated in PDF format by the remote monitoring platform at the end of the patient care on a virtual ward.
