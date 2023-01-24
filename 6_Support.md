@@ -19,3 +19,4 @@
 ## FAQS
 
 ## GLOSSARY
+Glossary of common terms and abbreviations used throughout this documentation site
