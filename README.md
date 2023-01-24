@@ -29,9 +29,9 @@ Our intention is to work towards a curated standard and iterate on this first dr
 
 This space is being used as a collaborative tool to develop this implementation guidance - the stakeholders involved are:
 
-NHS England Virtual Wards Interoperability Team
-Remote Monitoring Suppliers
-NHS Healthcare Providers
+- NHS England Virtual Wards Interoperability Team
+- Remote Monitoring Suppliers
+- NHS Healthcare Providers
 
 (Please only develop against these standard if you are working with us directly)
 
