@@ -17,19 +17,15 @@
 # 1. Background and Use Case
 
 ## Background
-A small team from NHS England have been tasked with looking into interoperability to support Virtual Wards,
+A small team from NHS England have been tasked with looking into interoperability to support Virtual Wards.
 
-Our hypothesis was that enabling the transfer of standardised, structured, semantically interoperable data between clinical systems would be beneficial for the delivery of local virtual wards, for:
+From our initial 3 month Discovery we found there is a large variety of integration options and the vast majority of virtual wards programs are at different levels of technical maturity, operating in different ways.
 
-- Virtual ward staff for the provision of direct care
-- Other NHS professionals (e.g., Urgent and Emergency Care staff) for direct care
-- NHS orgs for the management of virtual wards including reporting and cohort management (secondary uses)
+The variety of integration options for virtual wards is creating a demand for a standardised approach to data transfer, which we are now looking to develop in this next phase of work.
 
-From our initial 3 month Discovery we found that the most benefit would be a hybrid approach of both unstructured and structured data. The other main benefit would be to capture and send a summary of the patient data, at the end of the stay on the virtual ward.
+In this next phase we are looking to develop a first of type. We have engaged with a select number of sites to develop a draft set of standards and prove our use case by sending a data package from the RM platform to chosen clinical IT system destinations using these standards.
 
-Further information available in the use case section below.
-
-In this next phase of work we are looking to develop a first of type. We have engaged with a select number of sites to develop this set of standards and prove our use case by sending a data package from the RM platform to chosen clinical destination using these standards.
+We are looking to use this as a starting point to get data flowing in a standardised way. Our aim and Intention is to build on these standards, with the ultimate goal being a fully structured output.
 
 ## Use Case
 Our initial focus is a Virtual Ward Care Record Summary (End of Patient stay).
