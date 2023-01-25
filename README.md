@@ -4,6 +4,15 @@
 >
 > *If you are not participating in the First-of-Type, it is advised not to develop against these specifications until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
+## Contents
+
+1. [Background & Use Case](/1_Background.md)
+2. [Architecture](/2_Architecture.md)
+3. [Data Model](/3_Data_Model.md)
+4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
+5. [Assurance](/5_Assurance.md)
+6. [Help & Support](/6_Support.md)
+
  ## Overview
 
 This draft implementation guidance is being developed to improve interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary at the end of the patient stay to external clinical systems.
@@ -29,15 +38,6 @@ For example, a patient is discharged from the virtual ward. The Virtual Ward Car
 The structured fields automatically update the patient record and the unstructured data is available for other clinicians potentially involved in the patient care cycle. More details available in [Background & Use Case](/1_Background.md) section.
 
 Sharing data strengthens patient care, reduces clinical risk and removes inefficiences, gaining back time for healthcare professionals. This gudiance is the start to a wider problem, our aim and Intention is to build on these standards, with the ultimate goal being a fully structured output.
-
-## Contents
-
-1. [Background & Use Case](/1_Background.md)
-2. [Architecture](/2_Architecture.md)
-3. [Data Model](/3_Data_Model.md)
-4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
-5. [Assurance](/5_Assurance.md)
-6. [Help & Support](/6_Support.md)
 
 ## Version History
 
