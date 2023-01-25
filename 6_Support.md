@@ -20,3 +20,32 @@
 
 ## GLOSSARY
 Glossary of common terms and abbreviations used throughout this documentation site
+
+| Acronym | Definition |
+| --- | --- |
+| API | Application Programming Interface |
+| BDM | Business Development Manager |
+| CSO | Clinical Safety Officer |
+| CTO |	Chief Technology Officer |
+| EPR | Electronic Patient Record |
+| DTAC | Digital Technology Assessment Criteria  |
+| FHIR | Fast Healthcare Interoperability Resources |
+| IG | Information Governance |
+| IM1 | Interface Mechanism 1 (GP System Pairing Integration) |
+| MESH | Messaging Exchange for Social Care |
+| NEWS2 | National Early Warning Score |
+| NRL | National Record Locator |
+| PAS | Patient Administration System |
+| PDS | Personal Demographics Service |
+| PRSB | PRSB Professional Record Standards Body |
+| RAG Rating | Red / Amber / Green rating |
+| RM Plstform | Remote Monitoring Platform |
+| REST | Representational State Transfer |
+| REST API | API or web API that conforms to the constraints of REST architectural style |
+| SCR | Summary Care Record |
+| SCRa | Summary Care Record Application |
+| ShCR | Shared Care Records |
+| SNOMED CT | Systematised Nomenclature of Medicine - Clinical Terms |
+| SSP | Spine Secure Proxy |
+| TIE | Trust Integration Engine |
+| VW | Virtual Ward |
