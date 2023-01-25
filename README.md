@@ -1,10 +1,10 @@
 # Virtual Wards - Care Record Summary (End of Stay) - Implementation Guidance v0.1
 
-> *This implementation guidance is provided for information only and is intended for those engaged with NHS England on development of the Virtual Wards Care Record Summary Standard.* 
+> *This implementation guidance is provided for information only and is intended for those engaged with NHS England on development of the Virtual Wards Care Record Summary Standard. The first iteration of this standard is being developed between February and March 2023.* 
 >
-> *If you are not participating in the First-of-Type, it is advised not to develop against these specifications until a formal announcement has been made.*
+> *If you are not participating in the First-of-Type, it is advised not to develop against these specifications until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
-## Overview
+ ## Overview
 
 This draft implementation guidance is being developed to aid interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary (for The End of the patient stay).
 
