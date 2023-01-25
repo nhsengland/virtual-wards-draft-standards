@@ -28,7 +28,7 @@ In this next phase we are looking to develop a first of type. We have engaged wi
 We are looking to use this as a starting point to get data flowing in a standardised way. Our aim and Intention is to build on these standards, with the ultimate goal being a fully structured output.
 
 ## Use Case
-Our initial focus is a Virtual Ward Care Record Summary (End of Patient stay).
+Our initial focus is sharing a Virtual Ward Care Record Summary at the end of the patient stay, between remote monitoring platfroms and external clinical IT systems.
 
 Structured data, such as patient demographics, and unstructured data, such as records of all clinical observations necessary to deliver a NEWS 2 score and additional symptoms, is generated in PDF format by the remote monitoring platform at the end of the patient care on a virtual ward.
 
