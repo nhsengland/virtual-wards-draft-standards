@@ -13,13 +13,15 @@
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
 
- ## Overview
+ ## Overview & Purpose
 
-This draft implementation guidance is being developed to improve interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary at the end of the patient stay to external clinical systems.
+This draft implementation guidance is being developed to improve interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary at the end of the patient stay to external clinical systems. 
 
 Our intention is to work towards a mandated standard and iterate on this first draft. 
 
-This standard isn’t to be implemented instead of a current solution but built alongside and used to support any current integrations.
+This standard isn’t to be implemented instead of a current solution but built alongside and used to support any current integrations. 
+
+The guidance should help guide and set standards for enabling the sharing of data for virtual wards.
 
 This space is being used as a collaborative tool to develop this implementation guidance - the stakeholders involved are:
 
@@ -29,12 +31,9 @@ This space is being used as a collaborative tool to develop this implementation 
 - NHS Healthcare Providers
 - Destination System Suppliers
 
+The plan is to have weekly touch points with stakeholders to work in agile way to iterate and develop the standards.
+
 **Please only develop against the standard if you are working with us directly**
-
-## Purpose
-
-This implementation guidance should help guide and set standards for enabling the sharing of data for virtual wards.
-
 
 
 ## Version History
