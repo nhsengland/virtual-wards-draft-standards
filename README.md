@@ -17,13 +17,7 @@
 
 This draft implementation guidance is being developed to improve interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary at the end of the patient stay to external clinical systems. 
 
-Our intention is to work towards a mandated standard and iterate on this first draft. 
-
-This standard isn’t to be implemented instead of a current solution but built alongside and used to support any current integrations. 
-
-The guidance should help guide and set standards for enabling the sharing of data for virtual wards.
-
-This space is being used as a collaborative tool to develop this implementation guidance - the stakeholders involved are:
+Our intention is to work towards a draft standard and iterate these standards over time with our stakeholders, through weekly touchpoints and agile ways of working.
 
 - NHS England Virtual Wards Interoperability Team
 - Remote Monitoring Suppliers
@@ -31,7 +25,9 @@ This space is being used as a collaborative tool to develop this implementation 
 - NHS Healthcare Providers
 - Destination System Suppliers
 
-The plan is to have weekly touch points with stakeholders to work in agile way to iterate and develop the standards.
+This standard should not be implemented instead of a current solution but built alongside and used to support any current integrations. 
+
+The guidance should help guide and set standards for enabling the sharing of data for virtual wards.
 
 **Please only develop against the standard if you are working with us directly**
 
