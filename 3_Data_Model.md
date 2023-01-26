@@ -64,8 +64,8 @@ Building on the FHIR UK Core resource definitions, this standard provides guidan
 The pages linked below provide population guidance and examples for each individual resource: 
 
 - FHIR Bundle
-- FHIR Patient
-- FHIR DocumentReference
+- [FHIR Patient](/virtual-wards-draft-standards/blob/v0.1/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
+- [FHIR DocumentReference](/virtual-wards-draft-standards/blob/v0.1/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
 - FHIR Observation
 
 > *IMPORTANT - this is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
