@@ -76,7 +76,7 @@ There are two key elements to the technical solution for sharing data:
 The scope of these interoperability standards and implementation guidance covers the data structure for sharing Virtual Ward data, including the type of information and the format in which it is to be shared and received. The mechanism for transferring the data within or between organisations is to be determined by organisations locally, however guidance is provided in [section 4 on Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md). 
 
 
-![image](/Images/Architecture%20Diagram%20-%20Technical%20Solution%20Scope%20v1.png)
+![image](/Images/Architecture%20Diagram%20-%20Technical%20Solution%20Scope%20v2.png)
 
 
 For the [data model specification, please see section 3](/3_Data_Model.md). 
