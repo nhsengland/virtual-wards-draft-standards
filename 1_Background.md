@@ -28,11 +28,11 @@ We are looking to support the development of a 'first of type' which demonstrate
 Sharing data strengthens patient care, reduces clinical risk and removes inefficiencies, releasing time for healthcare professionals. This guidance is the first step towards resolving the wider virtual wards interoperability and data sharing problems identified in the discovery. Our aim and intention is to iterate this standard going forward, with the ultimate goal being a fully structured output.
 
 ## Use Case
-Our focus use case is to support the sharing of Supplementary Remote Monitoring Data from a Virtual Ward Stay. (This use case was formally referred to as the "Virtual Ward Care Record Summary - End of Stay"). This is not a replacement for the official PRSB discharge summary.
+Our focus use case is to support the sharing of Supplementary Remote Monitoring Data from a Virtual Ward Stay. This use case was formally referred to as the "Virtual Ward Care Record Summary - (End of Stay)".
 
-The aim is to share this supplementary data from remote monitoring (RM) platforms to external clinical IT systems. 
+The aim is to share this supplementary data from remote monitoring (RM) platforms to external clinical IT systems. This is not a replacement for the official PRSB discharge summary.
 
-For example, a patient is discharged from the virtual ward and the Supplementary RM Data is generated as a PDF, and transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL).
+The intention is that in future a patient would be discharged from the virtual ward and the Supplementary RM Data would be generated and safely transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL).
 
 The destination systems and organisations can be grouped as follows:
 
@@ -41,7 +41,7 @@ The destination systems and organisations can be grouped as follows:
 - C - Data from the RM platform is sent to clinical systems which sit outside the NHS organisation hosting the virtual ward
 - D+E - Data from the RM platform is sent to or viewed in external clinical IT systems and/or via national interoperability services such as NRL
 
-Our focus is getting the data from the Remote Monitoring platform in destination A or B and developing a standardised transfer to the local, regional or national platforms in destination C, D or E. This transfer should ensure that the appropriate data from the VW stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data would be supplementary to the official discharge summary issued at the end of the virtual ward stay.
+Our focus is getting the data from the Remote Monitoring platform in destination A or B and developing a standardised transfer to the local, regional or national platforms in destination C, D or E. This transfer should ensure that the appropriate data from the virtual ward stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data would be supplementary to the official discharge summary issued at the end of the virtual ward stay.
 
 More information about the Supplementary RM Data can be found in the [Architecture Overview](/2_Architecture.md) section.
 
