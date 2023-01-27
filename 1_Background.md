@@ -32,7 +32,7 @@ Our focus use case is to support the sharing of Supplementary Remote Monitoring 
 
 The aim is to share this supplementary data from remote monitoring (RM) platforms to external clinical IT systems. This is not a replacement for the official PRSB discharge summary.
 
-The intention is that in future a patient would be discharged from the virtual ward and the Supplementary RM Data would be generated and safely transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL).
+The intention is that in future a patient would be discharged from the virtual ward and the Supplementary RM Data would be generated and safely transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL). This transfer should ensure that the appropriate data from the virtual ward stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data would be supplementary to the official discharge summary issued at the end of the virtual ward stay.
 
 The destination systems and organisations can be grouped as follows:
 
@@ -43,8 +43,8 @@ The destination systems and organisations can be grouped as follows:
 
 ![image](https://user-images.githubusercontent.com/122816374/215143599-1274af65-7b35-4a32-b2be-ca41d8e121cf.png)
 
-Our focus is getting the data from the Remote Monitoring platform in destination A or B and developing a standardised transfer to the local, regional or national platforms in destination C, D or E. This transfer should ensure that the appropriate data from the virtual ward stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data would be supplementary to the official discharge summary issued at the end of the virtual ward stay.
+Our focus is getting the Supplementary RM Data from the Remote Monitoring platform in destination A or B and developing a standard for sending that data to the local, regional or national platforms in destination C, D or E.
 
-More information about the Supplementary RM Data can be found in the [Architecture Overview](/2_Architecture.md) section.
+More information can be found in the [Architecture Overview](/2_Architecture.md) section.
 
 As mentioned previously, we are looking to use this as a starting point to get data flowing in a standardised way. Our aim and intention is to build on these standards, with the ultimate goal being a fully structured output. 
