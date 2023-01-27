@@ -28,7 +28,7 @@ This standard should not be implemented instead of a current solution but built 
 
 The guidance should help guide and set standards for enabling the sharing of data for virtual wards.
 
-**Please only develop against the standard if you are working with us directly**
+**Please only develop against the standard if you are working with us directly.**
 
 
 ## Version History
