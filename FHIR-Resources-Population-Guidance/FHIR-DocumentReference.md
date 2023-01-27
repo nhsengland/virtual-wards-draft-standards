@@ -4,6 +4,9 @@
 ### Definition
 The DocumentReference resource is used to represent a document of any kind, such as a clinical document, lab report, or imaging study, that is stored electronically. The resource includes metadata about the document, such as its title, author, and creation date, as well as a reference to the actual document content, which can be stored in a variety of formats, including PDF. The DocumentReference resource is part of the FHIR standard and is used to facilitate the exchange of electronic documents between different systems and organizations.
 
+### Structure Definition
+https://simplifier.net/Simplifier.Core.R4.Resources/DocumentReference/~json
+
 ### Minimum Viable Content
 A minimum viable content that all provider and consumer systems should support is the following elements.
 
