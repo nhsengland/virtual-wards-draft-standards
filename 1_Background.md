@@ -45,6 +45,6 @@ The destination systems and organisations can be grouped as follows:
 
 Our focus is getting the Supplementary RM Data from the Remote Monitoring platform in destination A or B and developing a standard for sending that data to the local, regional or national platforms in destination C, D or E.
 
-More information can be found in the [Architecture Overview](/2_Architecture.md) section.
-
 As mentioned previously, we are looking to use this as a starting point to get data flowing in a standardised way. Our aim and intention is to build on these standards, with the ultimate goal being a fully structured output. 
+
+More information can be found in the [Architecture Overview](/2_Architecture.md) section.
