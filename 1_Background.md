@@ -39,7 +39,7 @@ The destination systems and organisations can be grouped as follows:
 - A - Data stays within the virtual ward and not transferred to any other clinical systems
 - B - Data is sent between the RM platform and the NHS host organisation clinical system
 - C - Data from the RM platform is sent to clinical systems which sit outside the NHS organisation hosting the virtual ward
-- D+E - Data from the RM platform is sent to or viewed in external clinical IT systems and/or via national interoperability services such as NRL
+- D+E - Data from the RM platform is sent to or viewed in external clinical IT systems via regional initiatives such as a shared care record and/or via national interoperability services such as NRL
 
 ![image](https://user-images.githubusercontent.com/122816374/215143599-1274af65-7b35-4a32-b2be-ca41d8e121cf.png)
 
