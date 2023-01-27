@@ -17,6 +17,7 @@
 # 6. Help & Support
 
 ## FAQs
+To be included in future version releases.
 
 ## GLOSSARY
 Glossary of common terms and abbreviations used throughout this documentation site
