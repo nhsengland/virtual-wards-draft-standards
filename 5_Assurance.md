@@ -1,6 +1,6 @@
-> *This implementation guidance is provided for information only and is intended for those engaged with NHS England on development of the Virtual Wards Care Record Summary Standard.* 
+> *This draft implementation guidance is provided for information only, and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
-> *If you are not participating in the First-of-Type, it is advised not to develop against these specifications until a formal announcement has been made.*
+> *If you are not participating in the First-of-Type, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
 
 ## Contents
@@ -16,7 +16,7 @@
 
 # 5. Assurance
 
-Implementations of this standard are to be owned and assured locally by the organisations sending and receiving the data. 
+Implementations of this guidance are to be owned and assured locally by the organisations sending and receiving the data. 
 
 > *Note that all information on this page is intended as **guidance only**. NHS England is not responsible for assuring solutions.*
 
@@ -30,7 +30,7 @@ For information on clinical safety and risk management, please see the [NHS Clin
 
 It is important to ensure that solutions comply with information governance regulations and best practices. For guidance on protecting data and handling information securely, please see the [NHS Website](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance). 
 
-Organisations must ensure that they have the relavant Data Sharing Agreements and Data Sharing Impact Assessments (DPIAs) in place, in-line with local policy, before systems go live. 
+Organisations must ensure that they have the relavant Data Sharing Agreements and Data Sharing Impact Assessments (DPIAs) in place, in-line with local policy, before systems go live. Appropriate audit records must be in place for data processing and transfer. 
 
 ## 5.3 Security
 
