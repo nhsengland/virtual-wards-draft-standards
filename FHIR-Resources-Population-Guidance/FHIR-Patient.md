@@ -1,8 +1,11 @@
-## StructureDefinition-UKCore-Patient
+## UKCore-Patient
 
 
 ### Definition
 Demographics and other administrative information about an individual receiving care or other health-related services. The data in the Resource covers the "who" information about the patient: its attributes are focused on the demographic information necessary to support the administrative and logistic procedures. A Patient record is generally created and maintained by each organization providing care for a patient.
+
+### Structure Definition
+https://simplifier.net/HL7FHIRUKCoreR4/UKCorePatient/~json
 
 ### Minimum Viable Content
 A minimum viable content that all provider and consumer systems should support is the following elements.
