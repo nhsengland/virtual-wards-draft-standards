@@ -16,7 +16,7 @@
 
 # 2. Architecture Overview
 
-As described in the [Use Case section](/1_Background.md), this implementation guidance provides interoperability standards for sharing Supplementary Remote Monitoring Data from a Virtual Ward stay (Supplementary RM Data) between Remote Monitoring Platforms (and/or Trust clinical/administration systems) and external clinical systems. Supplementary RM data is created at the end of a patient's stay on a Virtual Ward and is sent to other clinical systems, used by local sites in the region (e.g. GP systems or Shared Care Records), to be available to other clinicians caring for the patient. 
+As described in the [Use Case section](/1_Background.md), this implementation guidance provides interoperability standards for sharing Supplementary Remote Monitoring Data from a Virtual Ward stay (Supplementary RM Data) between Remote Monitoring Platforms (and/or Trust clinical/administration systems) and external clinical systems. Supplementary RM data is created at the end of a patient's stay on a virtual ward and is sent to other clinical systems, used by local sites in the region (e.g. GP systems or Shared Care Records), to be available to other clinicians caring for the patient. 
 
 The diagram below provides an overview of the solution and scope of these standards.
 
@@ -24,9 +24,9 @@ The diagram below provides an overview of the solution and scope of these standa
 
 1. Patient data is captured by remote monitoring devices*
 2. Data is uploaded to the remote monitoring platform*
-3. The Virtual Ward clinical monitors the data during the patient's time on the Virtual Ward. When the patient is discharged from the Virtual Ward, a clinician will trigger a process to create the Supplementary RM Data payload. 
+3. The virtual ward clinician monitors the data during the patient's time on the virtual ward. When the patient is discharged from the virtual ward, a clinician will trigger a process to create the Supplementary RM Data payload. 
 4. The Supplementary RM Data is sent from the remote monitoring platform to the destination clinical system.
-5. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the Virtual Ward. 
+5. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward. 
 
 *\*Note that points 1 & 2 are only included to provide context. Data sharing from remote monitoring devices is out of scope for these standards*
 
@@ -42,12 +42,12 @@ The diagrams below depict the potential architectures for sharing Supplementary 
 
 1. Patient data is captured by remote monitoring devices
 2. Data is uploaded to the remote monitoring platform
-3. The Virtual Ward clinical monitors the data during the patient's time on the Virtual Ward. When the patient is discharged from the Virtual Ward, a clinician will trigger a process to create the Supplementary RM Data payload. 
+3. The virtual ward clinician monitors the data during the patient's time on the virtual ward. When the patient is discharged from the virtual ward, a clinician will trigger a process to create the Supplementary RM Data payload. 
 4. The Supplementary RM Data is sent from the remote monitoring platform to the destination clinical system:
      - Within the Trust (e.g. the Trust EPR)
      - Local site systems (e.g. GP systems)
      - Shared Care Records
-5. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the Virtual Ward. 
+5. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward. 
 
 ### Example 2 - Supplementary RM Data sourced from the Trust's clinical systems
 
@@ -58,14 +58,14 @@ Where there are existing data feeds from the Remote Monitoring Platform into the
 1. Patient data is captured by remote monitoring devices
 2. Data is uploaded to the remote monitoring platform
 3. Data is fed into the Trust's clinical system through existing data feeds
-4. The Virtual Ward clinical monitors the data during the patient's time on the Virtual Ward. When the patient is discharged from the Virtual Ward, a clinician will trigger a process to create the Supplementary RM Data payload, using the Trust's clinical system. 
+4. The virtual ward clinician monitors the data during the patient's time on the virtual ward. When the patient is discharged from the virtual ward, a clinician will trigger a process to create the Supplementary RM Data payload, using the Trust's clinical system. 
 5. The Supplementary RM Data is sent from the clinical to the destination clinical system:
      - Local site systems (e.g. GP systems)
      - Shared Care Records
 
     >*Note that, as described in the [Use Case section](/1_Background.md), the Supplementary RM Data is an addendum to the Acute Discharge Summary. Depending on the processes within the Trust, the Supplementary RM Data may be sent alongside the Discharge Summary (as shown in the diagram), however the full Discharge Summary is out of scope for this guidance.*
 
-6. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the Virtual Ward. 
+6. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward. 
 
 ## 2.2 Technical Solution Scope
 
@@ -73,7 +73,7 @@ There are two key elements to the technical solution for sharing data:
  - The data structure: what data is shared and the format in which it is shared
  - The data transfer mechanism: how the data is shared from one system to another
 
-The scope of these interoperability standards and implementation guidance covers the data structure for sharing Virtual Ward data, including the type of information and the format in which it is to be shared and received. The mechanism for transferring the data within or between organisations is to be determined by organisations locally, however guidance is provided in [section 4 on Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md). 
+The scope of these interoperability standards and implementation guidance covers the data structure for sharing virtual ward data, including the type of information and the format in which it is to be shared and received. The mechanism for transferring the data within or between organisations is to be determined by organisations locally, however guidance is provided in [section 4 on Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md). 
 
 
 ![image](/Images/Architecture%20Diagram%20-%20Technical%20Solution%20Scope%20v2.png)
