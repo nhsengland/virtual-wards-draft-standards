@@ -45,6 +45,6 @@ The destination systems and organisations can be grouped as follows:
 
 Our focus is getting the data from the Remote Monitoring platform in destination A or B and developing a standardised transfer to the local, regional or national platforms in destination C, D or E. This transfer should ensure that the appropriate data from the VW stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data would be supplementary to the official discharge summary issued at the end of the virtual ward stay.
 
-More information about the Supplementary RM Data including more technical specification can be found in the [Architecture Overview](/2_Architecture.md) section.
+More information about the Supplementary RM Data can be found in the [Architecture Overview](/2_Architecture.md) section.
 
 As mentioned previously, we are looking to use this as a starting point to get data flowing in a standardised way. Our aim and intention is to build on these standards, with the ultimate goal being a fully structured output. 
