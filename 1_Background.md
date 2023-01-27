@@ -17,8 +17,6 @@
 # 1. Background and Use Case
 
 ## Background
-A small team from NHS England have been tasked with looking into interoperability to support virtual wards.
-
 Discovery research undertaken in autumn 2022 has shown that there are a large variety of integration options and the vast majority of virtual wards are at different levels of technical maturity, operating in different ways.
 
 The variety of integration options for virtual wards is creating a demand for a standardised approach to data transfer, which we are now looking to develop in this next phase of work.
