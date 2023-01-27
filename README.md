@@ -15,10 +15,10 @@
 
  ## Overview & Purpose
 
-This draft implementation guidance is being developed to improve interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary at the end of the patient stay to external clinical systems. 
+This draft implementation guidance is being developed to improve interoperability for virtual wards, with the transfer of Supplementary Remote Monitoring Data from a Virtual Ward Stay to external clinical systems. 
 
 Our intention is to work towards a draft standard and iterate these standards over time with our stakeholders, through weekly touchpoints and agile ways of working.
-
+Our key stakeholder groups are:
 - Remote Monitoring Suppliers
 - ICS/ICBs
 - NHS Healthcare Providers
@@ -28,11 +28,11 @@ This standard should not be implemented instead of a current solution but built 
 
 The guidance should help guide and set standards for enabling the sharing of data for virtual wards.
 
-**Please only develop against the standard if you are working with us directly**
+**Please only develop against the standard if you are working with us directly.**
 
 
 ## Version History
 
-|Version|Release Notes|
-|--------------|-------------|
-|0.1|Initial draft|
+|Version|Date|Release Notes|
+|--------------|-------------|-------------|
+|0.1|27 Jan 2023|Initial draft|
