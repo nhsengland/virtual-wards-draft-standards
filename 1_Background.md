@@ -23,7 +23,7 @@ Discovery research undertaken in autumn 2022 has shown that there are a large va
 
 The variety of integration options for virtual wards is creating a demand for a standardised approach to data transfer, which we are now looking to develop in this next phase of work.
 
-We have engaged with a select number of sites to develop a draft set of standards for sending a data package from the RM platform to a chosen clinical IT system destination.
+We have engaged with a select number of sites to develop a draft set of standards for sending a data package from the remote monitoring platform used in the virtual ward, to a chosen clinical IT system destination in another organisation.
 
 We are looking to support the development of a 'first of type' which demonstrates the technical feasibility of a standards based approach, and builds momentum for future phases. 
 
