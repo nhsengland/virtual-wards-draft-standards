@@ -40,7 +40,7 @@ Glossary of common terms and abbreviations used throughout this documentation si
 | PDS | Personal Demographics Service |
 | PRSB | PRSB Professional Record Standards Body |
 | RAG Rating | Red / Amber / Green rating |
-| RM Plstform | Remote Monitoring Platform |
+| RM Platform | Remote Monitoring Platform |
 | REST | Representational State Transfer |
 | REST API | API or web API that conforms to the constraints of REST architectural style |
 | SCR | Summary Care Record |
