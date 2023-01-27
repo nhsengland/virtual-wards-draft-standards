@@ -15,7 +15,7 @@
 
  ## Overview & Purpose
 
-This draft implementation guidance is being developed to improve interoperability for virtual wards, with the data transfer of a Virtual Ward Care Record Summary at the end of the patient stay to external clinical systems. 
+This draft implementation guidance is being developed to improve interoperability for virtual wards, with the transfer of Supplementary Remote Monitoring Data from a Virtual Ward Stay stay to external clinical systems. 
 
 Our intention is to work towards a draft standard and iterate these standards over time with our stakeholders, through weekly touchpoints and agile ways of working.
 
