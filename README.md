@@ -33,6 +33,6 @@ The guidance should help guide and set standards for enabling the sharing of dat
 
 ## Version History
 
-|Version|Release Notes|
+|Version|Date|Release Notes|
 |--------------|-------------|
-|0.1|Initial draft|
+|0.1|27 Jan 2023|Initial draft|
