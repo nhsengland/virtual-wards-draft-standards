@@ -35,4 +35,5 @@ The guidance should help guide and set standards for enabling the sharing of dat
 
 |Version|Date|Release Notes|
 |--------------|-------------|-------------|
+|0.2|30 Jan 2023|Added FHIR Bundle guidance page|
 |0.1|27 Jan 2023|Initial draft|

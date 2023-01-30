@@ -1,13 +1,34 @@
-## UKCore-DocumentReference
+> *This draft implementation guidance is provided for information only, and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
+>
+> *If you are not participating in the First-of-Type, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
 
-### Definition
+## Contents
+[&larr; Back to Homepage](/README.md)
+1. [Background & Use Case](/1_Background.md)
+2. [Architecture Overview](/2_Architecture.md)
+3. [Data Model](/3_Data_Model.md)
+    - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
+    - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
+    - **FHIR DocumentReference**
+    - FHIR Observation *(to be included in future version releases)*
+4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
+5. [Assurance](/5_Assurance.md)
+6. [Help & Support](/6_Support.md)
+
+<br>
+
+# 3.4.2 FHIR UK Core DocumentReference Resource
+
+> *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
+
+## Usage
 The DocumentReference resource is used to represent a document of any kind, such as a clinical document, lab report, or imaging study, that is stored electronically. The resource includes metadata about the document, such as its title, author, and creation date, as well as a reference to the actual document content, which can be stored in a variety of formats, including PDF. The DocumentReference resource is part of the FHIR standard and is used to facilitate the exchange of electronic documents between different systems and organizations.
 
-### Structure Definition
+## Structure Definition
 https://simplifier.net/Simplifier.Core.R4.Resources/DocumentReference/~json
 
-### Minimum Viable Content
+## Required Elements (for Supplementary RM Data)
 A minimum viable content that all provider and consumer systems should support is the following elements.
 
 <table data-responsive>
@@ -32,7 +53,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>DocumentReference.docStatus</td>
-            <td>Required</td>
+            <td></td>
         </tr>        
         <tr>
             <td>DocumentReference.type</td>
@@ -40,7 +61,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>DocumentReference.category</td>
-            <td>Example</td>
+            <td></td>
         </tr>
         <tr>
             <td>DocumentReference.subject</td>
@@ -64,7 +85,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>DocumentReference.relatesTo</td>
-            <td>Required</td>
+            <td></td>
         </tr>
         <tr>
             <td>DocumentReference.description</td>
@@ -72,15 +93,15 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>DocumentReference.securityLabel</td>
-            <td>Extensible</td>
+            <td></td>
         </tr>
         <tr>
             <td>DocumentReference.content</td>
-            <td>Preferred</td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>DocumentReference.context</td>
-            <td>Example</td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -108,7 +129,7 @@ Master Version Specific Identifier
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 
 ## DocumentReference.Identifier
@@ -134,7 +155,7 @@ Master Version Specific Identifier
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 
 ## DocumentReference.Status
@@ -160,7 +181,7 @@ The status of this document reference: current | superseded | entered-in-error
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 
 ## DocumentReference.docStatus
@@ -176,7 +197,7 @@ NEED
     <tbody>
       <tr>
       <td>Code</td>
-      <td>Required</td>
+      <td>Optional</td>
       <td>0:1</td>
       </tr>
     </tbody>
@@ -244,7 +265,7 @@ Kind of document (LOINC if possible)
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 #### Example
 ```json
@@ -354,7 +375,7 @@ Who/what authenticated the document
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 
 ## DocumentReference.custodian
@@ -397,7 +418,7 @@ Organization which maintains the document
     <tbody>
       <tr>
       <td>BackboneElement</td>
-      <td>Required</td>
+      <td>Optional</td>
       <td>0:*</td>
       </tr>
     </tbody>
@@ -406,7 +427,7 @@ Relationships that this document has with other document references that already
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 
 ## DocumentReference.description
@@ -431,7 +452,7 @@ Human-readable description
 
 #### Example
 ```json
-    NEED
+    To follow in future version releases
 ```
 
 ## DocumentReference.securityLabel
@@ -456,7 +477,7 @@ A set of Security-Tag codes specifying the level of privacy/security of the Docu
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
 
 ## DocumentReference.content
@@ -515,5 +536,5 @@ The clinical context in which the document was prepared.
 
 #### Example
 ```json
-NEED
+To follow in future version releases
 ```
