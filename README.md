@@ -1,4 +1,4 @@
-#  Supplementary Remote Monitoring Data from a Virtual Ward Stay - Draft Implementation Guidance v0.1
+#  Supplementary Remote Monitoring Data from a Virtual Ward Stay - Draft Implementation Guidance v0.2
 
 > *This draft implementation guidance is provided for information only and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
@@ -35,4 +35,5 @@ The guidance should help guide and set standards for enabling the sharing of dat
 
 |Version|Date|Release Notes|
 |--------------|-------------|-------------|
+|0.2|30 Jan 2023|Added FHIR Bundle guidance page|
 |0.1|27 Jan 2023|Initial draft|

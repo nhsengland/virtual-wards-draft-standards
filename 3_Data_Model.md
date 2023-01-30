@@ -8,7 +8,7 @@
 1. [Background & Use Case](/1_Background.md)
 2. [Architecture Overview](/2_Architecture.md)
 3. **Data Model**
-    - FHIR Bundle
+    - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - FHIR Observation *(to be included in future version releases)*
@@ -69,7 +69,7 @@ Building on the FHIR UK Core resource definitions, this implementation guidance 
 
 The pages linked below provide population guidance and examples for each individual resource: 
 
-- FHIR Bundle 
+- [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
 - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
 - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
 - FHIR Observation *(to be included in future version releases)*
