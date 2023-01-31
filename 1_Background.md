@@ -41,7 +41,7 @@ The destination systems and organisations can be grouped as follows:
 - C - Data from the RM platform is sent to clinical systems which sit outside the NHS organisation hosting the virtual ward
 - D+E - Data from the RM platform is sent to or viewed in external clinical IT systems via regional initiatives such as a shared care record and/or via national interoperability services such as NRL
 
-![Destination Diagram v3 png](https://user-images.githubusercontent.com/122816374/215522961-115f6777-5b08-422b-b563-299d2df954ed.png)
+![Destination Diagram v3](https://user-images.githubusercontent.com/122816374/215752949-8f801085-7dfc-4895-b640-ee0fbfe6dec9.png)
 
 Our focus is getting the Supplementary RM Data from the Remote Monitoring platform in destination A or B and developing a standard for sending that data to the local, regional or national platforms in destination C, D or E.
 
