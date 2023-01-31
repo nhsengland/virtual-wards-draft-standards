@@ -151,11 +151,11 @@ To follow in future version releases
     </tbody>
 </table>
 
-Master Version Specific Identifier
+Other identifiers for the document
 
 #### Example
 ```json
-To follow in future version releases
+"id": "example-01"
 ```
 
 ## DocumentReference.Status
@@ -181,7 +181,7 @@ The status of this document reference: current | superseded | entered-in-error
 
 #### Example
 ```json
-To follow in future version releases
+"status": "current"
 ```
 
 ## DocumentReference.docStatus
@@ -207,7 +207,7 @@ The status of the underlying document: preliminary | final | amended | entered-i
 
 #### Example
 ```json
-"status": "current"
+"status": "final"
 ```
 
 ## DocumentReference.type
@@ -266,10 +266,6 @@ Kind of document (LOINC if possible)
 #### Example
 ```json
 To follow in future version releases
-```
-#### Example
-```json
-"status": "current"
 ```
 
 ## DocumentReference.subject
