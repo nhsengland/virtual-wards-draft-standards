@@ -45,11 +45,11 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>Patient.identifier</td>
-            <td></td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>Patient.identifier:nhsNumber</td>
-            <td></td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>Patient.active</td>
@@ -57,19 +57,19 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>        
         <tr>
             <td>Patient.name</td>
-            <td></td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>Patient.telecom</td>
-            <td></td>
+            <td>Optional</td>
         </tr>
         <tr>
             <td>Patient.gender</td>
-            <td></td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>Patient.birthDate</td>
-            <td></td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>Patient.deceased[x]</td>
@@ -77,7 +77,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>Patient.address</td>
-            <td></td>
+            <td>Required</td>
         </tr>
         <tr>
             <td>Patient.maritalStatus</td>
@@ -85,7 +85,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>Patient.contact</td>
-            <td></span></td>
+            <td>Optional</td>
         </tr>
         <tr>
             <td>Patient.communication</td>
@@ -97,7 +97,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>Patient.managingOrganisation</td>
-            <td></td>
+            <td>TBC</td>
         </tr>
         <tr>
             <td>Patient.link</td>
