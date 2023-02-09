@@ -51,17 +51,45 @@ A minimum viable content that all provider and consumer systems should support i
             <td>Patient.identifier:nhsNumber</td>
             <td>Required</td>
         </tr>
-        <tr>
-            <td>Patient.active</td>
-            <td></td>
+           <tr>
+            <td>Patient.identifier:nhsNumber.extension</td>
+            <td>Optional - if not included then assume not verified</td>
+        </tr>
+          <tr>
+            <td>Patient.identifier:nhsNumber.extension:nhsNumberVerificationStatus</td>
+            <td>Optional - if not included then assume not verified</td>
+        </tr>
+           <tr>
+            <td>Patient.identifier:nhsNumber.system</td>
+            <td>Required - fixed value - https://fhir.nhs.uk/Id/nhs-number</td>
+        </tr> 
+          <tr>
+            <td>Patient.identifier:nhsNumber.value</td>
+            <td>Required</td>
         </tr>        
         <tr>
             <td>Patient.name</td>
             <td>Required</td>
         </tr>
+           <tr>
+            <td>Patient.name.family</td>
+            <td>Required</td>
+        </tr>
+           <tr>
+            <td>Patient.name.given</td>
+            <td>Required</td>
+        </tr>
         <tr>
             <td>Patient.telecom</td>
             <td>Optional</td>
+        </tr>
+            <tr>
+            <td>Patient.telecom.value</td>
+            <td>Required (if telecom included)</td>
+        </tr>
+            <tr>
+            <td>Patient.telecom.use</td>
+            <td>Optional (But recommended)</td>
         </tr>
         <tr>
             <td>Patient.gender</td>
@@ -73,35 +101,72 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td>Patient.deceased[x]</td>
-            <td></td>
+            <td>Absense of element assumes patient alive</td>
         </tr>
         <tr>
             <td>Patient.address</td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.maritalStatus</td>
-            <td></td>
+            <td>Patient.address.use</td>
+            <td>Optional recommended</td>
+        </tr>
+        <tr>
+            <td>Patient.address.type</td>
+            <td>Optional recommended</td>
+        </tr>
+         <tr>
+            <td>Patient.address.line</td>
+            <td>Optional recommended</td>
+        </tr>
+         <tr>
+            <td>Patient.address.city</td>
+            <td>Optional recommended</td>
+        </tr>
+          <tr>
+            <td>Patient.address.postalCode</td>
+            <td>Required</td>
+        </tr>
+          <tr>
+            <td>Patient.address.period</td>
+            <td>Reccomended if multiple addresses are included</td>
         </tr>
         <tr>
             <td>Patient.contact</td>
             <td>Optional</td>
         </tr>
-        <tr>
-            <td>Patient.communication</td>
-            <td></td>
+         <tr>
+            <td>Patient.contact.relationship</td>
+            <td>Required if using</td>
+        </tr>
+         <tr>
+            <td>Patient.contact.name</td>
+            <td>Required if using</td>
+        </tr>
+         <tr>
+            <td>Patient.contact.telecom</td>
+            <td>Required if using</td>
+        </tr>
+         <tr>
+            <td>Patient.contact.telecom.value</td>
+            <td>Required if using</td>
+        </tr>
+         <tr>
+            <td>Patient.contact.telecom.use</td>
+            <td>Optional (Recommended)</td>
         </tr>
         <tr>
-            <td>Patient.generalPractitioner</td>
-            <td></td>
+            <td>Patient.contact.telecom.rank</td>
+            <td>Optional</td>
         </tr>
         <tr>
-            <td>Patient.managingOrganisation</td>
-            <td>TBC</td>
+            <td>Patient.contact.address</td>
+            <td>Required if using</td>
         </tr>
-        <tr>
-            <td>Patient.link</td>
-            <td></td>
+             <tr>
+            <td>Patient.contact.gender</td>
+            <td>Required if using</td>
+        </tr>
         </tr>
     </tbody>
 </table>
