@@ -39,10 +39,6 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
     </thead>
     <tbody>
-    <tr>
-            <td>Patient.extension</td>
-            <td></td>
-        </tr>
         <tr>
             <td>Patient.identifier</td>
             <td>Required</td>
@@ -171,44 +167,6 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
-### Patient.extension
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>extension</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-
-Additional content defined by implementations. Example below for Patient.extension:ethnicCategory
-
-#### Example
-```json
-     "extension":  [
-        {
-            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-EthnicCategory",
-            "valueCodeableConcept": {
-                "coding":  [
-                    {
-                        "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-EthnicCategory",
-                        "code": "CA",
-                        "display": "English"
-                    }
-                ]
-            }
-        }
-    ] 
-```
 
 ### Patient.identifier
 
@@ -336,32 +294,6 @@ The value that is unique
             "value": "9912003890"
         }
     ]
-```
-
-### Patient.Active
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>boolean</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-
-Whether this patient's record is in active use
-
-#### Example
-```json
-FIND EXAMPLE
 ```
 
 ### Patient.Name
@@ -558,33 +490,6 @@ An address for the individual
         }
     ]
 ```
-### Patient.maritalStatus
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>CodeableConcept</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-
-Marital (civil) status of a patient
-
-#### Example
-```json
-FIND EXAMPLE
-```
-
-
 
 ### Patient.contact
 
@@ -663,125 +568,4 @@ A contact party (e.g. guardian, partner, friend) for the patient
         }
     ]
 ```
-### Patient.communication
 
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>BackboneElement</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-
-A language which may be used to communicate with the patient about his or her health
-
-#### Example
-```json
-"communication":  [
-        {
-            "language": {
-                "coding":  [
-                    {
-                        "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage",
-                        "code": "en",
-                        "display": "English"
-                    }
-                ]
-            },
-            "preferred": true
-        }
-    ]
-```
-
-### Patient.generalPractitioner
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Reference(UK Core Practitioner | UK Core Organization | UK Core PractitionerRole)</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-
-Patient's nominated primary care provider
-
-#### Example
-```json
- "generalPractitioner":  [
-        {
-            "id": "Y12345",
-            "type": "Organization",
-            "reference": "/Organization/Y12345",
-            "display": "F. B. Quux and Co. GP Surgery"
-        }
-    ]
-```
-
-### Patient.managingOrganisation
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Reference(UK Core Organisation)</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-
-Organisation that is the custodian of the patient record
-
-#### Example
-```json
-To follow in future version releases
-```
-### Patient.link
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>BackboneElement</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-
-Link to another patient resource that concerns the same actual person
-
-#### Example
-```json
-To follow in future version releases
-```
