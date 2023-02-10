@@ -38,8 +38,6 @@ The UK Core resource inherits from the [international HL7 FHIR R4 base resource 
 |[meta](#meta)|mandatory|
 |[identifer](#identifier)|mandatory|
 |[name](#name)|optional|
-|[telecom](#telecom)|optional|
-|[contact](#contact)|optional|
 
 Further guidance on each element is outlined in the sections below. 
 
