@@ -10,6 +10,7 @@
 3. [Data Model](/3_Data_Model.md)
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - **FHIR Patient**
+    - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - FHIR Observation *(to be included in future version releases)*
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
