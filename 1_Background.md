@@ -44,7 +44,7 @@ The destination systems and organisations can be grouped as follows:
 
 ![Destination Diagram v3](https://user-images.githubusercontent.com/122816374/215752949-8f801085-7dfc-4895-b640-ee0fbfe6dec9.png)
 
-Our focus is getting the Supplementary RM Data from the Remote Monitoring platform in destination A or B and developing a standard for sending that data to the local, regional platforms in destination C or D. 
+Our focus is getting the Supplementary RM Data from the Remote Monitoring platform and/or host clinical system (in destination A and/or B) and developing a standard for sending that data to the local and/or regional platforms (in destination C and/or D). 
 
 We recognise that sending data to the national platforms such as NRL is important for the wider interoperability problem space, but for this piece of work it is out of scope and recommended that this work feeds into this in the future.
 
