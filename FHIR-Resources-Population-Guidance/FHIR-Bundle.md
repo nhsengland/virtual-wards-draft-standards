@@ -34,7 +34,7 @@ The UK Core resource inherits from the [international HL7 FHIR R4 base resource 
 
 |Element|Optionality|
 |-------|-----------|
-|[id](#identifier)|optional - recommended|
+|[id](#id)|mandatory|
 |[meta](#meta)|mandatory|
 |[identifer](#identifier)|optional|
 |[type](#bundle-type)|mandatory|
@@ -48,11 +48,9 @@ Further guidance on each element is outlined in the sections below.
 
 |Usage|Data Type|Optionality|Cardinality|
 |-----|---------|-----------|-----------|
-|A logical identifier generated for this bundle.|[id](https://hl7.org/fhir/R4/datatypes.html#id)|optional - recommended|0..1|
+|A logical identifier generated for this bundle.|[id](https://hl7.org/fhir/R4/datatypes.html#id)|mandatory|0..1|
 
 **Additional Guidance:** Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
-
-> *Note that for audit purposes, either Id or [Identifier](#identifier) should be used to trace the Bundle between organisations/audit records if required.*
 
 **Example (XML)**
 
@@ -262,6 +260,8 @@ Further guidance on each element is outlined in the sections below.
 ```
 
 > *For full Patient, DocumentReference and Observation resource examples, please see the individual profile pages.*
+
+****
 
 ## Full Bundle Example (XML)
 
