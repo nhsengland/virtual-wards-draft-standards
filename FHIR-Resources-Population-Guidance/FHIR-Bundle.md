@@ -168,33 +168,52 @@ Further guidance on each element is outlined in the sections below.
 |entry (Patient)|A resource containing Patient details.|Identifier|mandatory|1..1|
 |entry (DocumentReference)|A resource containing the PDF document.|Identifier|mandatory|1..1|
 |entry (Observation)|Resources containing observations (e.g. NEWS2 scores).|Identifier|optional|0..*|
+|entry.fullUrl|The URI for the entry resource UUID.|uri|mandatory|1..1|
 
 
-**Additional Guidance**: Guidance on populating the individual resources can be found through the links below:
- - [Patient resource](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
- - [DocumentReference resource](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
- - Observation resource *(to follow in future version releases)*
+**Additional Guidance**: 
+
+ - Guidance on populating the individual resources can be found through the links below:
+    - [Patient resource](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
+    - [DocumentReference resource](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
+    - Observation resource *(to follow in future version releases)*
+ - The `fullUrl` for each entry must match the `[resource].id` field for the individual resource within the entry. 
 
 **Example (XML)**
 
 ```xml
 <entry>
+    <fullUrl value="urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
     <resource>
         <Patient>
+            <id value="39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
             <!-- Patient resource -->
         </Patient>
     </resource>
 </entry>
 <entry>
+    <fullUrl value="urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
+    <resource>
+        <Organization>
+            <id value="f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
+            <!-- Organization resource -->
+        </Organization>
+    </resource>
+</entry>
+<entry>
+    <fullUrl value="urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
     <resource>
         <DocumentReference>
+            <id value="0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
             <!-- DocumentReference resource -->
         </DocumentReference>
     </resource>
 </entry>
 <entry>
     <resource>
+        <fullUrl value="urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf">
         <Observation>
+            <id value="f8acb755-6e68-4ff0-9c82-46353e3cafbf">
             <!-- Observation resource -->
         </Observation>
     </resource>
@@ -206,17 +225,37 @@ Further guidance on each element is outlined in the sections below.
 ```json
 {
     "entry": [
-        "resource" :{
-            "resourceType": "Patient",
-            // Patient resource
+        {
+            "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "resource" : {
+                "resourceType": "Patient",
+                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
+                // Patient resource
+            }
         },
-        "resource" :{
-            "resourceType": "DocumentReference",
-            // DocumentReference resource
+        {
+            "fullUrl": "urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87"
+            "resource" : {
+                "resourceType": "Organization",
+                "id": "f62a27e5-ff98-4f4b-8cf3-f86b694d8a87",
+                // Organization resource
+            }
         },
-        "resource" :{
-            "resourceType": "Observation",
-            // Observation resource
+        {
+            "fullUrl": "urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+            "resource" :{
+                "resourceType": "DocumentReference",
+                "id": "0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+                // DocumentReference resource
+            } 
+        },
+        {
+            "fullUrl": "urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+            "resource" :{
+                "resourceType": "Observation",
+                "id": "f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+                // Observation resource
+            }
         }
     ]
 }
@@ -240,22 +279,37 @@ Further guidance on each element is outlined in the sections below.
     </identifier>
     <type value="collection" />
     <entry>
+        <fullUrl value="urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
         <resource>
             <Patient>
+                <id value="39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
                 <!-- Patient resource -->
             </Patient>
         </resource>
-        </entry>
-        <entry>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
+        <resource>
+            <Organization>
+                <id value="f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
+                <!-- Organization resource -->
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
         <resource>
             <DocumentReference>
+                <id value="0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
                 <!-- DocumentReference resource -->
             </DocumentReference>
         </resource>
-        </entry>
-        <entry>
+    </entry>
+    <entry>
         <resource>
+            <fullUrl value="urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf">
             <Observation>
+                <id value="f8acb755-6e68-4ff0-9c82-46353e3cafbf">
                 <!-- Observation resource -->
             </Observation>
         </resource>
@@ -283,17 +337,37 @@ Further guidance on each element is outlined in the sections below.
     },
     "type": "collection",
     "entry": [
-        "resource" :{
-            "resourceType": "Patient",
-            // Patient resource
+        {
+            "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "resource" : {
+                "resourceType": "Patient",
+                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
+                // Patient resource
+            }
         },
-        "resource" :{
-            "resourceType": "DocumentReference",
-            // DocumentReference resource
+        {
+            "fullUrl": "urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87"
+            "resource" : {
+                "resourceType": "Organization",
+                "id": "f62a27e5-ff98-4f4b-8cf3-f86b694d8a87",
+                // Organization resource
+            }
         },
-        "resource" :{
-            "resourceType": "Observation",
-            // Observation resource
+        {
+            "fullUrl": "urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+            "resource" :{
+                "resourceType": "DocumentReference",
+                "id": "0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+                // DocumentReference resource
+            } 
+        },
+        {
+            "fullUrl": "urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+            "resource" :{
+                "resourceType": "Observation",
+                "id": "f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+                // Observation resource
+            }
         }
     ]
 }
