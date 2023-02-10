@@ -202,6 +202,7 @@ An identifier for this patient.
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -209,11 +210,12 @@ An identifier for this patient.
       <td>identifier</td>
       <td>Optional</td>
       <td>0:1</td>
+      <td>Formatted as 10 digits, with no spaces. </td>
       </tr>
     </tbody>
 </table>
 
-NHS Number for the patient
+NHS Number for the patients.
 
 #### Patient.identifier:nhsNumber.extension:nhsNumberVerificationStatus
 
@@ -304,6 +306,7 @@ The value that is unique
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -311,6 +314,7 @@ The value that is unique
       <td>HumanName</td>
       <td>Optional</td>
       <td>0:1</td>
+      <td>"Given" and "Family" fields required</td>
       </tr>
     </tbody>
 </table>
@@ -428,18 +432,21 @@ The date of birth for the individual
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>boolean</td>
       <td>Optional</td>
-      <td>0:1</td>
+      <td>Optional</td>
+      <td>Most systems will interpret the absence of a value as a sign of the person being alive.</td>
       </tr>
           <tr>
       <td>dateTime</td>
       <td>Optional</td>
-      <td>0:1</td>
+      <td>Optional</td>
+      <td>Most systems will interpret the absence of a value as a sign of the person being alive.</td>
       </tr>
     </tbody>
 </table>
