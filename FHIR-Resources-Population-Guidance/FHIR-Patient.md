@@ -10,7 +10,6 @@
 3. [Data Model](/3_Data_Model.md)
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - **FHIR Patient**
-    - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - FHIR Observation *(to be included in future version releases)*
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
@@ -47,46 +46,14 @@ A minimum viable content that all provider and consumer systems should support i
         <tr>
             <td>Patient.identifier:nhsNumber</td>
             <td>Required</td>
-        </tr>
-           <tr>
-            <td>Patient.identifier:nhsNumber.extension</td>
-            <td>Optional - if not included then assume not verified</td>
-        </tr>
-          <tr>
-            <td>Patient.identifier:nhsNumber.extension:nhsNumberVerificationStatus</td>
-            <td>Optional - if not included then assume not verified</td>
-        </tr>
-           <tr>
-            <td>Patient.identifier:nhsNumber.system</td>
-            <td>Required - fixed value - https://fhir.nhs.uk/Id/nhs-number</td>
-        </tr> 
-          <tr>
-            <td>Patient.identifier:nhsNumber.value</td>
-            <td>Required</td>
-        </tr>        
+        </tr>       
         <tr>
             <td>Patient.name</td>
-            <td>Required</td>
-        </tr>
-           <tr>
-            <td>Patient.name.family</td>
-            <td>Required</td>
-        </tr>
-           <tr>
-            <td>Patient.name.given</td>
             <td>Required</td>
         </tr>
         <tr>
             <td>Patient.telecom</td>
             <td>Optional</td>
-        </tr>
-            <tr>
-            <td>Patient.telecom.value</td>
-            <td>Required (if telecom included)</td>
-        </tr>
-            <tr>
-            <td>Patient.telecom.use</td>
-            <td>Optional (But recommended)</td>
         </tr>
         <tr>
             <td>Patient.gender</td>
@@ -105,64 +72,9 @@ A minimum viable content that all provider and consumer systems should support i
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.address.use</td>
-            <td>Optional recommended</td>
-        </tr>
-        <tr>
-            <td>Patient.address.type</td>
-            <td>Optional recommended</td>
-        </tr>
-         <tr>
-            <td>Patient.address.line</td>
-            <td>Optional recommended</td>
-        </tr>
-         <tr>
-            <td>Patient.address.city</td>
-            <td>Optional recommended</td>
-        </tr>
-          <tr>
-            <td>Patient.address.postalCode</td>
-            <td>Required</td>
-        </tr>
-          <tr>
-            <td>Patient.address.period</td>
-            <td>Reccomended if multiple addresses are included</td>
-        </tr>
-        <tr>
             <td>Patient.contact</td>
             <td>Optional</td>
         </tr>
-         <tr>
-            <td>Patient.contact.relationship</td>
-            <td>Required if using</td>
-        </tr>
-         <tr>
-            <td>Patient.contact.name</td>
-            <td>Required if using</td>
-        </tr>
-         <tr>
-            <td>Patient.contact.telecom</td>
-            <td>Required if using</td>
-        </tr>
-         <tr>
-            <td>Patient.contact.telecom.value</td>
-            <td>Required if using</td>
-        </tr>
-         <tr>
-            <td>Patient.contact.telecom.use</td>
-            <td>Optional (Recommended)</td>
-        </tr>
-        <tr>
-            <td>Patient.contact.telecom.rank</td>
-            <td>Optional</td>
-        </tr>
-        <tr>
-            <td>Patient.contact.address</td>
-            <td>Required if using</td>
-        </tr>
-             <tr>
-            <td>Patient.contact.gender</td>
-            <td>Required if using</td>
         </tr>
         </tr>
     </tbody>
@@ -218,24 +130,47 @@ An identifier for this patient.
 
 NHS Number for the patients.
 
-#### Patient.identifier:nhsNumber.extension:nhsNumberVerificationStatus
+#### Patient.identifier:nhsNumber.extension
 
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
+            <th>Optionality</th>
             <th>Cardinality</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>Extension(CodeableConcept)</td>
+      <td>Optional</td>
+      <td>0:*</td>
+      </tr>
+    </tbody>
+</table>
+
+Optional - if not included then assume not verified
+
+#### Patient.identifier:nhsNumber.extension:nhsNumberVerificationStatus
+
+<table data-responsive>
+    <thead>
+        <tr>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Extension(CodeableConcept)</td>
+      <td>Optional</th>
       <td>0:1</td>
       </tr>
     </tbody>
 </table>
 
-NHS number verification status
+NHS number verification status. Optional - if not included then assume not verified
 
 #### Patient.identifier:nhsNumber.system
 
@@ -243,18 +178,20 @@ NHS number verification status
     <thead>
         <tr>
             <th>DataType</th>
+            <th>Optionality</th>
             <th>Cardinality</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>uri</td>
+      <td>Required</td>
       <td>1:1</td>
       </tr>
     </tbody>
 </table>
 
-The namespace for the identifier value
+The namespace for the identifier value. Required - fixed value - https://fhir.nhs.uk/Id/nhs-number
 
 #### Patient.identifier:nhsNumber.value
 
@@ -262,18 +199,20 @@ The namespace for the identifier value
     <thead>
         <tr>
             <th>DataType</th>
+            <th>Optionality</th>
             <th>Cardinality</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>string</td>
+      <td>Required</td>
       <td>1:1</td>
       </tr>
     </tbody>
 </table>
 
-The value that is unique
+The value that is unique. Required. Formatting: 10 digit number with no spaces
 
 #### Example
 ```json
@@ -313,14 +252,34 @@ The value that is unique
     <tbody>
       <tr>
       <td>HumanName</td>
-      <td>Optional</td>
-      <td>0:1</td>
+      <td>Required</td>
+      <td>0:*</td>
       <td>"Given" and "Family" fields required</td>
+      </tr>
+        <tr>
+      <td>String</td>
+      <td>Required</td>
+      <td>0:1</td>
+      <td>Family name required</td>
+      </tr>
+        <tr>
+      <td>String</td>
+      <td>Required</td>
+      <td>0:*</td>
+      <td>Given name required</td>
       </tr>
     </tbody>
 </table>
 
 A name associated with the patient
+
+#### Patient.Name.Family
+Extension of Structure Definition HumanName.Family
+Family name (often called 'Surname')
+
+#### Patient.Name.Given
+Extension of Structure Definition HumanName.Given
+Given names (not always 'first'). Includes middle names
 
 #### Example
 ```json
@@ -342,6 +301,7 @@ A name associated with the patient
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -349,12 +309,29 @@ A name associated with the patient
       <td>ContactPoint</td>
       <td>Optional</td>
       <td>0:*</td>
+      <td>Phone number or email</td>
+      </tr>
+        <tr>
+      <td>String</td>
+      <td>Required</td>
+      <td>0:1</td>
+      <td>Value - actual contact point details</td>
+      </tr>
+        <tr>
+      <td>Code</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+      <td>home | work | temp | old | mobile - purpose of this contact point</td>
       </tr>
     </tbody>
 </table>
 
 A contact detail for the individual
 
+#### Patient.telecom.value
+The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
+#### Patient.telecom.use
+Identifies the purpose for the contact point.
 #### Example
 ```json
 "telecom":  [
@@ -373,6 +350,7 @@ A contact detail for the individual
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -380,11 +358,12 @@ A contact detail for the individual
       <td>code</td>
       <td>Required</td>
       <td>0:1</td>
+      <td>male | female | other | unknown - Required terminology bindings</td>
       </tr>
     </tbody>
 </table>
 
-male | female | other | unknown
+Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
 
 #### Example
 ```json
@@ -399,6 +378,7 @@ male | female | other | unknown
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -406,11 +386,12 @@ male | female | other | unknown
       <td>date</td>
       <td>Optional</td>
       <td>0:1</td>
+      <td>The date of birth for the individual</td>
       </tr>
     </tbody>
 </table>
 
-The date of birth for the individual
+Age of the individual drives many clinical processes.
 
 #### Example
 ```json
@@ -439,21 +420,21 @@ The date of birth for the individual
     <tbody>
       <tr>
       <td>boolean</td>
-      <td>Optional</td>
-      <td>Optional</td>
+      <td>Required</td>
+      <td>0:1</td>
       <td>Most systems will interpret the absence of a value as a sign of the person being alive.</td>
       </tr>
           <tr>
       <td>dateTime</td>
-      <td>Optional</td>
-      <td>Optional</td>
+      <td>Required</td>
+      <td>0:1</td>
       <td>Most systems will interpret the absence of a value as a sign of the person being alive.</td>
       </tr>
     </tbody>
 </table>
 
 Indicates if the individual is deceased or not. 	
-If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.
+If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive. Only one instance of the boolean or dateTime is required.
 
 #### Example
 ```json
@@ -469,19 +450,68 @@ If there's no value in the instance, it means there is no statement on whether o
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>address</td>
       <td>Optional</td>
+      <td>0:1</td>
+      <td>Address for an individual</td>
+      </tr>
+       <tr>
+      <td>code</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+      <td>Use: home | work | temp | old | billing - purpose of this address</td>
+      </tr>
+        <tr>
+      <td>code</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+      <td>Type: postal | physical | both</td>
+      </tr>
+      <td>string</td>
+      <td>Optional but recommended</td>
       <td>0:*</td>
+      <td>Line: Street name, number, direction & P.O. Box etc.</td>
+      </tr>
+      <tr>
+       <td>string</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+      <td>City: Name of city, town etc.</td>
+      </tr>
+       <tr>
+       <td>string</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+      <td>Postal code: Postal Code for area</td>
+      </tr>
+       <tr>
+       <td>Period</td>
+      <td>Recommended if multiple addresses are included</td>
+      <td>0:1</td>
+      <td>Period: Time period when address was/is in use</td>
       </tr>
     </tbody>
 </table>
 
 An address for the individual
 
+#### Patient.address.use
+The purpose of this address. Allows an appropriate address to be chosen from a list of many.
+#### Patient.address.type
+postal | physical | both. Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
+#### Patient.address.line
+Street name, number, direction & P.O. Box etc. This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.
+#### Patient.address.city
+Name of city, town etc. The name of the city, town, suburb, village or other community or delivery center.
+#### Patient.address.postalcode
+Postal code for area. A postal code designating a region defined by the postal service.
+#### Patient.address.period
+Uses Period.Start and Period. End in date time format
 #### Example
 ```json
   "address":  [
@@ -507,6 +537,7 @@ An address for the individual
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -514,12 +545,77 @@ An address for the individual
       <td>BackBone Element</td>
       <td>Optional</td>
       <td>0:*</td>
+      <td>A contact party (e.g. guardian, partner, friend) for the patient</td>
+      </tr>
+        <tr>
+      <td>CodeableConcept</td>
+      <td>Optional, required if using</td>
+      <td>0:*</td>
+      <td>Relationship: The kind of relationship. </td>
+      </tr>
+        <tr>
+      <td>HumanName</td>
+      <td>Optional, required if using</td>
+      <td>0:*</td>
+      <td>Name: A name associated with the contact person</td>
+      </tr>
+    <tr>
+      <td>ContactPoint</td>
+      <td>Optional, required if using</td>
+      <td>0:*</td>
+      <td>telecom: A contact detail for the person</td>
+      </tr>
+             <tr>
+      <td>String</td>
+      <td>Required if telecom included</td>
+      <td>0:1</td>
+      <td>telecom.value: The actual contact point details</td>
+      </tr>
+              <tr>
+      <td>Code</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>telecom.use: home | work | temp | old | mobile - purpose of this contact point</td>
+      </tr>
+                  <tr>
+      <td>Code</td>
+      <td>Optional</td>
+      <td>0:1</td>
+      <td>telecom.rank:Specify preferred order of use (1 = highest) point</td>
+      </tr>
+                        <tr>
+      <td>Address</td>
+      <td>Optional (Required if using)</td>
+      <td>0:1</td>
+      <td>Contact.address: Address for the contact person</td>
+      </tr>
+                          <tr>
+      <td>Code</td>
+      <td>Optional (Required if using)</td>
+      <td>0:1</td>
+      <td>Contact.gender: male | female | other | unknown</td>
       </tr>
     </tbody>
 </table>
 
 A contact party (e.g. guardian, partner, friend) for the patient
 
+#### Patient.contact.relationship
+The nature of the relationship between the patient and the contact person.
+#### Patient.contact.name
+A name associated with the contact person.
+#### Patient.contact.telecom
+A contact detail for the person, e.g. a telephone number or an email address. People have (primary) ways to contact them in some way such as phone, email.
+#### Patient.contact.telecom.value
+The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
+#### Patient.contact.telecom.use
+Identifies the purpose for the contact point.
+#### Patient.contact.telecom.rank
+Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+#### Patient.contact.address
+Address for the contact person. Need to keep track where the contact person can be contacted per postal mail or visited.
+#### Patient.contact.gender
+Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
 #### Example
 ```json
   "contact":  [
