@@ -30,7 +30,7 @@ The DocumentReference resource is used to represent a document of any kind, such
 https://simplifier.net/Simplifier.Core.R4.Resources/DocumentReference/~json
 
 ## Required Elements (for Supplementary RM Data)
-A minimum viable content that all provider and consumer systems should support is the following elements.
+A minimum viable content that all provider and consumer systems should support is the following elements. 
 
 <table data-responsive>
     <thead>
@@ -41,132 +41,91 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
     <tr>
-            <td>DocumentReference.masterIdentifier</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.identifier</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.status</td>
+    <td> <a href="#MasterID">DocumentReferencemasterIdentifier</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>DocumentReference.docStatus</td>
-            <td></td>
-        </tr>        
+            <td><a href="#Status">DocumentReference.status</a></td>
+            <td>Required</td>
+        </tr>      
         <tr>
-            <td>DocumentReference.type</td>
+            <td><a href="#Type">DocumentReference.type</a></td>
             <td>Preferred</td>
         </tr>
         <tr>
-            <td>DocumentReference.category</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.subject</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.date</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.author</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.authenticator</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.custodian</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.relatesTo</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.description</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.securityLabel</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>DocumentReference.content</td>
+            <td><a href="#Subject">DocumentReference.subject</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>DocumentReference.context</td>
-            <td></td>
+            <td><a href="#Author">DocumentReference.author</a></td>
+            <td>Optional</td>
+        </tr>
+        <tr>
+            <td><a href="#Custodian">DocumentReference.custodian</a></td>
+            <td>Required</td>
+        </tr>
+        <tr>
+            <td><a href="#Content">DocumentReference.content</a></td>
+            <td>Required</td>
         </tr>
     </tbody>
 </table>
 
 ## DocumentReference.masterIdentifier
-
+<div id="MasterID"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
-      <tr>
+     <tr>
       <td>Identifier</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:1</td>
+        <td>Master Identifier: Master Version Specific Identifier</td>
+      </tr>
+      <tr>
+      <td>uri(http://www.acme.com/identifiers/patient)</td>
+      <td>Required if using</td>
+      <td>1:1</td>
+        <td>System: Establishes namespace for the value</td>
+      </tr>
+         <tr>
+      <td>String</td>
+      <td>Required if using</td>
+      <td>1:1</td>
+        <td>Value: The value that is unique</td>
       </tr>
     </tbody>
 </table>
 
 Master Version Specific Identifier
 
+### DocumentReference.masterIdentifier.system
+Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
+### DocumentReference.masterIdentifier.value
+The portion of the identifier typically relevant to the user and which is unique within the context of the system.
+
 #### Example
 ```json
 To follow in future version releases
 ```
 
-## DocumentReference.Identifier
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Identifier</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-
-Other identifiers for the document
-
-#### Example
-```json
-"id": "example-01"
-```
 
 ## DocumentReference.Status
-
+<div id="Status"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+               <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -174,58 +133,37 @@ Other identifiers for the document
       <td>Code</td>
       <td>Required</td>
       <td>1:1</td>
+        <td>Status: The status of this document reference.</td>
       </tr>
     </tbody>
 </table>
 
-The status of this document reference: current | superseded | entered-in-error
+The status of this document reference: current | superseded | entered-in-error. At the point of sending the status code should always be "current".
+
 
 #### Example
 ```json
 "status": "current"
 ```
 
-## DocumentReference.docStatus
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Code</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-
-The status of the underlying document: preliminary | final | amended | entered-in-error
-
-#### Example
-```json
-"status": "final"
-```
 
 ## DocumentReference.type
-
+<div id="Type"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
       <tr>
-      <td>Code</td>
-      <td>Preferred</td>
+      <td>CodeableConcept</td>
+      <td>Optional but Recommended</td>
       <td>0:1</td>
+      <td>Status: Kind of document (LOINC if possible)</td>
       </tr>
     </tbody>
 </table>
@@ -244,91 +182,53 @@ Kind of document (LOINC if possible)
     }
 ```
 
-## DocumentReference.category
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>CodeableConcept</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-	Categorization of document
-
-#### Example
-```json
-To follow in future version releases
-```
-
 ## DocumentReference.subject
-
+<div id="Subject"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+              <th>Usage</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>Reference(Group | Device | UK Core Patient | UK Core Practitioner)</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:1</td>
+      <td>subject: Who/what is the subject of the document</td>
+      </tr>
+         <tr>
+      <td>String</td>
+      <td>Required</td>
+      <td>0:1</td>
+      <td>subject.reference: A reference to a location at which the other resource is found. </td>
       </tr>
     </tbody>
 </table>
-Who/what is the subject of the document
+Who/what is the subject of the document. This should reference the patient.id
+
+### DocumentReference.subject.reference
+A reference to Patient.id. 
 
 #### Example
 ```json
   "subject": {
-        "reference": "Patient/UKCore-Patient-RichardSmith-Example"
+        "reference": "Patient/9912003890"
     }
 ```
 
-## DocumentReference.date
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>instant</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-When this document reference was created
-
-#### Example
-```json
-   "date": "2016-03-08T15:26:00+01:00"
-```
-
 ## DocumentReference.author
-
+<div id="Author"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -336,11 +236,20 @@ When this document reference was created
       <td>Reference(Device | UK Core Practitioner | UK Core PractitionerRole | UK Core Organization | UK Core Patient | UK Core RelatedPerson)</td>
       <td>Optional</td>
       <td>0:*</td>
+      <td>Author: Who and/or what authored the document</td>
+      </tr>
+         <tr>
+      <td>String</td>
+      <td>Required if using</td>
+      <td>0:1</td>
+      <td>author.reference: Literal reference, Relative, internal or absolute URL </td>
       </tr>
     </tbody>
 </table>
 Who and/or what authored the document
 
+### DocumentReference.author.reference
+A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found.
 #### Example
 ```json
     "author":  [
@@ -350,50 +259,36 @@ Who and/or what authored the document
     ]
 ```
 
-## DocumentReference.authenticator
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Reference(UK Core Practitioner | UK Core PractitionerRole | UK Core Organization)</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-Who/what authenticated the document
-
-#### Example
-```json
-To follow in future version releases
-```
-
 ## DocumentReference.custodian
-
+<div id="Custodian"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>Reference(UK Core Organization)</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:1</td>
+      <td>Custodian: Organisation which maintains the document</td>
+      </tr>
+          <tr>
+      <td>String</td>
+      <td>Required if using</td>
+      <td>0:1</td>
+      <td>Reference: Literal reference, Relative, internal or absolute URL</td>
       </tr>
     </tbody>
 </table>
 Organization which maintains the document
+
+### DocumentReference.custodian.reference
+Literal reference, Relative, internal or absolute URL. A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. 
 
 #### Example
 ```json
@@ -402,100 +297,69 @@ Organization which maintains the document
     }
 ```
 
-## DocumentReference.relatesTo
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>BackboneElement</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-Relationships that this document has with other document references that already exist.
-
-#### Example
-```json
-To follow in future version releases
-```
-
-## DocumentReference.description
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>string</td>
-      <td>Optional</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-Human-readable description
-
-#### Example
-```json
-    To follow in future version releases
-```
-
-## DocumentReference.securityLabel
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>CodeableConcept</td>
-      <td>Extensible</td>
-      <td>0:*</td>
-      </tr>
-    </tbody>
-</table>
-A set of Security-Tag codes specifying the level of privacy/security of the Document
-
-#### Example
-```json
-To follow in future version releases
-```
-
 ## DocumentReference.content
-
+<div id="Content"></div>
 <table data-responsive>
     <thead>
         <tr>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
+            <th>Usage</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>BackboneElement</td>
-      <td>Preferred</td>
+      <td>Required</td>
       <td>1:*</td>
+       <td>Content: The document and format referenced. There may be multiple content element repetitions, each with a different format.</td>
+      </tr>
+       <tr>
+      <td>Attachment</td>
+      <td>Required</td>
+      <td>1:1</td>
+       <td>Attachment: Required -The document or URL of the document along with critical metadata to prove content has integrity.</td>
+      </tr>
+          <tr>
+      <td>String</td>
+      <td>Required</td>
+      <td>0:1</td>
+       <td>Sttachment.title: A label or set of text to display in place of the data..</td>
+      </tr>
+                <tr>
+      <td>base64binary</td>
+      <td>Required</td>
+      <td>0:1</td>
+       <td>Sttachment.data: The actual data of the attachment - a sequence of bytes, base64 encoded.</td>
+      </tr>
+                   <tr>
+      <td>code</td>
+      <td>Required</td>
+      <td>0:1</td>
+       <td>attachment.contentType: Mime type of the content, with charset etc..</td>
+      </tr>
+                    <tr>
+      <td>dateTime</td>
+      <td>Required</td>
+      <td>0:1</td>
+       <td>attachment.creation: The date that the attachment was first created..</td>
       </tr>
     </tbody>
 </table>
 The document and format referenced. There may be multiple content element repetitions, each with a different format.
+
+### DocumentReference.content.attachment
+Where to access the document. The document or URL of the document along with critical metadata to prove content has integrity.
+
+### DocumentReference.content.attachment.title
+Label to display in place of the data. A label or set of text to display in place of the data.
+### DocumentReference.content.attachment.data 
+The actual data of the attachment - a sequence of bytes, base64 encoded. The data needs to able to be transmitted inline. The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.
+### DocumentReference.content.attachment.contentType
+Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
+### DocumentReference.content.attachment.creation
+Date attachment was first created. This is often tracked as an integrity issue for use of the attachment.
 
 #### Example
 ```json
@@ -511,27 +375,4 @@ The document and format referenced. There may be multiple content element repeti
     ]
 
 ```
-## DocumentReference.context
 
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>BackboneElement</td>
-      <td>Example</td>
-      <td>0:1</td>
-      </tr>
-    </tbody>
-</table>
-The clinical context in which the document was prepared.
-
-#### Example
-```json
-To follow in future version releases
-```
