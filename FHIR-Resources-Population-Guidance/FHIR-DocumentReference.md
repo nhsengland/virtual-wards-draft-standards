@@ -72,6 +72,7 @@ A minimum viable content that all provider and consumer systems should support i
 </table>
 
 <div id="MasterID"></div>
+
 ## DocumentReference.masterIdentifier
 
 <table data-responsive>
