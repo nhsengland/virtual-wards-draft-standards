@@ -39,11 +39,14 @@ The destination systems and organisations can be grouped as follows:
 - A - Data stays within the virtual ward and not transferred to any other clinical systems
 - B - Data is sent between the RM platform and the NHS host organisation clinical system
 - C - Data from the RM platform is sent to clinical systems which sit outside the NHS organisation hosting the virtual ward
-- D+E - Data from the RM platform is sent to or viewed in external clinical IT systems via regional initiatives such as a shared care record and/or via national interoperability services such as NRL
+- D - Data from the RM platform is sent to or viewed in external clinical IT systems via regional initiatives such as a shared care record 
+- E - Data from the RM platform is sent to or viewed in external clinical IT systems via national initiatives such as National Record Locator
 
-![Destination Diagram v3 png](https://user-images.githubusercontent.com/122816374/215522961-115f6777-5b08-422b-b563-299d2df954ed.png)
+![Destination Diagram v3](https://user-images.githubusercontent.com/122816374/215752949-8f801085-7dfc-4895-b640-ee0fbfe6dec9.png)
 
-Our focus is getting the Supplementary RM Data from the Remote Monitoring platform in destination A or B and developing a standard for sending that data to the local, regional or national platforms in destination C, D or E.
+Our focus is getting the Supplementary RM Data from the Remote Monitoring platform and/or host clinical system (in destination A and/or B) and developing a standard for sending that data to the local and/or regional platforms (in destination C and/or D). 
+
+We recognise that sending data to the national platforms such as NRL is important for the wider interoperability problem space, but for this piece of work it is out of scope and recommended that this work feeds into this in the future.
 
 As mentioned previously, we are looking to use this as a starting point to get data flowing in a standardised way. Our aim and intention is to build on these standards, with the ultimate goal being a fully structured output. 
 
