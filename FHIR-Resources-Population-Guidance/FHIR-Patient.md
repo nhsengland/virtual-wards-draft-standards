@@ -40,11 +40,11 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
      <tr>
-            <td><a href="#ID">Id</a></td>
-            <td>Optional but recommended</td>
+            <td><a href="#ID">Patient.id</a></td>
+            <td>Required</td>
         </tr>
       <tr>
-            <td><a href="#Meta">Meta</a></td>
+            <td><a href="#Meta">Patient.meta</a></td>
             <td>Required</td>
         </tr>
         <tr>
@@ -73,7 +73,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td><a href="#Deceased">Patient.deceased[x]</a></td>
-            <td>Absense of element assumes patient alive</td>
+            <td>Optional - Absence of element assumes patient is alive</td>
         </tr>
         <tr>
             <td><a href="#Address">Patient.address</a></td>
@@ -123,7 +123,7 @@ Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'.
 
 <div id="Meta"></div>
 
-### Meta
+## Meta
 
 <table data-responsive>
     <thead>
@@ -137,7 +137,7 @@ Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'.
     <tbody>
       <tr>
       <td>Element</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>1:1</td>
       <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
       </tr>
@@ -146,18 +146,6 @@ Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'.
       <td>Required</td>
       <td>1:1</td>
       <td>meta.profile: Profiles this resource claims to conform to</td>
-      </tr>
-            <tr>
-      <td>id</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>VersionId: Version specific identifier </td>
-      </tr>
-             <tr>
-      <td>instant</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>lastUpdated: When the resource version last changed </td>
       </tr>
     </tbody>
 </table>
@@ -170,8 +158,6 @@ Each resource contains an element "meta", of type "Meta", which is a set of meta
     "profile": [
     "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient"
     ]
-    "versionId": "1",
-    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
 }
 ```
 
@@ -190,18 +176,14 @@ Each resource contains an element "meta", of type "Meta", which is a set of meta
     <tbody>
       <tr>
       <td>identifier</td>
-      <td>Optional</td>
-      <td>0:*</td>
+      <td>Required</td>
+      <td>1:*</td>
       </tr>
     </tbody>
 </table>
 
-An identifier for this patient.
+Identifiers for this patient.
 
-#### Example
-```json
- "id":"44f85d15-8744-47c2-a790-4f5e38aacdb0" 
-```
 <div id="IdentifierNHS"></div>
 
 ### Patient.identifier:nhsNumber
@@ -218,8 +200,8 @@ An identifier for this patient.
     <tbody>
       <tr>
       <td>identifier</td>
-      <td>Optional</td>
-      <td>0:1</td>
+      <td>Required</td>
+      <td>1:1</td>
       <td>Formatted as 10 digits, with no spaces. </td>
       </tr>
     </tbody>
@@ -527,19 +509,19 @@ Age of the individual drives many clinical processes.
       <td>boolean</td>
       <td>Required</td>
       <td>0:1</td>
-      <td>Most systems will interpret the absence of a value as a sign of the person being alive.</td>
+      <td>The absence of a value assumes the patient is alive.</td>
       </tr>
           <tr>
       <td>dateTime</td>
-      <td>Required</td>
+      <td>Optional</td>
       <td>0:1</td>
-      <td>Most systems will interpret the absence of a value as a sign of the person being alive.</td>
+      <td>The absence of a value assumes the patient is alive.</td>
       </tr>
     </tbody>
 </table>
 
 Indicates if the individual is deceased or not. 	
-If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive. Only one instance of the boolean or dateTime is required.
+If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. The absence of a value assumes the patient is alive. Only one instance of the boolean or dateTime is required.
 
 #### Example
 ```json
@@ -562,7 +544,7 @@ If there's no value in the instance, it means there is no statement on whether o
     <tbody>
       <tr>
       <td>address</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:1</td>
       <td>Address for an individual</td>
       </tr>
@@ -591,8 +573,8 @@ If there's no value in the instance, it means there is no statement on whether o
       </tr>
        <tr>
        <td>string</td>
-      <td>Optional but recommended</td>
-      <td>0:1</td>
+      <td>Required</td>
+      <td>1:1</td>
       <td>Postal code: Postal Code for area</td>
       </tr>
        <tr>

@@ -41,11 +41,11 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
     <tr>
-            <td><a href="#ID">Id</a></td>
+            <td><a href="#ID">DocumentReference.id</a></td>
             <td>Optional but recommended</td>
         </tr>
     <tr>
-            <td><a href="#Meta">Meta</a></td>
+            <td><a href="#Meta">DocumentReference.meta</a></td>
             <td>Required</td>
         </tr>
     <tr>
@@ -95,8 +95,8 @@ A minimum viable content that all provider and consumer systems should support i
     <tbody>
       <tr>
       <td>id</td>
-      <td>Optional but recommended</td>
-      <td>0:1</td>
+      <td>Required</td>
+      <td>1:1</td>
         <td>A logical identifier generated for this document reference.</td>
       </tr>
     </tbody>
@@ -114,7 +114,7 @@ Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'.
 
 <div id="Meta"></div>
 
-### Meta
+## Meta
 
 <table data-responsive>
     <thead>
@@ -128,7 +128,7 @@ Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'.
     <tbody>
       <tr>
       <td>Element</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>1:1</td>
       <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
       </tr>
@@ -138,18 +138,6 @@ Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'.
       <td>1:1</td>
       <td>meta.profile: Profiles this resource claims to conform to</td>
       </tr>
-            <tr>
-      <td>id</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.VersionId: Version specific identifier </td>
-      </tr>
-             <tr>
-      <td>instant</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.lastUpdated: When the resource version last changed </td>
-      </tr>
     </tbody>
 </table>
 
@@ -158,21 +146,12 @@ Each resource contains an element "meta", of type "Meta", which is a set of meta
 ### Meta.profile
 A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url.
 
-### Meta.versionId
-The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
-
-### Meta.lastUpdated
-	
-When the resource last changed - e.g. when the version changed.
-
 #### Example
 ```json
 "meta": {
     "profile": [
     "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
     ]
-    "versionId": "1",
-    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
 }
 ```
 
@@ -325,10 +304,9 @@ A reference to Patient.id.
 
 #### Example
 ```json
-  "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
-            "resource" : {
-                "resourceType": "Patient",
-                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
+"subject" : {
+    "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+}
 ```
 
 <div id="Author"></div>
@@ -365,13 +343,11 @@ Who and/or what authored the document
 A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found.
 #### Example
 ```json
-"Author:": [
- "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
-            "resource" : {
-                "resourceType": "Patient",
-                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
-            },
-        ]
+"author:": [
+    {
+        "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+    }
+]
 ```
 
 <div id="Custodian"></div>
@@ -409,13 +385,9 @@ Literal reference, Relative, internal or absolute URL. A reference to a location
 
 #### Example
 ```json
-"Custodian:": [
- "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
-            "resource" : {
-                "resourceType": "Patient",
-                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
-            },
-        ]
+"Custodian:": {
+    "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+}
 ```
 <div id="Content"></div>
 
@@ -491,7 +463,8 @@ Date attachment was first created. This is often tracked as an integrity issue f
                 "contentType": "application/pdf",
                 "url": "https://health.trust.uk/CarePlanReport_44301kfgd.pdf",
                 "title": "Care Plan Report",
-                "creation": "2016-03-08T15:26:00+01:00"
+                "creation": "2016-03-08T15:26:00+01:00",
+                "data": // base64 encoded PDF
             }
         }
     ]
