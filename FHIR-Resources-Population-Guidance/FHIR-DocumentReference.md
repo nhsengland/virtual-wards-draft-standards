@@ -71,8 +71,9 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
-## DocumentReference.masterIdentifier
 <div id="MasterID"></div>
+## DocumentReference.masterIdentifier
+
 <table data-responsive>
     <thead>
         <tr>
@@ -116,9 +117,10 @@ The portion of the identifier typically relevant to the user and which is unique
 To follow in future version releases
 ```
 
+<div id="Status"></div>
 
 ## DocumentReference.Status
-<div id="Status"></div>
+
 <table data-responsive>
     <thead>
         <tr>
@@ -146,9 +148,10 @@ The status of this document reference: current | superseded | entered-in-error. 
 "status": "current"
 ```
 
+<div id="Type"></div>
 
 ## DocumentReference.type
-<div id="Type"></div>
+
 <table data-responsive>
     <thead>
         <tr>
@@ -181,9 +184,10 @@ Kind of document (LOINC if possible)
         ]
     }
 ```
+<div id="Subject"></div>
 
 ## DocumentReference.subject
-<div id="Subject"></div>
+
 <table data-responsive>
     <thead>
         <tr>
@@ -220,8 +224,10 @@ A reference to Patient.id.
     }
 ```
 
-## DocumentReference.author
 <div id="Author"></div>
+
+## DocumentReference.author
+
 <table data-responsive>
     <thead>
         <tr>
@@ -259,8 +265,10 @@ A reference to a location at which the other resource is found. The reference ma
     ]
 ```
 
-## DocumentReference.custodian
 <div id="Custodian"></div>
+
+## DocumentReference.custodian
+
 <table data-responsive>
     <thead>
         <tr>
@@ -296,9 +304,10 @@ Literal reference, Relative, internal or absolute URL. A reference to a location
         "reference": "Organization/UKCore-Organisation-LeedsTeachingHospital-Example"
     }
 ```
+<div id="Content"></div>
 
 ## DocumentReference.content
-<div id="Content"></div>
+
 <table data-responsive>
     <thead>
         <tr>
