@@ -221,7 +221,7 @@ A reference to Patient.id.
 #### Example
 ```json
   "subject": {
-        "reference": "Patient/9912003890"
+        "reference": "Patient/Id/nhsNumber/9912003890"
     }
 ```
 
