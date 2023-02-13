@@ -41,6 +41,14 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
     <tr>
+            <td><a href="#ID">Id</a></td>
+            <td>Optional but recommended</td>
+        </tr>
+    <tr>
+            <td><a href="#Meta">Meta</a></td>
+            <td>Required</td>
+        </tr>
+    <tr>
     <td> <a href="#MasterID">DocumentReferencemasterIdentifier</a></td>
             <td>Required</td>
         </tr>
@@ -71,6 +79,103 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
+<div id="ID"></div>
+
+## Id
+
+<table data-responsive>
+    <thead>
+        <tr>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+               <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>id</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+        <td>A logical identifier generated for this document reference.</td>
+      </tr>
+    </tbody>
+</table>
+
+Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
+
+
+#### Example
+```json
+{
+    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+}
+```
+
+<div id="Meta"></div>
+
+### Meta
+
+<table data-responsive>
+    <thead>
+        <tr>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Element</td>
+      <td>Optional</td>
+      <td>1:1</td>
+      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
+      </tr>
+            <tr>
+      <td>Canonical</td>
+      <td>Required</td>
+      <td>1:1</td>
+      <td>meta.profile: Profiles this resource claims to conform to</td>
+      </tr>
+            <tr>
+      <td>id</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>meta.VersionId: Version specific identifier </td>
+      </tr>
+             <tr>
+      <td>instant</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>meta.lastUpdated: When the resource version last changed </td>
+      </tr>
+    </tbody>
+</table>
+
+Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource.
+
+### Meta.profile
+A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url.
+
+### Meta.versionId
+The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
+
+### Meta.lastUpdated
+	
+When the resource last changed - e.g. when the version changed.
+
+#### Example
+```json
+"meta": {
+    "profile": [
+    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
+    ]
+    "versionId": "1",
+    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
+}
+```
+
 <div id="MasterID"></div>
 
 ## DocumentReference.masterIdentifier
@@ -92,7 +197,7 @@ A minimum viable content that all provider and consumer systems should support i
         <td>Master Identifier: Master Version Specific Identifier</td>
       </tr>
       <tr>
-      <td>uri(http://www.acme.com/identifiers/patient)</td>
+      <td>uri</td>
       <td>Required if using</td>
       <td>1:1</td>
         <td>System: Establishes namespace for the value</td>
@@ -167,11 +272,11 @@ The status of this document reference: current | superseded | entered-in-error. 
       <td>CodeableConcept</td>
       <td>Optional but Recommended</td>
       <td>0:1</td>
-      <td>Status: Kind of document (LOINC if possible)</td>
+      <td>Status: Kind of document (SNOMED CT if possible)</td>
       </tr>
     </tbody>
 </table>
-Kind of document (LOINC if possible)
+Kind of document (SNOMED CT if possible)
 
 #### Example
 ```json
@@ -200,7 +305,7 @@ Kind of document (LOINC if possible)
     </thead>
     <tbody>
       <tr>
-      <td>Reference(Group | Device | UK Core Patient | UK Core Practitioner)</td>
+      <td>Reference (UK Core Patient)</td>
       <td>Required</td>
       <td>0:1</td>
       <td>subject: Who/what is the subject of the document</td>
@@ -220,9 +325,10 @@ A reference to Patient.id.
 
 #### Example
 ```json
-  "subject": {
-        "reference": "Patient/Id/nhsNumber/9912003890"
-    }
+  "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "resource" : {
+                "resourceType": "Patient",
+                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
 ```
 
 <div id="Author"></div>
@@ -240,7 +346,7 @@ A reference to Patient.id.
     </thead>
     <tbody>
       <tr>
-      <td>Reference(Device | UK Core Practitioner | UK Core PractitionerRole | UK Core Organization | UK Core Patient | UK Core RelatedPerson)</td>
+      <td>Reference(UK Core Organization)</td>
       <td>Optional</td>
       <td>0:*</td>
       <td>Author: Who and/or what authored the document</td>
@@ -259,11 +365,13 @@ Who and/or what authored the document
 A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found.
 #### Example
 ```json
-    "author":  [
-        {
-            "reference": "Practitioner/UKCore-Practitioner-SandraGose-Example"
-        }
-    ]
+"Author:": [
+ "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "resource" : {
+                "resourceType": "Patient",
+                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
+            },
+        ]
 ```
 
 <div id="Custodian"></div>
@@ -301,9 +409,13 @@ Literal reference, Relative, internal or absolute URL. A reference to a location
 
 #### Example
 ```json
- "custodian": {
-        "reference": "Organization/UKCore-Organisation-LeedsTeachingHospital-Example"
-    }
+"Custodian:": [
+ "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "resource" : {
+                "resourceType": "Patient",
+                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
+            },
+        ]
 ```
 <div id="Content"></div>
 
