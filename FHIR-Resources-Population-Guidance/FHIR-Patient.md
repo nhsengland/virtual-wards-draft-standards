@@ -39,6 +39,14 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
     </thead>
     <tbody>
+     <tr>
+            <td><a href="#ID">Id</a></td>
+            <td>Optional but recommended</td>
+        </tr>
+      <tr>
+            <td><a href="#Meta">Meta</a></td>
+            <td>Required</td>
+        </tr>
         <tr>
             <td><a href="#Identifier">Patient.identifier</a></td>
             <td>Required</td>
@@ -79,6 +87,93 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
     </tbody>
 </table>
+
+<div id="ID"></div>
+
+## Id
+
+<table data-responsive>
+    <thead>
+        <tr>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+               <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>id</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+        <td>A logical identifier generated for this patient reference.</td>
+      </tr>
+    </tbody>
+</table>
+
+Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
+
+
+#### Example
+```json
+{
+    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+}
+```
+
+<div id="Meta"></div>
+
+### Meta
+
+<table data-responsive>
+    <thead>
+        <tr>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Element</td>
+      <td>Optional</td>
+      <td>1:1</td>
+      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
+      </tr>
+            <tr>
+      <td>Canonical</td>
+      <td>Required</td>
+      <td>1:1</td>
+      <td>meta.profile: Profiles this resource claims to conform to</td>
+      </tr>
+            <tr>
+      <td>id</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>VersionId: Version specific identifier </td>
+      </tr>
+             <tr>
+      <td>instant</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>lastUpdated: When the resource version last changed </td>
+      </tr>
+    </tbody>
+</table>
+
+Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource.
+
+#### Example
+```json
+"meta": {
+    "profile": [
+    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient"
+    ]
+    "versionId": "1",
+    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
+}
+```
 
 <div id="Identifier"></div>
 
