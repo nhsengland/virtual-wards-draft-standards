@@ -40,39 +40,39 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
         <tr>
-            <td>Patient.identifier</td>
+            <td><a href="#Identifier">Patient.identifier</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.identifier:nhsNumber</td>
+            <td><a href="#IdentifierNHS">Patient.identifier:nhsNumber</a></td>
             <td>Required</td>
         </tr>       
         <tr>
-            <td>Patient.name</td>
+            <td><a href="#Name">Patient.name</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.telecom</td>
+            <td><a href="#Telecom">Patient.telecom</a></td>
             <td>Optional</td>
         </tr>
         <tr>
-            <td>Patient.gender</td>
+            <td><a href="#Gender">Patient.gender</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.birthDate</td>
+            <td><a href="#BirthDate">Patient.birthDate</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.deceased[x]</td>
+            <td><a href="#Deceased">Patient.deceased[x]</a></td>
             <td>Absense of element assumes patient alive</td>
         </tr>
         <tr>
-            <td>Patient.address</td>
+            <td><a href="#Address">Patient.address</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td>Patient.contact</td>
+            <td><a href="#Contact">Patient.contact</a></td>
             <td>Optional</td>
         </tr>
         </tr>
@@ -80,6 +80,7 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
+<div id="Identifier"></div>
 
 ### Patient.identifier
 
@@ -106,6 +107,7 @@ An identifier for this patient.
 ```json
  "id":"44f85d15-8744-47c2-a790-4f5e38aacdb0" 
 ```
+<div id="IdentifierNHS"></div>
 
 ### Patient.identifier:nhsNumber
 
@@ -238,6 +240,8 @@ The value that is unique. Required. Formatting: 10 digit number with no spaces
     ]
 ```
 
+<div id="Name"></div>
+
 ### Patient.Name
 
 <table data-responsive>
@@ -293,6 +297,9 @@ Given names (not always 'first'). Includes middle names
         }
     ]
 ```
+
+<div id="Telecom"></div>
+
 ### Patient.telecom
 
 <table data-responsive>
@@ -341,6 +348,7 @@ Identifies the purpose for the contact point.
         }
     ]
 ```
+<div id="Gender"></div>
 
 ### Patient.gender
 
@@ -369,6 +377,7 @@ Administrative Gender - the gender that the patient is considered to have for ad
 ```json
  "gender": "female"
 ```
+<div id="BirthDate"></div>
 
 ### Patient.birthDate
 
@@ -405,6 +414,7 @@ Age of the individual drives many clinical processes.
         ]
     }
 ```
+<div id="Deceased"></div>
 
 ### Patient.deceasedDateTime
 
@@ -441,6 +451,7 @@ If there's no value in the instance, it means there is no statement on whether o
 "deceasedBoolean": "true",
 "deceasedDateTime": "2010-10-22T00:00:00+00:00"
 ```
+<div id="Address"></div>
 
 ### Patient.address
 
@@ -528,6 +539,7 @@ Uses Period.Start and Period. End in date time format
         }
     ]
 ```
+<div id="Contact"></div>
 
 ### Patient.contact
 
