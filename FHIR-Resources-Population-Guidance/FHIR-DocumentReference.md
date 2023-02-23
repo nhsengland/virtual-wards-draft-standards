@@ -223,7 +223,10 @@ A minimum viable content that all provider and consumer systems should support i
 
 #### Example
 ```json
-To follow in future version releases
+"masterIdentifier": {
+    "system": "http://example.com/identifiers",
+    "value": "12345"
+}
 ```
 
 <div id="Status"></div>
