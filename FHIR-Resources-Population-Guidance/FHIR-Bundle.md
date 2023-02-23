@@ -47,11 +47,29 @@ Further guidance on each element is outlined in the sections below.
 
 ### Id
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|A logical identifier generated for this bundle.|[id](https://hl7.org/fhir/R4/datatypes.html#id)|mandatory|0..1|
 
-**Additional Guidance:** Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>id</td>
+      <td>id</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+        <td>A logical identifier generated for this document reference.</td>
+        <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
+      </tr>
+    </tbody>
+</table>
 
 **Example (XML)**
 
@@ -71,14 +89,53 @@ Further guidance on each element is outlined in the sections below.
 
 ### Meta
 
+<table data-responsive>
+    <thead>
+        <tr>
+           <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Meta</td>
+      <td>Element</td>
+      <td>Optional</td>
+      <td>1:1</td>
+      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
+      <td>Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource. </td>
+      </tr>
+            <tr>
+            <td>meta.profile</td>
+      <td>Canonical</td>
+      <td>Required</td>
+      <td>1:1</td>
+      <td>meta.profile: Profiles this resource claims to conform to </td>
+      <td>A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url. The meta.profile element must contain a fixed value `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"` </td>
+      </tr>
+            <tr>
+       <td>meta.versionID</td>     
+      <td>id</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>meta.VersionId: Version specific identifier </td>
+      <td>The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted. </td>
+      </tr>
+             <tr>
+       <td>Meta.lastUpdated</td>      
+      <td>instant</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>meta.lastUpdated: When the resource version last changed </td>
+      <td>When the resource last changed - e.g. when the version changed.</td>
+      </tr>
+    </tbody>
+</table>
 
-|Element|Usage|Data Type|Optionality|Cardinality|
-|-------|-----|---------|-----------|-----------|
-|meta.profile|To assert that the content conforms to a resource profile (the UK Core FHIR Bundle definition)|[canonical](https://hl7.org/fhir/R4/datatypes.html#canonical)|mandatory|1..1|
-|meta.versionId|Changes each time the content of the bundle changes. Can be used to indicate if any corrections are required.|[id](https://hl7.org/fhir/R4/datatypes.html#id)|optional - recommended|0..1|
-|meta.lastUpdated|The date/time that the bundle was assembled or last updated - i.e. when the resources were placed in the bundle.|[instant](https://hl7.org/fhir/R4/datatypes.html#instant)|optional - recommended|0..1|
-
-**Additional Guidance:** The meta.profile element must contain a fixed value `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"`
 
 **Example (XML)**
 
@@ -105,13 +162,30 @@ Further guidance on each element is outlined in the sections below.
 
 ### Identifier
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|A persistent identifier for the bundle that won't change as a bundle is copied from server to server.|[Identifier](https://hl7.org/fhir/R4/datatypes.html#Identifier)|optional|0..1|
-
-**Additional Guidance:** The identifer should be defined using the `system` and `value` sub-elements. The system is a URI which defines the set of identifiers (i.e. how the value is unique). The value is a unique identifier value within that system. 
-
-> *Note that for audit purposes, either [Id](#id) or Identifier should be used to trace the Bundle between organisations/audit records if required.*
+<table data-responsive>
+    <thead>
+        <tr>
+           <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+ <tr>
+  <tbody>
+      <tr>
+      <td>Identifier</td>
+      <td>[Identifier](https://hl7.org/fhir/R4/datatypes.html#Identifier)</td>
+      <td>Optional</td>
+      <td>0:1</td>
+      <td>A persistent identifier for the bundle that won't change as a bundle is copied from server to server.</td>
+      <td>The identifer should be defined using the `system` and `value` sub-elements. The system is a URI which defines the set of identifiers (i.e. how the value is unique). The value is a unique identifier value within that system. *Note that for audit purposes, either [Id](#id) or Identifier should be used to trace the Bundle between organisations/audit records if required.* </td>
+      </tr>
+      </tbody>
+</table>
 
 **Example (XML)**
 
@@ -136,12 +210,31 @@ Further guidance on each element is outlined in the sections below.
 
 ### Bundle Type
 
+<table data-responsive>
+    <thead>
+        <tr>
+           <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+ <tr>
+  <tbody>
+      <tr>
+      <td>Type</td>
+      <td>[code](https://hl7.org/fhir/R4/datatypes.html#code)</td>
+      <td>mandatory</td>
+      <td>1:1</td>
+      <td>Type: Indicates the purpose of this bundle - how it is intended to be used (i.e. a collection of resources containing Supplementary RM data).</td>
+      <td>The code contains a fixed value of `"collection"`, taken from the [BundleType value set](https://hl7.org/fhir/R4/valueset-bundle-type.html). </td>
+      </tr>
+      </tbody>
+</table>
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|Indicates the purpose of this bundle - how it is intended to be used (i.e. a collection of resources containing Supplementary RM data).|[code](https://hl7.org/fhir/R4/datatypes.html#code)|mandatory|1..1|
-
-**Additional Guidance:** The code contains a fixed value of `"collection"`, taken from the [BundleType value set](https://hl7.org/fhir/R4/valueset-bundle-type.html).
 
 **Example (XML)**
 
@@ -159,24 +252,55 @@ Further guidance on each element is outlined in the sections below.
 
 ****
 ### Entry
-
 > This specification requires a minimum of 2 `entry` elements, which are outlined below. 
 
-|Element|Usage|Data Type|Optionality|Cardinality|
-|-------|-----|---------|-----------|-----------|
-|entry (Patient)|A resource containing Patient details.|Identifier|mandatory|1..1|
-|entry (DocumentReference)|A resource containing the PDF document.|Identifier|mandatory|1..1|
-|entry (Observation)|Resources containing observations (e.g. NEWS2 scores).|Identifier|optional|0..*|
-|entry.fullUrl|The URI for the entry resource UUID.|uri|mandatory|1..1|
+<table data-responsive>
+    <thead>
+        <tr>
+           <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+ <tr>
+  <tbody>
+      <tr>
+      <td>Entry (Patient)</td>
+      <td>Identifier</td>
+      <td>mandatory</td>
+      <td>1:1</td>
+      <td>A resource containing Patient details.</td>
+      <td><a href = /FHIR-Resources-Population-Guidance/FHIR-Patient.md> Patient resource </a></td>
+      </tr>
+       <tr>
+      <td>entry (DocumentReference)</td>
+      <td>Identifier</td>
+      <td>mandatory</td>
+      <td>1:1</td>
+      <td>A resource containing the PDF document.</td>
+      <td><a href = /FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md> DocumentReference resource </a> </td>
+      </tr>
+          <td>entry (Observation)</td>
+      <td>Identifier</td>
+      <td>optional</td>
+      <td>0:*</td>
+      <td>Resources containing observations (e.g. NEWS2 scores).</td>
+      <td> <a href = /FHIR-Resources-Population-Guidance/FHIR-Observation.md> Observation resource </a> </td>
+      </tr>
+                <td>entry.fullUrl</td>
+      <td>uri</td>
+      <td>mandatory</td>
+      <td>1:1</td>
+      <td>The URI for the entry resource UUID.</td>
+      <td> The `fullUrl` for each entry must match the `[resource].id` field for the individual resource within the entry. </td>
+      </tr>
+      </tbody>
+</table>
 
-
-**Additional Guidance**: 
-
- - Guidance on populating the individual resources can be found through the links below:
-    - [Patient resource](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
-    - [DocumentReference resource](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
-    - Observation resource *(to follow in future version releases)*
- - The `fullUrl` for each entry must match the `[resource].id` field for the individual resource within the entry. 
 
 **Example (XML)**
 
