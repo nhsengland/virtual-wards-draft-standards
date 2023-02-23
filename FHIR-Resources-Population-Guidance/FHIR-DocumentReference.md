@@ -12,7 +12,7 @@
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)    
     - **FHIR DocumentReference**
-    - FHIR Observation *(to be included in future version releases)*
+    - [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md) 
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
