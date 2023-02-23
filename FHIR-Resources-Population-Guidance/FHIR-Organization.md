@@ -46,13 +46,29 @@ Further guidance on each element is outlined in the sections below.
 
 ### Id
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|A logical identifier generated for this organization resource.|[id](https://hl7.org/fhir/R4/datatypes.html#id)|mandatory|0..1|
 
-**Additional Guidance:** Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
-
-> *Note that for audit purposes, either Id or [Identifier](#identifier) should be used to trace the Bundle between organisations/audit records if required.*
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>id</td>
+      <td>id</td>
+      <td>Optional but recommended</td>
+      <td>0:1</td>
+        <td>A logical identifier generated for this document reference.</td>
+        <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
+      </tr>
+    </tbody>
+</table>
 
 **Example (XML)**
 
@@ -72,18 +88,61 @@ Further guidance on each element is outlined in the sections below.
 
 ### Meta
 
+<table data-responsive>
+    <thead>
+        <tr>
+           <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Meta</td>
+      <td>Element</td>
+      <td>Optional</td>
+      <td>1:1</td>
+      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
+      <td>Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource. </td>
+      </tr>
+            <tr>
+            <td>meta.profile</td>
+      <td>Canonical</td>
+      <td>Required</td>
+      <td>1:1</td>
+      <td>meta.profile: Profiles this resource claims to conform to </td>
+      <td>A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url. The meta.profile element must contain a fixed value <a href= "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle" > `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"` </td>
+      </tr>
+            <tr>
+       <td>meta.versionID</td>     
+      <td>id</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>meta.VersionId: Version specific identifier </td>
+      <td>The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted. </td>
+      </tr>
+             <tr>
+       <td>Meta.lastUpdated</td>      
+      <td>instant</td>
+      <td>Optional (recommended)</td>
+      <td>0:1</td>
+      <td>meta.lastUpdated: When the resource version last changed </td>
+      <td>When the resource last changed - e.g. when the version changed.</td>
+      </tr>
+    </tbody>
+</table>
 
-|Element|Usage|Data Type|Optionality|Cardinality|
-|-------|-----|---------|-----------|-----------|
-|meta.profile|To assert that the content conforms to a resource profile (the UK Core FHIR Organization definition)|[canonical](https://hl7.org/fhir/R4/datatypes.html#canonical)|mandatory|1..1|
-
-**Additional Guidance:** The meta.profile element must contain a fixed value `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"`
 
 **Example (XML)**
 
 ```xml
 <meta>
-    <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization" />
+    <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle" />
+    <version value="1" />
+    <lastUpdated value="2023-01-02T12:48:23.413+00:00" />
 </meta>
 ```
 
@@ -92,23 +151,43 @@ Further guidance on each element is outlined in the sections below.
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
+    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"
     ]
+    "versionId": "1",
+    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
 }
 ```
-
+****
 ****
 
 ### Identifier
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|An identifier for the organisation - the organisation's ODS code.|[Identifier](https://hl7.org/fhir/R4/datatypes.html#Identifier)|optional|0..*|
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Identifier</td>
+      <td> <a href= "https://hl7.org/fhir/R4/datatypes.html#Identifier"> Identifier </a> </td>
+      <td>Optional</td>
+      <td>0:*</td>
+        <td>An identifier for the organisation - the organisation's ODS code.</td>
+        <td>The identifer should be the organisation's  <a href= "https://digital.nhs.uk/services/organisation-data-service"> ODS code </a> defined using the `system` and `value` sub-elements. 
+  The system should be fixed value of <a href ="https://fhir.nhs.uk/Id/ods-organization-code"> ODS </a>`
+  The value should be the ODS code itself e.g., `"ABC12"`
+To look up an organisation's ODS code, you can use the <a href ="https://odsportal.digital.nhs.uk/"> ODS portal </a> </td>
+      </tr>
+    </tbody>
+</table>
 
-**Additional Guidance:** The identifer should be the organisation's [ODS code](https://digital.nhs.uk/services/organisation-data-service), defined using the `system` and `value` sub-elements. 
- - The system should be fixed value of `"https://fhir.nhs.uk/Id/ods-organization-code"`
- - The value should be the ODS code itself e.g., `"ABC12"`
-To look up an organisation's ODS code, you can use the [ODS portal](https://odsportal.digital.nhs.uk/). 
 
 **Example (XML)**
 
@@ -135,9 +214,29 @@ To look up an organisation's ODS code, you can use the [ODS portal](https://odsp
 
 ### Name
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|The organisation's name.|[String](https://hl7.org/fhir/R4/datatypes.html#string)|optional|0..1|
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td> Name </td>
+      <td><a href= "https://hl7.org/fhir/R4/datatypes.html#string"> String </a> </td>
+      <td>Optional</td>
+      <td>0:1</td>
+        <td>The organisation's name.</td>
+        <td> Name detailing the organisation </td>
+      </tr>
+    </tbody>
+</table>
+
 
 **Example (XML)**
 
