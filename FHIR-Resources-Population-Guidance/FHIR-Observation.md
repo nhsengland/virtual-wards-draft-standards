@@ -14,6 +14,7 @@ FHIR OBSERVATION
     - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)    
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - **FHIR Observation**
+    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
