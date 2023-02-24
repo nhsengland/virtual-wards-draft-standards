@@ -1,4 +1,4 @@
-#  Supplementary Remote Monitoring Data from a Virtual Ward Stay - Draft Implementation Guidance v0.3
+#  Supplementary Remote Monitoring Data from a Virtual Ward Stay - Draft Implementation Guidance v0.4
 
 > *This draft implementation guidance is provided for information only and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
@@ -35,6 +35,7 @@ The guidance should help guide and set standards for enabling the sharing of dat
 
 |Version|Date|Release Notes|
 |--------------|-------------|-------------|
+|0.4|24 Feb 2023|<ul><li>Added optionality guidance key for resource population guidance - clarified definitions of mandatory, required and optional</li><li>Added Encounter as mandatory resource in the FHIR Bundle</li><li>Added Observation resource guidance</li><li>Updates to optionality and cardinality of data items across FHIR resources</li><li>Added further examples to FHIR resource pages</li><li>Updates to formatting across resource guidance</li></ul>|
 |0.3|10 Feb 2023|<ul><li>Added data source organisation details as a mandatory resource within the FHIR Bundle</li><li>Updated the optionality of data items within the FHIR Patient resource</li><li>Updated the optionality of data items within the FHIR DocumentReference resource</li><li>Added guidance on the use of identifiers (UUIDs) for referencing within the FHIR Bundle (including updates to the mandatory  data items included in the FHIR Bundle</li><li>Minor updates to the use case diagram</li></ul>|
 |0.2|30 Jan 2023|Added FHIR Bundle guidance page|
 |0.1|27 Jan 2023|Initial draft|

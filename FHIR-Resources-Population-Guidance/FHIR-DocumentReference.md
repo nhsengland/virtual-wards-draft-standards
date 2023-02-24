@@ -10,16 +10,17 @@
 3. [Data Model](/3_Data_Model.md)
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
-    - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)    
+    - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)  
+    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md)  
     - **FHIR DocumentReference**
-    - FHIR Observation *(to be included in future version releases)*
+    - [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md)
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
 
 <br>
 
-# 3.4.2 FHIR UK Core DocumentReference Resource
+# 3.4.5 FHIR UK Core DocumentReference Resource
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -29,6 +30,16 @@ The DocumentReference resource is used to represent a document of any kind, such
 ## Structure Definition
 https://simplifier.net/Simplifier.Core.R4.Resources/DocumentReference/~json
 
+## Optionality Guidance
+
+The population guidance below uses the following definitions for data item optionality:
+
+1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+3. **Optional** - the system has the option to include this data if it is available
+
+Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
+
 ## Required Elements (for Supplementary RM Data)
 A minimum viable content that all provider and consumer systems should support is the following elements. 
 
@@ -36,33 +47,33 @@ A minimum viable content that all provider and consumer systems should support i
     <thead>
         <tr>
             <th>Element</th>
-            <th data-no-sort>Required?</th>
+            <th data-no-sort>Optionality</th>
         </tr>
     </thead>
     <tbody>
     <tr>
             <td><a href="#ID">DocumentReference.id</a></td>
-            <td>Optional but recommended</td>
+            <td>Mandatory</td>
         </tr>
     <tr>
             <td><a href="#Meta">DocumentReference.meta</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>
     <tr>
-    <td> <a href="#MasterID">DocumentReferencemasterIdentifier</a></td>
-            <td>Required</td>
+    <td> <a href="#MasterID">DocumentReference.masterIdentifier</a></td>
+            <td>Mandatory</td>
         </tr>
         <tr>
             <td><a href="#Status">DocumentReference.status</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>      
         <tr>
             <td><a href="#Type">DocumentReference.type</a></td>
-            <td>Preferred</td>
+            <td>Required</td>
         </tr>
         <tr>
             <td><a href="#Subject">DocumentReference.subject</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>
         <tr>
             <td><a href="#Author">DocumentReference.author</a></td>
@@ -70,14 +81,16 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
         <tr>
             <td><a href="#Custodian">DocumentReference.custodian</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>
         <tr>
             <td><a href="#Content">DocumentReference.content</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>
     </tbody>
 </table>
+
+****
 
 <div id="ID"></div>
 
@@ -86,74 +99,80 @@ A minimum viable content that all provider and consumer systems should support i
 <table data-responsive>
     <thead>
         <tr>
+        <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
-               <th>Usage</th>
+            <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
       <td>id</td>
-      <td>Required</td>
+      <td>id</td>
+      <td>Mandatory</td>
       <td>1:1</td>
         <td>A logical identifier generated for this document reference.</td>
+        <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
     </tbody>
 </table>
 
-Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
 
 
-#### Example
+
+**Example**
 ```json
 {
     "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
 }
 ```
-
+****
 <div id="Meta"></div>
 
-## Meta
+### Meta
 
 <table data-responsive>
     <thead>
         <tr>
+           <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
             <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+      <td>Meta</td>
       <td>Element</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
+      <td>Metadata about the resource</td>
+      <td></td>
       </tr>
             <tr>
+            <td>meta.profile</td>
       <td>Canonical</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>meta.profile: Profiles this resource claims to conform to</td>
+      <td>To identify the FHIR profile the resource conforms to</td>
+      <td>Fixed value: "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"</td>
       </tr>
     </tbody>
 </table>
 
-Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource.
-
-### Meta.profile
-A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url.
-
-#### Example
+**Example**
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
+        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
     ]
 }
 ```
+****
 
 <div id="MasterID"></div>
 
@@ -162,46 +181,50 @@ A list of profiles (references to StructureDefinition resources) that this resou
 <table data-responsive>
     <thead>
         <tr>
+               <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
             <th>Usage</th>
-        </tr>
+            <th>Guidance</th>
     </thead>
     <tbody>
      <tr>
+     <td>DocumentReference.masterIdentifier</td>
       <td>Identifier</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>0:1</td>
-        <td>Master Identifier: Master Version Specific Identifier</td>
+        <td>Master Version Specific Identifier</td>
+         <td>Local identifier for the document, for tracing and audit purposes</td>
       </tr>
       <tr>
+      <td>DocumentReference.masterIdentifier.System</td>
       <td>uri</td>
-      <td>Required if using</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-        <td>System: Establishes namespace for the value</td>
+        <td>Establishes namespace for the value</td>
+        <td></td>
       </tr>
          <tr>
+         <td>DocumentReference.masterIdentifier.Value</td>
       <td>String</td>
-      <td>Required if using</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-        <td>Value: The value that is unique</td>
+        <td>The identifier value that is unique</td>
+        <td></td>
       </tr>
     </tbody>
 </table>
 
-Master Version Specific Identifier
 
-### DocumentReference.masterIdentifier.system
-Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
-### DocumentReference.masterIdentifier.value
-The portion of the identifier typically relevant to the user and which is unique within the context of the system.
-
-#### Example
+**Example**
 ```json
-To follow in future version releases
+"masterIdentifier": {
+    "system": "http://example.com/identifiers",
+    "value": "12345"
+}
 ```
-
+****
 <div id="Status"></div>
 
 ## DocumentReference.Status
@@ -209,29 +232,31 @@ To follow in future version releases
 <table data-responsive>
     <thead>
         <tr>
+              <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
-               <th>Usage</th>
+            <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+       <td>DocumentReference.masterIdentifier.Status</td>
       <td>Code</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-        <td>Status: The status of this document reference.</td>
+        <td>The status of this document reference.</td>
+        <td>Fixed value: "current".</td>
       </tr>
     </tbody>
 </table>
 
-The status of this document reference: current | superseded | entered-in-error. At the point of sending the status code should always be "current".
-
-
-#### Example
+**Example**
 ```json
 "status": "current"
 ```
+****
 
 <div id="Type"></div>
 
@@ -240,75 +265,83 @@ The status of this document reference: current | superseded | entered-in-error. 
 <table data-responsive>
     <thead>
         <tr>
+              <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
             <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+      <td>DocumentReference.Type</td>
       <td>CodeableConcept</td>
-      <td>Optional but Recommended</td>
+      <td>Required</td>
       <td>0:1</td>
-      <td>Status: Kind of document (SNOMED CT if possible)</td>
+      <td>Kind of document (SNOMED CT if possible)</td>
+      <td>Should be used if an appropriate code to represent the document is available.</td>
       </tr>
     </tbody>
 </table>
-Kind of document (SNOMED CT if possible)
 
-#### Example
+**Example**
 ```json
     "type": {
         "coding":  [
             {
                 "system": "http://snomed.info/sct",
-                "code": "734163000",
-                "display": "Care plan"
+                "code": "1363501000000100",
+                "display": "Royal College of Physicians NEWS2 (National Early Warning Score 2) chart"
             }
         ]
     }
 ```
 <div id="Subject"></div>
 
+****
 ## DocumentReference.subject
 
 <table data-responsive>
     <thead>
         <tr>
+              <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
-              <th>Usage</th>
+            <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+      <td>DocumentReference.Subject</td>
       <td>Reference (UK Core Patient)</td>
-      <td>Required</td>
-      <td>0:1</td>
-      <td>subject: Who/what is the subject of the document</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>Who the subject of the document is</td>
+      <td>This must reference the patient resource included in the Bundle</td>
       </tr>
          <tr>
+         <td>DocumentReference.Subject.Reference</td>
       <td>String</td>
-      <td>Required</td>
-      <td>0:1</td>
-      <td>subject.reference: A reference to a location at which the other resource is found. </td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>A reference to a location at which the Patient resource is found.</td>
+      <td>A reference to Patient.id for the Patient resource in the Bundle.</td>
       </tr>
     </tbody>
 </table>
-Who/what is the subject of the document. This should reference the patient.id
 
-### DocumentReference.subject.reference
-A reference to Patient.id. 
 
-#### Example
+
+**Example**
 ```json
 "subject" : {
     "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
 }
 ```
-
+****
 <div id="Author"></div>
 
 ## DocumentReference.author
@@ -316,32 +349,35 @@ A reference to Patient.id.
 <table data-responsive>
     <thead>
         <tr>
+             <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
             <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+        <td>DocumentReference.Author</td>
       <td>Reference(UK Core Organization)</td>
       <td>Optional</td>
       <td>0:*</td>
-      <td>Author: Who and/or what authored the document</td>
+      <td>The organisation(s) that authored the document.</td>
+      <td></td>
       </tr>
          <tr>
+         <td>DocumentReference.Author.Reference</td>
       <td>String</td>
       <td>Required if using</td>
       <td>0:1</td>
-      <td>author.reference: Literal reference, Relative, internal or absolute URL </td>
+      <td>A reference to a location at which the Organization resource is found.</td>
+      <td>This should reference an Organization resource within the Bundle using the Organization.id field.</td>
       </tr>
     </tbody>
 </table>
-Who and/or what authored the document
 
-### DocumentReference.author.reference
-A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found.
-#### Example
+**Example**
 ```json
 "author:": [
     {
@@ -349,6 +385,7 @@ A reference to a location at which the other resource is found. The reference ma
     }
 ]
 ```
+****
 
 <div id="Custodian"></div>
 
@@ -357,38 +394,44 @@ A reference to a location at which the other resource is found. The reference ma
 <table data-responsive>
     <thead>
         <tr>
+              <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
             <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+      <td>DocumentReference.Custodian</td>
       <td>Reference(UK Core Organization)</td>
-      <td>Required</td>
-      <td>0:1</td>
-      <td>Custodian: Organisation which maintains the document</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>Organisation which owns and maintains the document</td>
+      <td>This should be the healthcare provider organisation sharing the data</td>
       </tr>
           <tr>
+          <td>DocumentReference.Custodian.Reference</td>
       <td>String</td>
-      <td>Required if using</td>
-      <td>0:1</td>
-      <td>Reference: Literal reference, Relative, internal or absolute URL</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>A reference to a location at which the Organization resource is found.</td>
+      <td>A reference to a location at which the Organization resource is found.</td>
+      <td>This should reference an Organization resource within the Bundle using the Organization.id field. </td>
       </tr>
     </tbody>
 </table>
-Organization which maintains the document
 
-### DocumentReference.custodian.reference
-Literal reference, Relative, internal or absolute URL. A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. 
 
-#### Example
+
+**Example**
 ```json
-"Custodian:": {
+"custodian:": {
     "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
 }
 ```
+****
 <div id="Content"></div>
 
 ## DocumentReference.content
@@ -396,75 +439,76 @@ Literal reference, Relative, internal or absolute URL. A reference to a location
 <table data-responsive>
     <thead>
         <tr>
+              <th>FHIR Attribute</th>
             <th>DataType</th>
             <th>Optionality</th>
             <th>Cardinality</th>
             <th>Usage</th>
+            <th>Guidance</th>
         </tr>
     </thead>
     <tbody>
       <tr>
+       <td>DocumentReference.Content</td>
       <td>BackboneElement</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:*</td>
-       <td>Content: The document and format referenced. There may be multiple content element repetitions, each with a different format.</td>
+       <td>The document referenced and the document metadata</td>
+       <td>There may be multiple content element repetitions, each with a different format. PDF format must be included at minimum.</td>  
       </tr>
        <tr>
+        <td>DocumentReference.Content.Attachment</td>
       <td>Attachment</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-       <td>Attachment: Required -The document or URL of the document along with critical metadata to prove content has integrity.</td>
+       <td>The document along with critical metadata to prove content has integrity.</td>
+       <td></td>
       </tr>
           <tr>
+          <td>DocumentReference.Content.Attachment.Title</td>
       <td>String</td>
-      <td>Required</td>
+      <td>Optional</td>
       <td>0:1</td>
-       <td>Sttachment.title: A label or set of text to display in place of the data..</td>
+       <td>A label or set of text to name the document</td>
+       <td>If a DocumentReference.type code is not provided, this field must be provided.</td>
       </tr>
                 <tr>
+        <td>DocumentReference.content.attachment.Data </td>
       <td>base64binary</td>
-      <td>Required</td>
-      <td>0:1</td>
-       <td>Sttachment.data: The actual data of the attachment - a sequence of bytes, base64 encoded.</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+       <td>The actual data of the attachment - a sequence of bytes, base64 encoded.</td>
+       <td>The Supplementary RM Data PDF document - a sequence of bytes, base64 encoded. The data needs to able to be transmitted inline. The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.</td>
       </tr>
                    <tr>
+        <td>DocumentReference.content.attachment.ContentType</td>
       <td>code</td>
-      <td>Required</td>
-      <td>0:1</td>
-       <td>attachment.contentType: Mime type of the content, with charset etc..</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+       <td>Mime type of the content, with charset etc. Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data.</td>
+       <td>Includes mime type parameters such as charset where appropriate. This should be "application/pdf"</td>
       </tr>
                     <tr>
+        <td>DocumentReference.content.attachment.Creation</td>
       <td>dateTime</td>
-      <td>Required</td>
-      <td>0:1</td>
-       <td>attachment.creation: The date that the attachment was first created..</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+       <td>The date that the attachment was created.</td>
+       <td></td>
       </tr>
     </tbody>
 </table>
-The document and format referenced. There may be multiple content element repetitions, each with a different format.
 
-### DocumentReference.content.attachment
-Where to access the document. The document or URL of the document along with critical metadata to prove content has integrity.
 
-### DocumentReference.content.attachment.title
-Label to display in place of the data. A label or set of text to display in place of the data.
-### DocumentReference.content.attachment.data 
-The actual data of the attachment - a sequence of bytes, base64 encoded. The data needs to able to be transmitted inline. The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.
-### DocumentReference.content.attachment.contentType
-Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
-### DocumentReference.content.attachment.creation
-Date attachment was first created. This is often tracked as an integrity issue for use of the attachment.
-
-#### Example
+**Example**
 ```json
 "content":  [
         {
             "attachment": {
                 "contentType": "application/pdf",
-                "url": "https://health.trust.uk/CarePlanReport_44301kfgd.pdf",
+                "data": //base64encoded PDF,
                 "title": "Care Plan Report",
-                "creation": "2016-03-08T15:26:00+01:00",
-                "data": // base64 encoded PDF
+                "creation": "2016-03-08T15:26:00+01:00"
             }
         }
     ]

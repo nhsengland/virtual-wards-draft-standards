@@ -20,7 +20,7 @@ As described in the [Use Case section](/1_Background.md), this implementation gu
 
 The diagram below provides an overview of the solution and scope of these standards.
 
-![image](/Images/Architecture%20Diagram%20-%20RM%20Platform%20to%20Destination%20System%20v2.png)
+![image](/Images/Architecture%20Diagram%20-%20RM%20Platform%20to%20Destination%20System%20v3.png)
 
 1. Patient data is captured by remote monitoring devices*
 2. Data is uploaded to the remote monitoring platform*

@@ -11,15 +11,16 @@
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - **FHIR Organization**
+    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
-    - FHIR Observation *(to be included in future version releases)*
+    - [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md) 
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
 
 <br>
 
-# 3.4.1 FHIR UK Core Organization Resource
+# 3.4.3 FHIR UK Core Organization Resource
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -29,6 +30,16 @@ The FHIR UK Core Organization is used to identify the organisation creating and 
 This page provides specific guidance on using the Organization resource for Supplementary RM Data. For the full structure definition, please see the [FHIR UK Core Organization Resource](https://simplifier.net/hl7fhirukcorer4/ukcoreorganization).
 
 The UK Core resource inherits from the [international HL7 FHIR R4 base resource definition](https://hl7.org/fhir/R4/Organization.html).
+
+## Optionality Guidance
+
+The population guidance below uses the following definitions for data item optionality:
+
+1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+3. **Optional** - the system has the option to include this data if it is available
+
+Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
 
 ## Required Elements (for Supplementary RM Data)
 
@@ -45,13 +56,29 @@ Further guidance on each element is outlined in the sections below.
 
 ### Id
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|A logical identifier generated for this organization resource.|[id](https://hl7.org/fhir/R4/datatypes.html#id)|mandatory|0..1|
 
-**Additional Guidance:** Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)
-
-> *Note that for audit purposes, either Id or [Identifier](#identifier) should be used to trace the Bundle between organisations/audit records if required.*
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>id</td>
+      <td>id</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+        <td>A logical identifier generated for this document reference.</td>
+        <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
+      </tr>
+    </tbody>
+</table>
 
 **Example (XML)**
 
@@ -71,12 +98,37 @@ Further guidance on each element is outlined in the sections below.
 
 ### Meta
 
+<table data-responsive>
+    <thead>
+        <tr>
+           <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+      <td>Meta</td>
+      <td>Element</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>Metadata about the resource</td>
+      <td></td>
+      </tr>
+            <tr>
+            <td>meta.profile</td>
+      <td>Canonical</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>To identify the FHIR profile the resource conforms to</td>
+      <td>Fixed value: "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"</td>
+      </tr>
+    </tbody>
+</table>
 
-|Element|Usage|Data Type|Optionality|Cardinality|
-|-------|-----|---------|-----------|-----------|
-|meta.profile|To assert that the content conforms to a resource profile (the UK Core FHIR Organization definition)|[canonical](https://hl7.org/fhir/R4/datatypes.html#canonical)|mandatory|1..1|
-
-**Additional Guidance:** The meta.profile element must contain a fixed value `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"`
 
 **Example (XML)**
 
@@ -91,23 +143,41 @@ Further guidance on each element is outlined in the sections below.
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
+        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
     ]
 }
 ```
-
+****
 ****
 
 ### Identifier
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|An identifier for the organisation - the organisation's ODS code.|[Identifier](https://hl7.org/fhir/R4/datatypes.html#Identifier)|optional|0..*|
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Identifier</td>
+      <td> <a href= "https://hl7.org/fhir/R4/datatypes.html#Identifier"> Identifier </a> </td>
+      <td>Optional</td>
+      <td>0:*</td>
+        <td>An identifier for the organisation - the organisation's ODS code.</td>
+        <td>The identifer should be the organisation's  <a href= "https://digital.nhs.uk/services/organisation-data-service"> ODS code </a> defined using the `system` and `value` sub-elements. 
+  The system should be fixed value of <a href ="https://fhir.nhs.uk/Id/ods-organization-code"> ODS </a>`
+  The value should be the ODS code itself e.g., `"ABC12"`
+To look up an organisation's ODS code, you can use the <a href ="https://odsportal.digital.nhs.uk/"> ODS portal </a> </td>
+      </tr>
+    </tbody>
+</table>
 
-**Additional Guidance:** The identifer should be the organisation's [ODS code](https://digital.nhs.uk/services/organisation-data-service), defined using the `system` and `value` sub-elements. 
- - The system should be fixed value of `"https://fhir.nhs.uk/Id/ods-organization-code"`
- - The value should be the ODS code itself e.g., `"ABC12"`
-To look up an organisation's ODS code, you can use the [ODS portal](https://odsportal.digital.nhs.uk/). 
 
 **Example (XML)**
 
@@ -134,9 +204,29 @@ To look up an organisation's ODS code, you can use the [ODS portal](https://odsp
 
 ### Name
 
-|Usage|Data Type|Optionality|Cardinality|
-|-----|---------|-----------|-----------|
-|The organisation's name.|[String](https://hl7.org/fhir/R4/datatypes.html#string)|optional|0..1|
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td> Name </td>
+      <td><a href= "https://hl7.org/fhir/R4/datatypes.html#string"> String </a> </td>
+      <td>Optional</td>
+      <td>0:1</td>
+        <td>The organisation's name.</td>
+        <td> Name detailing the organisation </td>
+      </tr>
+    </tbody>
+</table>
+
 
 **Example (XML)**
 
