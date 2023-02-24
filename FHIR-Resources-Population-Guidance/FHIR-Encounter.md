@@ -11,9 +11,9 @@
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)    
+    -  **FHIR Encounter**
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md) 
-    -  **FHIR Encounter**
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
@@ -30,6 +30,16 @@ An Encounter Resource is a record of an event that occurs when a patient interac
 ## Structure Definition
 https://simplifier.net/HL7FHIRUKCoreR4/UKCoreEncounter/~related
 
+## Optionality Guidance
+
+The population guidance below uses the following definitions for data item optionality:
+
+1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+3. **Optional** - the system has the option to include this data if it is available
+
+Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
+
 ## Required Elements (for Supplementary RM Data)
 A minimum viable content that all provider and consumer systems should support is the following elements. 
 
@@ -37,52 +47,50 @@ A minimum viable content that all provider and consumer systems should support i
     <thead>
         <tr>
             <th>Element</th>
-            <th data-no-sort>Required?</th>
+            <th data-no-sort>Mandatory</th>
         </tr>
     </thead>
     <tbody>
     <tr>
-            <td><a href="#ID">Id</a></td>
-            <td>Optional but recommended</td>
+            <td><a href="#ID">Encounter.id</a></td>
+            <td>Mandatory</td>
         </tr>
     <tr>
-            <td><a href="#Meta">Meta</a></td>
-            <td>Required</td>
+            <td><a href="#Meta">Encounter.meta</a></td>
+            <td>Mandatory</td>
         </tr>
     <tr>
             <td><a href="#Identifier">Encounter.identifier</a></td>
-            <td>Required</td>
+            <td>Optional</td>
         </tr>
         <tr>
             <td><a href="#Status">Encounter.status</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>      
         <tr>
-            <td><a href="#statusHistory">Encounter.statusHistory</a></td>
-            <td>Required</td>
-        </tr>
-        <tr>
             <td><a href="#Class">Encounter.class</a></td>
-            <td>Required</td>
-        </tr>
-          <tr>
-            <td><a href="#ClassHistory">Encounter.classHistory</a></td>
-            <td>Required</td>
-        </tr>
-        <tr>
-            <td><a href="#Type">Encounter.type</a></td>
             <td>Mandatory</td>
         </tr>
         <tr>
-            <td><a href="#Subject">Encounter.subject</a></td>
+            <td><a href="#Type">Encounter.type</a></td>
             <td>Required</td>
         </tr>
         <tr>
-            <td><a href="#Participant">Encounter.participant</a></td>
+            <td><a href="#Subject">Encounter.subject</a></td>
+            <td>Mandatory</td>
+        </tr>
+        <tr>
+            <td><a href="#Period">Encounter.period</a></td>
+            <td>Mandatory</td>
+        </tr>
+        <tr>
+            <td><a href="#ServiceProvider">Encounter.serviceProvider</a></td>
             <td>Optional</td>
         </tr>
     </tbody>
 </table>
+
+****
 
 <div id="ID"></div>
 
@@ -103,8 +111,8 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
       <td>id</td>
       <td>id</td>
-      <td>Optional but recommended</td>
-      <td>0:1</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
         <td>A logical identifier generated for this document reference.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
@@ -138,36 +146,20 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
       <tr>
-      <td>Meta</td>
-      <td>Element</td>
-      <td>Optional</td>
-      <td>1:1</td>
-      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
-      <td>Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource. </td>
+        <td>Meta</td>
+        <td>Element</td>
+        <td>Mandatory</td>
+        <td>1:1</td>
+        <td>Metadata about the resource</td>
+        <td></td>
       </tr>
-            <tr>
-            <td>meta.profile</td>
-      <td>Canonical</td>
-      <td>Required</td>
-      <td>1:1</td>
-      <td>meta.profile: Profiles this resource claims to conform to </td>
-      <td>A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url. </td>
-      </tr>
-            <tr>
-       <td>meta.versionID</td>     
-      <td>id</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.VersionId: Version specific identifier </td>
-      <td>The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted. </td>
-      </tr>
-             <tr>
-       <td>Meta.lastUpdated</td>      
-      <td>instant</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.lastUpdated: When the resource version last changed </td>
-      <td>When the resource last changed - e.g. when the version changed.</td>
+      <tr>
+        <td>meta.profile</td>
+        <td>Canonical</td>
+        <td>Mandatory</td>
+        <td>1:1</td>
+        <td>To identify the FHIR profile the resource conforms to</td>
+        <td>Fixed value: "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter"</td>
       </tr>
     </tbody>
 </table>
@@ -176,10 +168,8 @@ A minimum viable content that all provider and consumer systems should support i
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
+      "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter"
     ]
-    "versionId": "1",
-    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
 }
 ```
 
@@ -202,31 +192,31 @@ A minimum viable content that all provider and consumer systems should support i
      <tr>
      <td>Encounter.Identifier</td>
       <td>Identifier</td>
-      <td>Required</td>
-      <td>0:1</td>
-        <td>Identifier: A unique identifier assigned to this observation.</td>
-        <td>Allows observations to be distinguished and referenced.</td>
+      <td>Optional</td>
+      <td>0:*</td>
+        <td>Identifier(s) assigned to this observation. Allows observations to be distinguished and referenced.</td>
+        <td></td>
       </tr>
       <tr>
       <td>Encounter.Identifier.System</td>
       <td>uri</td>
-      <td>Required if using</td>
-      <td>1:1</td>
-        <td>System: Establishes namespace for the value</td>
-          <td>Establishes the namespace for the value - that is, a URL that describes a set values that are unique</td>
+      <td>Required (if using)</td>
+      <td>0:1</td>
+        <td>Establishes namespace for the value</td>
+          <td>A URL that describes a set values that are unique</td>
       </tr>
          <tr>
       <td>Encounter.Identifier.Value</td>
       <td>String</td>
-      <td>Required if using</td>
-      <td>1:1</td>
-        <td>Value: The value that is unique</td>
-        <td>The portion of the identifier typically relevant to the user and which is unique within the context of the system.</td>
+      <td>Required (if using)</td>
+      <td>0:1</td>
+        <td>The identifier value that is unique within the context of the system.</td>
+        <td></td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
     "identifier":  [
         {
@@ -235,7 +225,7 @@ A minimum viable content that all provider and consumer systems should support i
         }
     ]
 ```
-
+****
 <div id="Status"></div>
 
 ## Encounter.Status
@@ -255,78 +245,20 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
         <td>Encounter.Status</td>
       <td>Code</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-        <td>Status: planned | arrived | triaged | in-progress | onleave | finished | cancelled +</td>
-        <td>Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).</td>
+        <td>Status of the encounter</td>
+        <td>Value must be one of: planned | arrived | triaged | in-progress | onleave | finished | cancelled (<a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-encounter-status.json">EncounterStatus value set</a>)</td>
       </tr>
     </tbody>
 </table>
 
-
-
-
-#### Example
+**Example**
 ```json
  "status": "final"
 ```
+****
 
-<div id="statusHistory"></div>
-
-## Encounter.statusHistory
-
-<table data-responsive>
-    <thead>
-        <tr>
-            <th>FHIR Attribute</th>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-            <th>Usage</th>
-            <th>Guidance</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Encounter.statusHistory</td>
-      <td>BackboneElement</td>
-      <td>Required</td>
-      <td>0:*</td>
-      <td>statusHistory: List of past encounter statuses</td>
-      <td>The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.</td>
-      </tr>
-           <tr>
-      <td>Encounter.statusHistory.status</td>
-      <td>code</td>
-      <td>Required</td>
-      <td>1:1</td>
-      <td>status: planned | arrived | triaged | in-progress | onleave | finished | cancelled +</td>
-      <td>Note that FHIR strings SHALL NOT exceed 1MB in size.</td>
-      </tr>
-           <tr>
-      <td>Encounter.statusHistory.period</td>
-      <td>period</td>
-      <td>Required</td>
-      <td>1:1</td>
-      <td>period: The time that the episode was in the specified status</td>
-      <td>A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. "the patient was an inpatient of the hospital for this time range") or one value from the range applies (e.g. "give to the patient between these two times").</td>
-      </tr>
-    </tbody>
-</table>
-
-
-#### Example
-```json
-"statusHistory": [
-   {
-      "status":"finished",
-      "period":{
-         "start":"2023-02-23",
-         "end":"2023-02-23"
-      }
-   }
-]
-```
 <div id="Class"></div>
 
 ## Encounter.Class
@@ -348,83 +280,23 @@ A minimum viable content that all provider and consumer systems should support i
       <td>Coding</td>
       <td>Mandatory</td>
       <td>1:1</td>
-      <td>class: Classification of patient encounter</td>
-      <td>Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.</td>
+      <td>Classification of patient encounter, such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.</td>
+      <td>Extensible value set: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-v3-actencountercode.json">v3.ActEncounterCode</a></td>
       </tr>
     </tbody>
 </table>
 
 
 
-#### Example
+**Example**
 ```json
    "class": {
         "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-        "code": "AMB",
-        "display": "ambulatory"
+        "code": "HH",
+        "display": "home health"
       },
 ```
-
-<div id="ClassHistory"></div>
-
-## Encounter.classHistory
-
-<table data-responsive>
-    <thead>
-        <tr>
-        <th>FHIR Attribute</th>
-            <th>DataType</th>
-            <th>Optionality</th>
-            <th>Cardinality</th>
-            <th>Usage</th>
-            <th>Guidance</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>Encounter.classHistory</td>
-      <td>BackboneElement</td>
-      <td>Optional</td>
-      <td>0:*</td>
-      <td>classHistory: List of past encounter classes</td>
-        <td>The class history permits the tracking of the encounters transitions without needing to go through the resource history.</td>
-      </tr>
-         <tr>
-         <td>Encounter.classHistory.class</td>
-      <td>Coding</td>
-      <td>Required if using</td>
-      <td>1:1</td>
-      <td>Coding:inpatient | outpatient | ambulatory | emergency +</td>
-          <td>Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.</td>
-      </tr>
-               <tr>
-         <td>Encounter.classHistory.period</td>
-      <td>Period</td>
-      <td>Required if using</td>
-      <td>1:1</td>
-      <td>Period: The time that the episode was in the specified class</td>
-          <td>A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. "the patient was an inpatient of the hospital for this time range")</td>
-      </tr>
-    </tbody>
-</table>
-
-
-#### Example
-```json
-"classHistory": [
-    {
-      "class": {
-        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-        "code": "AMB",
-        "display": "ambulatory"
-      },
-      "period": {
-        "start": "2022-01-01T09:00:00Z",
-        "end": "2022-01-01T10:00:00Z"
-      }
-    }
-]
-```
+****
 
 <div id="Type"></div>
 
@@ -445,26 +317,27 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
       <td>Encounter.type</td>
       <td>CodeableConcept</td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:*</td>
-      <td>type: Specific type of encounter</td>
-      <td>Since there are many ways to further classify encounters, this element is 0..*..</td>
+      <td>Specific type of encounter (SNOMED CT if possible)</td>
+      <td>Preferred value set: <a href="https://simplifier.net/hl7fhirukcorer4/files/valuesets/valueset-ukcore-encountertype.xml">UKCoreEncounterType</a></td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
 "type": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-              "code": "ATND",
-              "display": "attender"
+              "system": "http://snomed.info/sct",
+              "code": "270420001",
+              "display": "Seen in own home"
             }
           ]
 ```
+****
 <div id="Subject"></div>
 
 ## Encounter.subject
@@ -484,42 +357,33 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
       <td>Encounter.subject</td>
       <td>Reference(UK Core Patient)</td>
-      <td>Required</td>
-      <td>0:1</td>
-       <td>Subject: The patient or group present at the encounter</td>
-       <td>While the encounter is always about the patient, the patient might not actually be known in all contexts of use, and there may be a group of patients that could be anonymous</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+       <td>The subject of the encounter</td>
+       <td>This must reference the patient resource included in the Bundle</td>
       </tr>
        <tr>
       <td>Encounter.subject.reference</td>
       <td>string</td>
-      <td>Required</td>
-      <td>0:1</td>
-       <td>Reference: Literal reference, Relative, internal or absolute URL.</td>
-         <td>A reference to a location at which the other resource is found.</td>
-      </tr>
-        <tr>
-      <td>Encounter.subject.type</td>
-      <td>URI</td>
-      <td>Required</td>
-      <td>0:1</td>
-       <td>type: Type the reference refers to (e.g. "Patient")</td>
-         <td>The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>A reference to a location at which the Patient resource is found.</td>
+      <td>A reference to Patient.id for the Patient resource in the Bundle.</td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
-"subject": {
-    "reference": "Patient/example",
-    "type": "Patient"
-  }
+"subject" : {
+    "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+}
 
 ```
+****
+<div id="Period"></div>
 
-<div id="Participant"></div>
-
-## Encounter.participant
+## Encounter.period
 
 <table data-responsive>
     <thead>
@@ -534,92 +398,83 @@ A minimum viable content that all provider and consumer systems should support i
     </thead>
     <tbody>
       <tr>
-      <td>Encounter.participant</td>
-      <td>Backbone Element</td>
-      <td>Optional</td>
-      <td>0:*</td>
-       <td>participant: List of participants involved in the encounter</td>
-        <td>The list of people responsible for providing the service.</td>
+      <td>Encounter.period</td>
+      <td>Period</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+       <td>The start and end time of the encounter</td>
+       <td></td>
       </tr>
-          <tr>
-      <td>Encounter.participant.type</td>
-      <td>CodeableConcept</td>
-      <td>Optional</td>
-      <td>0:*</td>
-       <td>type: Role of participant in encounter</td>
-        <td>Role of participant in encounter..</td>
+       <tr>
+      <td>Encounter.period.start</td>
+      <td>dateTime</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>Start time of the encounter, with inclusive boundary.</td>
+      <td></td>
       </tr>
-            <tr>
-      <td>Encounter.participant.individual</td>
-      <td>Reference(UK Core Practitioner | UK Core PractitionerRole | UK Core RelatedPerson)</td>
-      <td>Optional</td>
-      <td>0:1</td>
-       <td>individual: Persons involved in the encounter other than the patient</td>
-        <td>References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.).</td>
-      </tr>
-                  <tr>
-      <td>Encounter.participant.individual.reference</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td>0:1</td>
-       <td>reference: Literal reference, Relative, internal or absolute URL</td>
-        <td>A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found.</td>
-      </tr>
-                  <tr>
-      <td>Encounter.participant.individual.identifier</td>
-      <td>Identifier</td>
-      <td>Optional</td>
-      <td>0:1</td>
-       <td>identifier: Logical reference, when literal reference is not known</td>
-        <td>An identifier for the target resource. </td>
-      </tr>
-                       <tr>
-      <td>Encounter.participant.individual.identifier.system</td>
-      <td>uri</td>
-      <td>Optional</td>
-      <td>0:1</td>
-       <td>urui: The namespace for the identifier value</td>
-        <td>Establishes the namespace for the value - that is, a URL that describes a set values that are unique. </td>
-      </tr>
-                       <tr>
-      <td>Encounter.participant.individual.identifier.value</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td>0:1</td>
-       <td>string:The value that is unique</td>
-        <td>The portion of the identifier typically relevant to the user and which is unique within the context of the system. </td>
+       <tr>
+      <td>Encounter.period.end</td>
+      <td>dateTime</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>End time of the encounter, with inclusive boundary.</td>
+      <td></td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
-  "participant": [
-    {
-      "type": [
-        {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-              "code": "ATND",
-              "display": "attender"
-            }
-          ]
-        }
-      ],
-      "individual": {
-        "reference": "Practitioner/example",
-        "identifier": [
-          {
-            "system": "http://example.org/practitioner-ids",
-            "value": "123"
-          }
-        ]
-      }
-    }
-  ]
+"period" : {
+    "start": "2023-01-07T13:34:00+01:00",
+    "end": "2023-01-15T15:21:00+01:00"
 }
-```
 
-<div id="Note"></div>
+```
+****
+
+<div id="ServiceProvider"></div>
+
+## Encounter.serviceProvider
+
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Encounter.serviceProvider</td>
+      <td>Backbone Element</td>
+      <td>Optional</td>
+      <td>0:*</td>
+       <td>The organisation responsible for the encounter</td>
+        <td></td>
+      </tr>
+               <tr>
+         <td>Encounter.serviceProvider.Reference</td>
+      <td>String</td>
+      <td>Required (if using)</td>
+      <td>0:1</td>
+      <td>A reference to a location at which the Organization resource is found.</td>
+      <td>This should reference an Organization resource within the Bundle using the Organization.id field.</td>
+      </tr>
+    </tbody>
+</table>
+
+**Example**
+```json
+"serviceProvider:": [
+    {
+        "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+    }
+]
+```
 

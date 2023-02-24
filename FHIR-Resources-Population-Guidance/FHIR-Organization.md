@@ -11,9 +11,9 @@
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - **FHIR Organization**
+    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md) 
-    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
@@ -30,6 +30,16 @@ The FHIR UK Core Organization is used to identify the organisation creating and 
 This page provides specific guidance on using the Organization resource for Supplementary RM Data. For the full structure definition, please see the [FHIR UK Core Organization Resource](https://simplifier.net/hl7fhirukcorer4/ukcoreorganization).
 
 The UK Core resource inherits from the [international HL7 FHIR R4 base resource definition](https://hl7.org/fhir/R4/Organization.html).
+
+## Optionality Guidance
+
+The population guidance below uses the following definitions for data item optionality:
+
+1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+3. **Optional** - the system has the option to include this data if it is available
+
+Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
 
 ## Required Elements (for Supplementary RM Data)
 
@@ -62,8 +72,8 @@ Further guidance on each element is outlined in the sections below.
       <tr>
       <td>id</td>
       <td>id</td>
-      <td>Optional but recommended</td>
-      <td>0:1</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
         <td>A logical identifier generated for this document reference.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
@@ -100,37 +110,21 @@ Further guidance on each element is outlined in the sections below.
         </tr>
     </thead>
     <tbody>
-      <tr>
+            <tr>
       <td>Meta</td>
       <td>Element</td>
-      <td>Optional</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
-      <td>Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource. </td>
+      <td>Metadata about the resource</td>
+      <td></td>
       </tr>
             <tr>
             <td>meta.profile</td>
       <td>Canonical</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>meta.profile: Profiles this resource claims to conform to </td>
-      <td>A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url. The meta.profile element must contain a fixed value <a href= "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle" > `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"` </td>
-      </tr>
-            <tr>
-       <td>meta.versionID</td>     
-      <td>id</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.VersionId: Version specific identifier </td>
-      <td>The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted. </td>
-      </tr>
-             <tr>
-       <td>Meta.lastUpdated</td>      
-      <td>instant</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.lastUpdated: When the resource version last changed </td>
-      <td>When the resource last changed - e.g. when the version changed.</td>
+      <td>To identify the FHIR profile the resource conforms to</td>
+      <td>Fixed value: "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"</td>
       </tr>
     </tbody>
 </table>
@@ -140,9 +134,7 @@ Further guidance on each element is outlined in the sections below.
 
 ```xml
 <meta>
-    <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle" />
-    <version value="1" />
-    <lastUpdated value="2023-01-02T12:48:23.413+00:00" />
+    <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization" />
 </meta>
 ```
 
@@ -151,10 +143,8 @@ Further guidance on each element is outlined in the sections below.
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"
+        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
     ]
-    "versionId": "1",
-    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
 }
 ```
 ****

@@ -12,9 +12,9 @@ FHIR OBSERVATION
     - [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)    
+    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - **FHIR Observation**
-    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
@@ -33,6 +33,16 @@ An Observation resource represents a single clinical observation or measurement 
 ## Structure Definition
 https://simplifier.net/HL7FHIRUKCoreR4/UKCoreObservation/~json
 
+## Optionality Guidance
+
+The population guidance below uses the following definitions for data item optionality:
+
+1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+3. **Optional** - the system has the option to include this data if it is available
+
+Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
+
 ## Required Elements (for Supplementary RM Data)
 A minimum viable content that all provider and consumer systems should support is the following elements. 
 
@@ -40,49 +50,49 @@ A minimum viable content that all provider and consumer systems should support i
     <thead>
         <tr>
             <th>Element</th>
-            <th data-no-sort>Required?</th>
+            <th data-no-sort>Optionality</th>
         </tr>
     </thead>
     <tbody>
     <tr>
-            <td><a href="#ID">Id</a></td>
-            <td>Optional but recommended</td>
+            <td><a href="#ID">Observation.id</a></td>
+            <td>Mandatory</td>
         </tr>
     <tr>
-            <td><a href="#Meta">Meta</a></td>
-            <td>Required</td>
+            <td><a href="#Meta">Observation.meta</a></td>
+            <td>Mandatory</td>
         </tr>
     <tr>
             <td><a href="#Identifier">Observation.identifier</a></td>
-            <td>Required</td>
+            <td>Optional</td>
         </tr>
         <tr>
             <td><a href="#Status">Observation.status</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>      
         <tr>
             <td><a href="#Category">Observation.category</a></td>
-            <td>Required</td>
+            <td>Optional</td>
         </tr>
         <tr>
             <td><a href="#Code">Observation.code</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>
         <tr>
             <td><a href="#Subject">Observation.subject</a></td>
             <td>Mandatory</td>
         </tr>
         <tr>
-            <td><a href="#Issued">Observation.issued</a></td>
-            <td>Required</td>
+            <td><a href="#EffectiveDateTime">Observation.effectiveDateTime</a></td>
+            <td>Mandatory</td>
         </tr>
         <tr>
             <td><a href="#Performer">Observation.performer</a></td>
-            <td>Required</td>
+            <td>Optional</td>
         </tr>
           <tr>
             <td><a href="#Value">Observation.value</a></td>
-            <td>Required</td>
+            <td>Mandatory</td>
         </tr>
           <tr>
             <td><a href="#Note">Observation.note</a></td>
@@ -90,7 +100,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
     </tbody>
 </table>
-
+****
 <div id="ID"></div>
 
 ## Id
@@ -110,8 +120,8 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
       <td>id</td>
       <td>id</td>
-      <td>Optional but recommended</td>
-      <td>0:1</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
         <td>A logical identifier generated for this document reference.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
@@ -121,13 +131,13 @@ A minimum viable content that all provider and consumer systems should support i
 
 
 
-#### Example
+**Example**
 ```json
 {
     "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
 }
 ```
-
+****
 <div id="Meta"></div>
 
 ### Meta
@@ -144,52 +154,34 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
     </thead>
     <tbody>
-      <tr>
+            <tr>
       <td>Meta</td>
       <td>Element</td>
-      <td>Optional</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
-      <td>Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource. </td>
+      <td>Metadata about the resource</td>
+      <td></td>
       </tr>
             <tr>
             <td>meta.profile</td>
       <td>Canonical</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>meta.profile: Profiles this resource claims to conform to </td>
-      <td>A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url. </td>
-      </tr>
-            <tr>
-       <td>meta.versionID</td>     
-      <td>id</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.VersionId: Version specific identifier </td>
-      <td>The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted. </td>
-      </tr>
-             <tr>
-       <td>Meta.lastUpdated</td>      
-      <td>instant</td>
-      <td>Optional (recommended)</td>
-      <td>0:1</td>
-      <td>meta.lastUpdated: When the resource version last changed </td>
-      <td>When the resource last changed - e.g. when the version changed.</td>
+      <td>To identify the FHIR profile the resource conforms to</td>
+      <td>Fixed value: "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Observation"</td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
+        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Observation"
     ]
-    "versionId": "1",
-    "lastUpdated": "2023-01-02T12:48:23.413+00:00"
 }
 ```
-
+****
 <div id="Identifier"></div>
 
 ## Observation.identifier
@@ -209,31 +201,31 @@ A minimum viable content that all provider and consumer systems should support i
      <tr>
      <td>Observation.Identifier</td>
       <td>Identifier</td>
-      <td>Required</td>
+      <td>Optional</td>
       <td>0:1</td>
-        <td>Identifier: A unique identifier assigned to this observation.</td>
-        <td>Allows observations to be distinguished and referenced.</td>
+        <td>A unique identifier assigned to this observation. Allows observations to be distinguished and referenced.</td>
+        <td></td>
       </tr>
       <tr>
-      <td>Observation.System</td>
+      <td>Observation.Identifier.System</td>
       <td>uri</td>
-      <td>Required if using</td>
-      <td>1:1</td>
-        <td>System: Establishes namespace for the value</td>
-          <td>Establishes the namespace for the value - that is, a URL that describes a set values that are unique</td>
+      <td>Required (if using)</td>
+      <td>0:1</td>
+        <td>Establishes namespace for the value</td>
+          <td>A URL that describes a set values that are unique</td>
       </tr>
          <tr>
-      <td>Observation.Value</td>
+      <td>Observation.Identifier.Value</td>
       <td>String</td>
-      <td>Required if using</td>
-      <td>1:1</td>
-        <td>Value: The value that is unique</td>
-        <td>The portion of the identifier typically relevant to the user and which is unique within the context of the system.</td>
+      <td>Required (if using)</td>
+      <td>0:1</td>
+        <td>The identifier value that is unique within the context of the system.</td>
+        <td></td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
     "identifier":  [
         {
@@ -262,10 +254,10 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
         <td>Observation.Status</td>
       <td>Code</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-        <td>Status: The status of this document reference.</td>
-        <td>The status of this document reference: current | superseded | entered-in-error. At the point of sending the status code should always be "current".</td>
+        <td>The status of this observation.</td>
+        <td>Value must be one of: registered | preliminary | final | amended <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-observation-status.json">(ObservationStatus value set)</a></td>
       </tr>
     </tbody>
 </table>
@@ -273,11 +265,11 @@ A minimum viable content that all provider and consumer systems should support i
 
 
 
-#### Example
+**Example**
 ```json
  "status": "final"
 ```
-
+****
 <div id="Category"></div>
 
 ## Observation.Category
@@ -299,14 +291,14 @@ A minimum viable content that all provider and consumer systems should support i
       <td>CodeableConcept</td>
       <td>Required</td>
       <td>0:*</td>
-      <td>Category: Classification of type of observation. Survey should be used</td>
-      <td>In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once. The level of granularity is defined by the category concepts in the value set.</td>
+      <td>Classification of type of observation. </td>
+      <td>Recommended value is "survey" from the <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/package/valueset-observation-category.json">ObservationCategoryCodes value set</a></td>
       </tr>
     </tbody>
 </table>
 
 
-#### Example
+**Example**
 ```json
      "category":  [
         {
@@ -320,6 +312,7 @@ A minimum viable content that all provider and consumer systems should support i
         }
     ]
 ```
+****
 <div id="Code"></div>
 
 ## Observation.Code
@@ -339,58 +332,55 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
       <td>Observation.Code</td>
       <td>CodeableConcept</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>Code: Type of observation (code / type)</td>
-      <td>Describes what was observed. Sometimes this is called the observation "name".</td>
+      <td>Type of observation - describes what was observed</td>
+      <td></td>
       </tr>
          <tr>
         <td>Observation.Code.Coding</td>
       <td>Coding</td>
-      <td>Required</td>
-      <td>0:*</td>
-      <td>Coding: Code defined by a terminology system. </td>
-         <td>Allows for alternative encodings within a code system, and translations to other code systems. </td>
+      <td>Mandatory</td>
+      <td>1:*</td>
+      <td>Code defined by a terminology system. Allows for alternative encodings within a code system, and translations to other code systems.</td>
+         <td>A SNOMED CT code should be used at minimum.</td>
       </tr>
            <tr>
         <td>Observation.Code.Coding:snomedCT</td>
       <td>Coding</td>
-      <td>Required</td>
-      <td>0:1</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
       <td>SnomedCT: Code defined by a terminology system </td>
           <td>Allows for alternative encodings within a code system, and translations to other code systems. </td>
       </tr>
            <tr>
         <td>Observation.Code.Coding:snomedCT.System</td>
       <td>URI (Fixed Value)</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>System: Identity of the terminology system </td>
-            <td>The identification of the code system that defines the meaning of the symbol in the code.</td>
+      <td>Identity of the terminology system </td>
+            <td>Fixed value: "http://snomed.info/sct"</td>
       </tr>
                  <tr>
         <td>Observation.Code.Coding:snomedCT.Code</td>
       <td>Code</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>Code: Symbol in syntax defined by the system </td>
-            <td>A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination). </td>
+      <td>SNOMED CT code representing the Observation</td>
+            <td></td>
       </tr>
                  <tr>
         <td>Observation.Code.Coding:snomedCT.Display</td>
       <td>String</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>Display: Representation defined by the system </td>
-      <td>A representation of the meaning of the code in the system, following the rules of the system. </td>
+      <td>Display representation of SNOMED CT code</td>
+      <td></td>
       </tr>
     </tbody>
 </table>
 
-Who/what is the subject of the document. This should reference the patient.id
-
-
-#### Example
+**Example**
 ```json
  "code": {
         "coding":  [
@@ -402,7 +392,7 @@ Who/what is the subject of the document. This should reference the patient.id
         ]
     }
 ```
-
+****
 <div id="Subject"></div>
 
 ## Observation.Subject
@@ -421,34 +411,34 @@ Who/what is the subject of the document. This should reference the patient.id
     <tbody>
       <tr>
       <td>Observation.subject</td>
-      <td>Reference (UK CORE Patient)</td>
+      <td>Reference(UK Core Patient)</td>
       <td>Mandatory</td>
-      <td>0:1</td>
-      <td>Subject: Who and/or what the observation is about</td>
-        <td>The patient, or group of patients, location, or device this observation is about and into whose record the observation is plac</td>
+      <td>1:1</td>
+       <td>The subject of the observation</td>
+       <td>This must reference the patient resource included in the Bundle</td>
       </tr>
-         <tr>
-         <td>Observation.subject.reference</td>
-      <td>String</td>
-      <td>Required if using</td>
-      <td>0:1</td>
-      <td>Reference: Literal reference, Relative, internal or absolute URL </td>
-          <td>A reference to a location at which the other resource is found.</td>
+       <tr>
+      <td>Observation.subject.reference</td>
+      <td>string</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>A reference to a location at which the Patient resource is found.</td>
+      <td>A reference to Patient.id for the Patient resource in the Bundle.</td>
       </tr>
     </tbody>
 </table>
 
 
-#### Example
+**Example**
 ```json
-  "subject": {
-        "reference": "Patient/30d3de6f-e800-47fa-b610-b02c7c8e9d57"
-    }
+"subject" : {
+    "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+}
 ```
 
-<div id="Issued"></div>
+<div id="EffectiveDateTime"></div>
 
-## Observation.issued
+## Observation.effectiveDateTime
 
 <table data-responsive>
     <thead>
@@ -463,20 +453,21 @@ Who/what is the subject of the document. This should reference the patient.id
     </thead>
     <tbody>
       <tr>
-      <td>Observation.issued</td>
+      <td>Observation.effectiveDateTime</td>
       <td>Instant</td>
-      <td>Required</td>
-      <td>0:1</td>
-      <td>Issued: Date/Time this version was made available</td>
-      <td>The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.</td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+      <td>Clinically relevant time/time-period for observation</td>
+      <td></td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
-Content Pending
+"effectiveDateTime": "2018-10-04T14:17:59+01:00"
 ```
+****
 <div id="Performer"></div>
 
 ## Observation.Performer
@@ -495,33 +486,33 @@ Content Pending
     <tbody>
       <tr>
       <td>Observation.Performer</td>
-      <td>Reference (UK Core Patient)</td>
-      <td>Required</td>
+      <td>Reference (UK Core Patient | UK Core Organization)</td>
+      <td>Optional</td>
       <td>0:*</td>
-       <td>Performer: Who is responsible for the observation.</td>
-       <td>May give a degree of confidence in the observation and also indicates where follow-up questions should be directed..</td>
+       <td>Who is responsible for the observation.</td>
+       <td></td>
       </tr>
        <tr>
       <td>Observation.performer.reference</td>
       <td>string</td>
-      <td>Required</td>
+      <td>Required (if using)</td>
       <td>0:1</td>
-       <td>Reference: Literal reference, Relative, internal or absolute URL.</td>
-         <td>A reference to a location at which the other resource is found.</td>
+       <td>A reference to a location at which the referenced resource is found.</td>
+         <td>Should reference the patient.id or organization.id field for a resource included within the bundle</td>
       </tr>    
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
  "performer":  [
         {
-            "reference": "Oranization/UKCore-Organization-LeedsTeachingHospital-Example"
+            "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
         }
     ]
 
 ```
-
+****
 <div id="Value"></div>
 
 ## Observation.Value
@@ -540,23 +531,28 @@ Content Pending
     <tbody>
       <tr>
       <td>Observation.Value</td>
-      <td>Integer</td>
-      <td>Required</td>
+      <td></td>
+      <td>Mandatory</td>
+      <td>1:1</td>
+       <td>Actual result. The information determined as a result of making the observation, if the information has a simple value.</td>
+        <td>Integer data type should be used for NEWS2 scores.</td>
+      </tr>
+      <tr>
+      <td>Observation.ValueInteger</td>
+      <td></td>
+      <td>Required (dependent on observation type)</td>
       <td>1:*</td>
-       <td>Value: Actual result</td>
-        <td>The information determined as a result of making the observation, if the information has a simple value.</td>
+       <td>Actual result as an integer value.</td>
+        <td>For example, NEWS2 score.</td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
-  "valueQuantity": {
-        "value": 11.2,
-        "unit": "10*9/L"
-    }
+  "valueInteger": "12"
 ```
-
+****
 <div id="Note"></div>
 
 ## Observation.note
@@ -578,16 +574,16 @@ Content Pending
       <td>Annotation</td>
       <td>Optional</td>
       <td>0:*</td>
-       <td>Note: Comments about the observation.</td>
-       <td>May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation..</td>
+       <td>Comments about the observation. May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.</td>
+       <td></td>
       </tr>
     </tbody>
 </table>
 
-#### Example
+**Example**
 ```json
 {
-  "note": "patient presents with" 
+  "note": "Patient presents with..." 
 }
 ```
 

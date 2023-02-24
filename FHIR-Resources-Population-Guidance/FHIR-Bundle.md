@@ -11,9 +11,9 @@
     - **FHIR Bundle**
     - [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
     - [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)
+    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
     - [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
     - [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md)
-    - [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md) 
 4. [Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md)
 5. [Assurance](/5_Assurance.md)
 6. [Help & Support](/6_Support.md)
@@ -31,21 +31,31 @@ This page provides specific guidance on using the Bundle resource for Supplement
 
 The UK Core resource inherits from the [international HL7 FHIR R4 base resource definition](https://hl7.org/fhir/R4/Bundle.html).
 
+## Optionality Guidance
+
+The population guidance below uses the following definitions for data item optionality:
+
+1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+3. **Optional** - the system has the option to include this data if it is available
+
+Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
+
 ## Required Elements (for Supplementary RM Data)
 
 |Element|Optionality|
 |-------|-----------|
-|[id](#id)|mandatory|
-|[meta](#meta)|mandatory|
-|[identifer](#identifier)|optional|
-|[type](#bundle-type)|mandatory|
-|[entry](#entry)|mandatory|
+|[Bundle.id](#id)|mandatory|
+|[Bundle.meta](#meta)|mandatory|
+|[Bundle.identifer](#identifier)|optional|
+|[Bundle.type](#bundle-type)|mandatory|
+|[Bundle.entry](#entry)|mandatory|
 
 Further guidance on each element is outlined in the sections below. 
 
 ****
 
-### Id
+## Id
 
 
 <table data-responsive>
@@ -63,9 +73,9 @@ Further guidance on each element is outlined in the sections below.
       <tr>
       <td>id</td>
       <td>id</td>
-      <td>Optional but recommended</td>
-      <td>0:1</td>
-        <td>A logical identifier generated for this document reference.</td>
+      <td>mandatory</td>
+      <td>1:1</td>
+        <td>A logical identifier generated for this bundle.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
     </tbody>
@@ -87,7 +97,7 @@ Further guidance on each element is outlined in the sections below.
 
 ****
 
-### Meta
+## Meta
 
 <table data-responsive>
     <thead>
@@ -104,34 +114,34 @@ Further guidance on each element is outlined in the sections below.
       <tr>
       <td>Meta</td>
       <td>Element</td>
-      <td>Optional</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>For some information flows, there is a requirement to identify which UK Core profile(s) an instance being exchanged between healthcare IT systems conforms to. This could be for the purpose of validation of the instance against the profile definition and/or for conformance testing. This profile conformance is declared using the profile.meta element.</td>
-      <td>Each resource contains an element "meta", of type "Meta", which is a set of metadata that provides technical and workflow context to the resource. </td>
+      <td>Metadata about the resource</td>
+      <td></td>
       </tr>
             <tr>
             <td>meta.profile</td>
       <td>Canonical</td>
-      <td>Required</td>
+      <td>Mandatory</td>
       <td>1:1</td>
-      <td>meta.profile: Profiles this resource claims to conform to </td>
-      <td>A list of profiles (references to StructureDefinition resources) that this resource claims to conform to. The URL is a reference to StructureDefinition.url. The meta.profile element must contain a fixed value `"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"` </td>
+      <td>To identify the FHIR profile the resource conforms to</td>
+      <td>Fixed value: "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"</td>
       </tr>
             <tr>
        <td>meta.versionID</td>     
       <td>id</td>
       <td>Optional (recommended)</td>
       <td>0:1</td>
-      <td>meta.VersionId: Version specific identifier </td>
-      <td>The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted. </td>
+      <td>Version specific identifier </td>
+      <td>Changes each time the content of the bundle changes. Can be used to indicate if any corrections are required.</td>
       </tr>
              <tr>
-       <td>Meta.lastUpdated</td>      
+       <td>meta.lastUpdated</td>      
       <td>instant</td>
       <td>Optional (recommended)</td>
       <td>0:1</td>
-      <td>meta.lastUpdated: When the resource version last changed </td>
-      <td>When the resource last changed - e.g. when the version changed.</td>
+      <td>The date/time that the bundle was assembled or last updated - i.e. when the resources were placed in the bundle.</td>
+      <td></td>
       </tr>
     </tbody>
 </table>
@@ -152,7 +162,7 @@ Further guidance on each element is outlined in the sections below.
 ```json
 "meta": {
     "profile": [
-    "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"
+        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"
     ]
     "versionId": "1",
     "lastUpdated": "2023-01-02T12:48:23.413+00:00"
@@ -160,7 +170,7 @@ Further guidance on each element is outlined in the sections below.
 ```
 ****
 
-### Identifier
+## Identifier
 
 <table data-responsive>
     <thead>
@@ -178,11 +188,11 @@ Further guidance on each element is outlined in the sections below.
   <tbody>
       <tr>
       <td>Identifier</td>
-      <td>[Identifier](https://hl7.org/fhir/R4/datatypes.html#Identifier)</td>
+      <td>Identifier</td>
       <td>Optional</td>
       <td>0:1</td>
       <td>A persistent identifier for the bundle that won't change as a bundle is copied from server to server.</td>
-      <td>The identifer should be defined using the `system` and `value` sub-elements. The system is a URI which defines the set of identifiers (i.e. how the value is unique). The value is a unique identifier value within that system. *Note that for audit purposes, either [Id](#id) or Identifier should be used to trace the Bundle between organisations/audit records if required.* </td>
+      <td>The identifer should be defined using the `system` and `value` sub-elements. The system is a URI which defines the set of identifiers (i.e. how the value is unique). The value is a unique identifier value within that system.</td>
       </tr>
       </tbody>
 </table>
@@ -208,7 +218,7 @@ Further guidance on each element is outlined in the sections below.
 ```
 ****
 
-### Bundle Type
+## Bundle Type
 
 <table data-responsive>
     <thead>
@@ -226,11 +236,11 @@ Further guidance on each element is outlined in the sections below.
   <tbody>
       <tr>
       <td>Type</td>
-      <td>[code](https://hl7.org/fhir/R4/datatypes.html#code)</td>
+      <td>code</td>
       <td>mandatory</td>
       <td>1:1</td>
-      <td>Type: Indicates the purpose of this bundle - how it is intended to be used (i.e. a collection of resources containing Supplementary RM data).</td>
-      <td>The code contains a fixed value of `"collection"`, taken from the [BundleType value set](https://hl7.org/fhir/R4/valueset-bundle-type.html). </td>
+      <td>Indicates the purpose of this bundle - how it is intended to be used (i.e. a collection of resources containing Supplementary RM data).</td>
+      <td>The code contains a fixed value of "collection", taken from the <a href="https://hl7.org/fhir/R4/valueset-bundle-type.html">BundleType value set</a>. </td>
       </tr>
       </tbody>
 </table>
@@ -251,8 +261,8 @@ Further guidance on each element is outlined in the sections below.
 ```
 
 ****
-### Entry
-> This specification requires a minimum of 2 `entry` elements, which are outlined below. 
+## Entry
+> This specification requires a minimum of 4 `entry` elements, which are outlined below. 
 
 <table data-responsive>
     <thead>
@@ -269,23 +279,39 @@ Further guidance on each element is outlined in the sections below.
  <tr>
   <tbody>
       <tr>
-      <td>Entry (Patient)</td>
-      <td>Identifier</td>
+      <td>entry (Patient)</td>
+      <td>Backbone Element</td>
       <td>mandatory</td>
       <td>1:1</td>
       <td>A resource containing Patient details.</td>
       <td><a href = /FHIR-Resources-Population-Guidance/FHIR-Patient.md> Patient resource </a></td>
       </tr>
+      <tr>
+      <td>entry (Organization)</td>
+      <td>Backbone Element</td>
+      <td>mandatory</td>
+      <td>1:*</td>
+      <td>A resource containing organisation details.</td>
+      <td><a href = /FHIR-Resources-Population-Guidance/FHIR-Organization.md> Organization resource </a></td>
+      </tr>
+      <tr>
+      <td>entry (Encounter)</td>
+      <td>Backbone Element</td>
+      <td>mandatory</td>
+      <td>1:1</td>
+      <td>A resource containing encounter details for the virtual ward stay.</td>
+      <td><a href = /FHIR-Resources-Population-Guidance/FHIR-Encounter.md> Encounter resource </a></td>
+      </tr>
        <tr>
       <td>entry (DocumentReference)</td>
-      <td>Identifier</td>
+      <td>Backbone Element</td>
       <td>mandatory</td>
       <td>1:1</td>
       <td>A resource containing the PDF document.</td>
       <td><a href = /FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md> DocumentReference resource </a> </td>
       </tr>
           <td>entry (Observation)</td>
-      <td>Identifier</td>
+      <td>Backbone Element</td>
       <td>optional</td>
       <td>0:*</td>
       <td>Resources containing observations (e.g. NEWS2 scores).</td>
@@ -321,6 +347,15 @@ Further guidance on each element is outlined in the sections below.
             <id value="f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
             <!-- Organization resource -->
         </Organization>
+    </resource>
+</entry>
+<entry>
+    <fullUrl value="urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
+    <resource>
+        <Encounter>
+            <id value="8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
+            <!-- Encounter resource -->
+        </Encounter>
     </resource>
 </entry>
 <entry>
@@ -362,6 +397,14 @@ Further guidance on each element is outlined in the sections below.
                 "resourceType": "Organization",
                 "id": "f62a27e5-ff98-4f4b-8cf3-f86b694d8a87",
                 // Organization resource
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622"
+            "resource" : {
+                "resourceType": "Encounter",
+                "id": "8c2a52ec-e1c7-4129-8c8b-f8a79f017622",
+                // Encounter resource
             }
         },
         {
@@ -422,6 +465,15 @@ Further guidance on each element is outlined in the sections below.
         </resource>
     </entry>
     <entry>
+        <fullUrl value="urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
+        <resource>
+            <Encounter>
+                <id value="8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
+                <!-- Encounter resource -->
+            </Encounter>
+        </resource>
+    </entry>
+    <entry>
         <fullUrl value="urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
         <resource>
             <DocumentReference>
@@ -476,6 +528,14 @@ Further guidance on each element is outlined in the sections below.
                 "resourceType": "Organization",
                 "id": "f62a27e5-ff98-4f4b-8cf3-f86b694d8a87",
                 // Organization resource
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622"
+            "resource" : {
+                "resourceType": "Encounter",
+                "id": "8c2a52ec-e1c7-4129-8c8b-f8a79f017622",
+                // Encounter resource
             }
         },
         {
