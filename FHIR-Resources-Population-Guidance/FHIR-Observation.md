@@ -1,4 +1,3 @@
-FHIR OBSERVATION 
 > *This draft implementation guidance is provided for information only, and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
 > *If you are not participating in the First-of-Type, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
@@ -21,9 +20,7 @@ FHIR OBSERVATION
 
 <br>
 
-# 3.4.2 FHIR UK Core Observation Resource
-
-> *Content to be included in future version releases*
+# 3.4.6 FHIR UK Core Observation Resource
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 

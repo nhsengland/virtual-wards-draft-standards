@@ -20,7 +20,7 @@
 
 <br>
 
-# 3.4.1 FHIR UK Core Organization Resource
+# 3.4.3 FHIR UK Core Organization Resource
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
