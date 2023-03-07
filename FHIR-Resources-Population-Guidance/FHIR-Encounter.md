@@ -27,6 +27,8 @@
 ## Usage
 An Encounter Resource is a record of an event that occurs when a patient interacts with the healthcare system, such as a visit to a doctor's office, a hospital stay, or a telehealth consultation. It includes information about the date, time, location, participants, reason for the encounter, and any relevant clinical or administrative data associated with the encounter. The Encounter Resource is a foundational component of the FHIR standard, as it provides a way to capture and exchange key healthcare data related to patient encounters in a standardized and interoperable format.
 
+>IMPORTANT - Only one Encounter Resource is required to represent the entire virtual ward stay (start/end date - this is specified in Encounter.period.start/end).
+
 ## Structure Definition
 https://simplifier.net/HL7FHIRUKCoreR4/UKCoreEncounter/~related
 
@@ -35,7 +37,7 @@ https://simplifier.net/HL7FHIRUKCoreR4/UKCoreEncounter/~related
 The population guidance below uses the following definitions for data item optionality:
 
 1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
-2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+2. **Required** - if the system that is providing the data item contains this piece of data, then it should include it in the resource
 3. **Optional** - the system has the option to include this data if it is available
 
 Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
@@ -113,7 +115,7 @@ A minimum viable content that all provider and consumer systems should support i
       <td>id</td>
       <td>Mandatory</td>
       <td>1:1</td>
-        <td>A logical identifier generated for this document reference.</td>
+        <td>A logical identifier generated for this encounter resource.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
     </tbody>

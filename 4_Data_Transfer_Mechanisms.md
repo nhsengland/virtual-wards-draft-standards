@@ -37,17 +37,22 @@ Mechanisms which could be used for transferring data between systems include:
 
 ## 4.2 Triggers for Data Transfer
 
-Triggers for transferring Supplementary RM Data are out of scope for this standard, however they must be considered and assured by the local organisation. 
+Triggers for generating and transferring Supplementary RM Data are out of scope for this standard, however they must be considered, agreed and assured by the local organisation(s). 
 
 For example:
  - Manual triggers may require a clinician to create the Supplementary RM Data and send it to the destination system
  - Automated triggers may create the Supplementary RM Data based on an event in the system, such as reaching a specific date or time, or as part of a wider discharge process.
 
- ## 4.3 Error Handling
+ ## 4.3 Receipt of Data Transfer 
 
- Error scenarios should be considered when implementing a data transfer mechanisms, alongside how each scenario will be handled and appropriate risk mitigation. The scenarios will be dependent on local organisation processes and the triggers for data transfer.
+The workflow steps following receipt of the Supplementary RM Data into the destination clinical system (including how the content is presented, processed and stored) are out of scope for this standard, however they must be considered, agreed and assured by the local organisation(s) involved. 
 
+ ## 4.4 Error Handling
 
- ## 4.4 Security
+Error scenarios should be considered when implementing a data transfer mechanisms, alongside how each scenario will be handled and appropriate risk mitigation. The scenarios will be dependent on local organisation processes and the triggers for data transfer.
+ 
+Error handling is out of scope for this standard, however it must be considered, agreed and assured by the local organisation(s) involved, before deployment in a live environment. 
+
+ ## 4.5 Security
 
 For recommendations on security guidance, please see [section 5.3](/5_Assurance.md#53-security).

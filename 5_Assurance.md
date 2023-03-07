@@ -22,15 +22,17 @@ Implementations of this guidance are to be owned and assured locally by the orga
 
 ## 5.1 Clinical Safety
 
-Clinical safety must be ensured in development and during implementation. Solutions must be assured by the local organisation's Clinical Safety Officer (CSO).
+Clinical safety must be ensured in development and during implementation. Solutions must be assured by the local organisation's Clinical Safety Officer (CSO). Local organisations may wish to involve local clinicians in the design of the solution, to further mitigate clinical risk and ensure buy-in from system users. 
 
-For information on clinical safety and risk management, please see the [NHS Clinical Risk Management Standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards).
+The Virtual Wards Interoperability Discovery Report (available on [NHS Futures](https://tinyurl.com/vw-interop)) includes an overview of some key clinical risks local organisations should consider, however, this list may not be exhaustive.
+
+For further information on clinical safety and risk management, please see the [NHS Clinical Risk Management Standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards).
 
 ## 5.2 Information Governance
 
 It is important to ensure that solutions comply with information governance regulations and best practices. For guidance on protecting data and handling information securely, please see the [NHS Website](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance). 
 
-Organisations must ensure that they have the relavant Data Sharing Agreements and Data Sharing Impact Assessments (DPIAs) in place, in-line with local policy, before systems go live. Appropriate audit records must be in place for data processing and transfer. 
+Organisations must ensure that they have the relevant Data Sharing Agreements and Data Sharing Impact Assessments (DPIAs) in place, in-line with local policy, before systems go live. Appropriate audit records must be in place for data processing and transfer. 
 
 ## 5.3 Security
 
