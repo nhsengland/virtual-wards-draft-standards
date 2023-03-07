@@ -538,7 +538,7 @@ A minimum viable content that all provider and consumer systems should support i
       <td>Observation.ValueInteger</td>
       <td></td>
       <td>Required (dependent on observation type)</td>
-      <td>1:*</td>
+      <td>0:1</td>
        <td>Actual result as an integer value.</td>
         <td>For example, NEWS2 score.</td>
       </tr>
