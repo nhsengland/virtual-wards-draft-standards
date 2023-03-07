@@ -36,7 +36,7 @@ The UK Core resource inherits from the [international HL7 FHIR R4 base resource 
 The population guidance below uses the following definitions for data item optionality:
 
 1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
-2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+2. **Required** - if the system that is providing the data item contains this piece of data, then it should include it in the resource
 3. **Optional** - the system has the option to include this data if it is available
 
 Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
@@ -74,7 +74,7 @@ Further guidance on each element is outlined in the sections below.
       <td>id</td>
       <td>Mandatory</td>
       <td>1:1</td>
-        <td>A logical identifier generated for this document reference.</td>
+        <td>A logical identifier generated for this organisation resource.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
     </tbody>

@@ -36,7 +36,7 @@ Depending on the existing data feeds in place within the NHS Trust, the data sou
 
 The diagrams below depict the potential architectures for sharing Supplementary RM Data between Remote Monitoring Platforms and wider clinical systems. 
 
-### Example 1 - Supplementary RM Data sourced from a Remote Montoring Platform
+### Example 1 - Supplementary RM Data sourced from a Remote Monitoring Platform
 
 ![image](/Images/Architecture%20Diagram%20-%20Data%20Sources%20%26%20Destinations%20-%20RM%20to%20CS%20v2.png)
 
@@ -63,7 +63,7 @@ Where there are existing data feeds from the Remote Monitoring Platform into the
      - Local site systems (e.g. GP systems)
      - Shared Care Records
 
-    >*Note that, as described in the [Use Case section](/1_Background.md), the Supplementary RM Data is an addendum to the Acute Discharge Summary. Depending on the processes within the Trust, the Supplementary RM Data may be sent alongside the Discharge Summary (as shown in the diagram), however the full Discharge Summary is out of scope for this guidance.*
+    >*Note that, as described in the [Use Case section](/1_Background.md), the Supplementary RM Data is an addendum to the official Discharge Summary. Depending on the processes within the Trust, the Supplementary RM Data may be sent alongside the Discharge Summary (as shown in the diagram), however the official Discharge Summary is out of scope for this guidance.*
 
 6. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward. 
 

@@ -35,7 +35,7 @@ https://simplifier.net/Simplifier.Core.R4.Resources/DocumentReference/~json
 The population guidance below uses the following definitions for data item optionality:
 
 1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
-2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+2. **Required** - if the system that is providing the data item contains this piece of data, then it should include it in the resource
 3. **Optional** - the system has the option to include this data if it is available
 
 Note that the population guidance for this profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resource can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
@@ -66,7 +66,11 @@ A minimum viable content that all provider and consumer systems should support i
         <tr>
             <td><a href="#Status">DocumentReference.status</a></td>
             <td>Mandatory</td>
-        </tr>      
+        </tr>   
+           <tr>
+            <td><a href="#DocStatus">DocumentReference.docStatus</a></td>
+            <td>Optional</td>
+        </tr>   
         <tr>
             <td><a href="#Type">DocumentReference.type</a></td>
             <td>Required</td>
@@ -86,6 +90,10 @@ A minimum viable content that all provider and consumer systems should support i
         <tr>
             <td><a href="#Content">DocumentReference.content</a></td>
             <td>Mandatory</td>
+        </tr>
+          <tr>
+            <td><a href="#Context">DocumentReference.context</a></td>
+            <td>Optional</td>
         </tr>
     </tbody>
 </table>
@@ -113,7 +121,7 @@ A minimum viable content that all provider and consumer systems should support i
       <td>id</td>
       <td>Mandatory</td>
       <td>1:1</td>
-        <td>A logical identifier generated for this document reference.</td>
+        <td>A logical identifier generated for this document reference resource.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
     </tbody>
@@ -258,6 +266,39 @@ A minimum viable content that all provider and consumer systems should support i
 ```
 ****
 
+<div id="DocStatus"></div>
+
+## DocumentReference.docStatus
+
+<table data-responsive>
+    <thead>
+        <tr>
+              <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td>DocumentReference.docStatus</td>
+      <td>CodeableConcept</td>
+      <td>Optional</td>
+      <td>0:1</td>
+        <td>The status of this document reference. "preliminary | final | amended | entered-in-error"</td>
+        <td>For Supplementary RM Data, the value should be "current".</td>
+      </tr>
+    </tbody>
+</table>
+
+**Example**
+```json
+"docStatus": "final"
+```
+****
+
 <div id="Type"></div>
 
 ## DocumentReference.type
@@ -291,8 +332,8 @@ A minimum viable content that all provider and consumer systems should support i
         "coding":  [
             {
                 "system": "http://snomed.info/sct",
-                "code": "1363501000000100",
-                "display": "Royal College of Physicians NEWS2 (National Early Warning Score 2) chart"
+                "code": "371534008",
+                "display": "Summary report (record artifact)"
             }
         ]
     }
@@ -515,3 +556,59 @@ A minimum viable content that all provider and consumer systems should support i
 
 ```
 
+<div id="Context"></div>
+
+## DocumentReference.context
+
+<table data-responsive>
+    <thead>
+        <tr>
+              <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td>DocumentReference.Context</td>
+      <td>BackboneElement</td>
+      <td>Optional</td>
+      <td>0:1</td>
+       <td>The clinical context in which the document was prepared.</td>
+       <td>These values are primarily added to help with searching for interesting/relevant documents.</td>  
+      </tr>
+       <tr>
+        <td>DocumentReference.Context.Encounter</td>
+      <td>Reference(UK Core Encounter)</td>
+      <td>Optional</td>
+      <td>0:1</td>
+       <td>Context of the document content</td>
+       <td>Describes the clinical encounter or type of care that the document content is associated with</td>
+      </tr>
+        <tr>
+        <td>DocumentReference.Context.Encounter.Reference</td>
+      <td>String</td>
+      <td>Optional</td>
+      <td>0:1</td>
+       <td>Literal reference, Relative, internal or absolute URL.</td>
+       <td>This should reference an Encounter resource within the Bundle using the Encounter.id field. </td>
+      </tr>
+    </tbody>
+</table>
+
+
+**Example**
+```json
+  "context": {
+        "encounter": {
+            "reference": "urn:uuid:9e530d43-5da1-458d-b300-da5eacaa3620"
+        }
+    }
+
+```
+
+
+7

@@ -1,4 +1,4 @@
-#  Supplementary Remote Monitoring Data from a Virtual Ward Stay - Draft Implementation Guidance v0.4
+#  Supplementary Remote Monitoring Data from a Virtual Ward Stay - Draft Implementation Guidance v0.5
 
 > *This draft implementation guidance is provided for information only and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
@@ -35,6 +35,7 @@ The guidance should help guide and set standards for enabling the sharing of dat
 
 |Version|Date|Release Notes|
 |--------------|-------------|-------------|
+|0.5|10 March 2023|<ul><li>Added further guidance in Section 1.2 around possible content of data transfer</li><li>Added new section 4.3 to clarify scope regarding Receipt of data transfer</li><li>Expanded Section 4.4 on Error handling, to clarify scope</li><li>Expanded Section 5.1 on Clinical Safety</li><li>Updated definition of "Required" across FHIR guidance to provide clarity and align with wider project collateral</li><li>Changed SNOMED CT example for DocumentReference.type code</li><li>Added guidance on using DocumentReference.docStatus field</li><li>Added guidance on referencing the Encounter resource from the DocumentReference resource</li><li>Added clarity on the use of the Encounter resource</li><li>Minor corrections to wording and cardinality discrepancies</li></ul>|
 |0.4|24 Feb 2023|<ul><li>Added optionality guidance key for resource population guidance - clarified definitions of mandatory, required and optional</li><li>Added Encounter as mandatory resource in the FHIR Bundle</li><li>Added Observation resource guidance</li><li>Updates to optionality and cardinality of data items across FHIR resources</li><li>Added further examples to FHIR resource pages</li><li>Updates to formatting across resource guidance</li></ul>|
 |0.3|10 Feb 2023|<ul><li>Added data source organisation details as a mandatory resource within the FHIR Bundle</li><li>Updated the optionality of data items within the FHIR Patient resource</li><li>Updated the optionality of data items within the FHIR DocumentReference resource</li><li>Added guidance on the use of identifiers (UUIDs) for referencing within the FHIR Bundle (including updates to the mandatory  data items included in the FHIR Bundle</li><li>Minor updates to the use case diagram</li></ul>|
 |0.2|30 Jan 2023|Added FHIR Bundle guidance page|
