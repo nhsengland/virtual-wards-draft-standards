@@ -113,7 +113,7 @@ A minimum viable content that all provider and consumer systems should support i
       <td>id</td>
       <td>Mandatory</td>
       <td>1:1</td>
-        <td>A logical identifier generated for this document reference.</td>
+        <td>A logical identifier generated for this encounter resource.</td>
         <td>Additional Guidance: Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)</td>
       </tr>
     </tbody>
