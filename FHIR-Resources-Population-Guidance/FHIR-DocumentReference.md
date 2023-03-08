@@ -69,7 +69,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>   
            <tr>
             <td><a href="#DocStatus">DocumentReference.docStatus</a></td>
-            <td>Required</td>
+            <td>Optional</td>
         </tr>   
         <tr>
             <td><a href="#Type">DocumentReference.type</a></td>
@@ -281,7 +281,7 @@ A minimum viable content that all provider and consumer systems should support i
       <tr>
        <td>DocumentReference.docStatus</td>
       <td>CodeableConcept</td>
-      <td>Required</td>
+      <td>Optional</td>
       <td>0:1</td>
         <td>The status of this document reference. "preliminary | final | amended | entered-in-error"</td>
         <td>Fixed value: "current".</td>
