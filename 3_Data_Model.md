@@ -54,7 +54,7 @@ In future phases, the intention is that this guidance will be iterated upon to i
 
 ## 3.3 FHIR Profiles
 
-The table below provides information about the pupose of each FHIR profile, and links to the base UK Core FHIR resources. For population guidance specific to Supplementary RM Data, please see [section 3.4](#34-fhir-resource-population-guidance) below.
+The table below provides information about the purpose of each FHIR profile, and links to the base UK Core FHIR resources. For population guidance specific to Supplementary RM Data, please see [section 3.4](#34-fhir-resource-population-guidance) below.
 
 |Resource|Description|
 |--------|-----------|

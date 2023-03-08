@@ -30,7 +30,7 @@ For information on clinical safety and risk management, please see the [NHS Clin
 
 It is important to ensure that solutions comply with information governance regulations and best practices. For guidance on protecting data and handling information securely, please see the [NHS Website](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance). 
 
-Organisations must ensure that they have the relavant Data Sharing Agreements and Data Sharing Impact Assessments (DPIAs) in place, in-line with local policy, before systems go live. Appropriate audit records must be in place for data processing and transfer. 
+Organisations must ensure that they have the relevant Data Sharing Agreements and Data Sharing Impact Assessments (DPIAs) in place, in-line with local policy, before systems go live. Appropriate audit records must be in place for data processing and transfer. 
 
 ## 5.3 Security
 

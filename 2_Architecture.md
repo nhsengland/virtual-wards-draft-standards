@@ -36,7 +36,7 @@ Depending on the existing data feeds in place within the NHS Trust, the data sou
 
 The diagrams below depict the potential architectures for sharing Supplementary RM Data between Remote Monitoring Platforms and wider clinical systems. 
 
-### Example 1 - Supplementary RM Data sourced from a Remote Montoring Platform
+### Example 1 - Supplementary RM Data sourced from a Remote Monitoring Platform
 
 ![image](/Images/Architecture%20Diagram%20-%20Data%20Sources%20%26%20Destinations%20-%20RM%20to%20CS%20v2.png)
 
