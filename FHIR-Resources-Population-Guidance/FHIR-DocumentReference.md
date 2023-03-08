@@ -69,7 +69,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>   
            <tr>
             <td><a href="#DocStatus">DocumentReference.docStatus</a></td>
-            <td>Mandatory</td>
+            <td>Required</td>
         </tr>   
         <tr>
             <td><a href="#Type">DocumentReference.type</a></td>
