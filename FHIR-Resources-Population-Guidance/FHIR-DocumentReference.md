@@ -66,7 +66,11 @@ A minimum viable content that all provider and consumer systems should support i
         <tr>
             <td><a href="#Status">DocumentReference.status</a></td>
             <td>Mandatory</td>
-        </tr>      
+        </tr>   
+           <tr>
+            <td><a href="#DocStatus">DocumentReference.docStatus</a></td>
+            <td>Mandatory</td>
+        </tr>   
         <tr>
             <td><a href="#Type">DocumentReference.type</a></td>
             <td>Required</td>
@@ -255,6 +259,39 @@ A minimum viable content that all provider and consumer systems should support i
 **Example**
 ```json
 "status": "current"
+```
+****
+
+<div id="DocStatus"></div>
+
+## DocumentReference.docStatus
+
+<table data-responsive>
+    <thead>
+        <tr>
+              <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td>DocumentReference.docStatus</td>
+      <td>CodeableConcept</td>
+      <td>Required</td>
+      <td>0:1</td>
+        <td>The status of this document reference. "preliminary | final | amended | entered-in-error"</td>
+        <td>Fixed value: "current".</td>
+      </tr>
+    </tbody>
+</table>
+
+**Example**
+```json
+"docStatus": "final"
 ```
 ****
 
