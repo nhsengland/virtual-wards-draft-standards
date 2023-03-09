@@ -91,6 +91,10 @@ A minimum viable content that all provider and consumer systems should support i
             <td><a href="#Content">DocumentReference.content</a></td>
             <td>Mandatory</td>
         </tr>
+          <tr>
+            <td><a href="#Context">DocumentReference.context</a></td>
+            <td>Optional</td>
+        </tr>
     </tbody>
 </table>
 
@@ -552,3 +556,59 @@ A minimum viable content that all provider and consumer systems should support i
 
 ```
 
+<div id="Context"></div>
+
+## DocumentReference.context
+
+<table data-responsive>
+    <thead>
+        <tr>
+              <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td>DocumentReference.Context</td>
+      <td>BackboneElement</td>
+      <td>Optional</td>
+      <td>0:1</td>
+       <td>The clinical context in which the document was prepared.</td>
+       <td>These values are primarily added to help with searching for interesting/relevant documents.</td>  
+      </tr>
+       <tr>
+        <td>DocumentReference.Context.Encounter</td>
+      <td>Reference(UK Core Encounter)</td>
+      <td>Optional</td>
+      <td>0:1</td>
+       <td>Context of the document content</td>
+       <td>Describes the clinical encounter or type of care that the document content is associated with</td>
+      </tr>
+        <tr>
+        <td>DocumentReference.Context.Encounter.Reference</td>
+      <td>String</td>
+      <td>Optional</td>
+      <td>0:1</td>
+       <td>Literal reference, Relative, internal or absolute URL.</td>
+       <td>This should reference an Encounter resource within the Bundle using the Encounter.id field. </td>
+      </tr>
+    </tbody>
+</table>
+
+
+**Example**
+```json
+  "context": {
+                    "encounter": {
+                        "reference": "urn:uuid:9e530d43-5da1-458d-b300-da5eacaa3620"
+                    }
+                }
+
+```
+
+
+7
