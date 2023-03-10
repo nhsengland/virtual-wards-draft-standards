@@ -332,8 +332,8 @@ A minimum viable content that all provider and consumer systems should support i
         "coding":  [
             {
                 "system": "http://snomed.info/sct",
-                "code": "1363501000000100",
-                "display": "Royal College of Physicians NEWS2 (National Early Warning Score 2) chart"
+                "code": "371534008",
+                "display": "Summary report (record artifact)"
             }
         ]
     }
