@@ -83,7 +83,7 @@ The pages linked below provide population guidance and examples for each individ
 The population guidance uses the following definitions for data item optionality:
 
 1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
-2. **Required** - if the system that is providing the data item contains this piece of data, then it MUST include it in the resource
+2. **Required** - if the system that is providing the data item contains this piece of data, then it should include it in the resource
 3. **Optional** - the system has the option to include this data if it is available
 
 Note that the population guidance for each profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resources can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
