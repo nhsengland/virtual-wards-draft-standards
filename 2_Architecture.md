@@ -63,7 +63,7 @@ Where there are existing data feeds from the Remote Monitoring Platform into the
      - Local site systems (e.g. GP systems)
      - Shared Care Records
 
-    >*Note that, as described in the [Use Case section](/1_Background.md), the Supplementary RM Data is an addendum to the Acute Discharge Summary. Depending on the processes within the Trust, the Supplementary RM Data may be sent alongside the Discharge Summary (as shown in the diagram), however the full Discharge Summary is out of scope for this guidance.*
+    >*Note that, as described in the [Use Case section](/1_Background.md), the Supplementary RM Data is an addendum to the official Discharge Summary. Depending on the processes within the Trust, the Supplementary RM Data may be sent alongside the Discharge Summary (as shown in the diagram), however the official Discharge Summary is out of scope for this guidance.*
 
 6. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward. 
 
