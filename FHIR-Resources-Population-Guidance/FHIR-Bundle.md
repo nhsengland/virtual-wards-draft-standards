@@ -322,7 +322,7 @@ Further guidance on each element is outlined in the sections below.
       <td>mandatory</td>
       <td>1:1</td>
       <td>The URI for the entry resource UUID.</td>
-      <td> The `fullUrl` for each entry must match the `[resource].id` field for the individual resource within the entry. URI for resource (Absolute URL server address or URI for UUID/OID). Not a functional URL for retrieving via an API. </td>
+      <td> The `fullUrl` for each entry must match the `[resource].id` field for the individual resource within the entry. URI for resource (Absolute URL server address or URI for UUID/OID). Note that this is not required to be a functional URL for retrieving the resource via an API. </td>
       </tr>
       </tbody>
 </table>

@@ -288,7 +288,7 @@ A minimum viable content that all provider and consumer systems should support i
       <td>Optional</td>
       <td>0:1</td>
         <td>The status of this document reference. "preliminary | final | amended | entered-in-error"</td>
-        <td>Fixed value: "current".</td>
+        <td>For Supplementary RM Data, the value should be "current".</td>
       </tr>
     </tbody>
 </table>
@@ -603,10 +603,10 @@ A minimum viable content that all provider and consumer systems should support i
 **Example**
 ```json
   "context": {
-                    "encounter": {
-                        "reference": "urn:uuid:9e530d43-5da1-458d-b300-da5eacaa3620"
-                    }
-                }
+        "encounter": {
+            "reference": "urn:uuid:9e530d43-5da1-458d-b300-da5eacaa3620"
+        }
+    }
 
 ```
 
