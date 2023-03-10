@@ -16,8 +16,10 @@
 
 # 1. Background and Use Case
 
-## Background
-Discovery research undertaken in autumn 2022 has shown that there are a large variety of integration options and the vast majority of virtual wards are at different levels of technical maturity, operating in different ways.
+## 1.1 Background
+In Autumn 2022 an NHS England team undertook Discovery research into the issues surrounding interoperability for Virtual Wards. The full Discovery Report is available on NHS Futures, and provides the context to this draft Implementation Guidance. 
+
+The Discovery research found that there are a large variety of integration options and the vast majority of virtual wards are at different levels of technical maturity, operating in different ways. 
 
 The variety of integration options for virtual wards is creating a demand for a standardised approach to data transfer, which we are now looking to develop in this next phase of work.
 
@@ -27,12 +29,14 @@ We are looking to support the development of a 'first of type' which demonstrate
 
 Sharing data strengthens patient care, reduces clinical risk and removes inefficiencies, releasing time for healthcare professionals. This guidance is the first step towards resolving the wider virtual wards interoperability and data sharing problems identified in the discovery. Our aim and intention is to iterate this standard going forward, with the ultimate goal being a fully structured output.
 
-## Use Case
+## 1.2 Use Case
 Our focus use case is to support the sharing of Supplementary Remote Monitoring Data from a Virtual Ward Stay. This use case was formally referred to as the "Virtual Ward Care Record Summary - (End of Stay)".
 
 The aim is to share this supplementary data from remote monitoring (RM) platforms to external clinical IT systems. This is not a replacement for the official PRSB discharge summary.
 
-The intention is that in future a patient would be discharged from the virtual ward and the Supplementary RM Data would be generated and safely transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL). This transfer should ensure that the appropriate data from the virtual ward stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data would be supplementary to the official discharge summary issued at the end of the virtual ward stay.
+The intention is that in future a patient would be discharged from the virtual ward and the Supplementary RM Data would be generated and safely transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL). This transfer should ensure that the appropriate data from the virtual ward stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data will be supplementary to the official discharge letter issued at the end of the virtual ward stay  
+
+The Supplementary RM Data content will be defined locally, in the first instance, but is likely to contain key information such as patient demographic details, virtual ward stay details (timescales, care pathway etc), patient parameter thresholds and details of any key events which took place during the stay. It may also include free-text clinical notes, responses submitted via symptom questionnaires, messages received and sent to patients and graphical images or other charts that do not have a standardised structured format and would need to be interpreted by a clinician.  
 
 The destination systems and organisations can be grouped as follows:
 
