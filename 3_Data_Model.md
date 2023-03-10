@@ -48,7 +48,7 @@ The data model for Supplementary RM Data consists of a FHIR Bundle, with mandato
 
 At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource). 
 
-Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md#32) of this implementation guidance for an overview of the suggested PDF content. 
+Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md## 1.2 Use Case) of this implementation guidance for an overview of the suggested PDF content. 
 
 In future phases, the intention is that this guidance will be iterated upon to include additional FHIR resources, supporting further structured data and a wider range of use cases.
 
