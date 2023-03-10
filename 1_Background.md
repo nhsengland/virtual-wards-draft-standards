@@ -27,7 +27,7 @@ We have engaged with a select number of sites to develop a draft set of standard
 
 We are looking to support the development of a 'first of type' which demonstrates the technical feasibility of a standards based approach, and builds momentum for future phases. 
 
-Sharing data strengthens patient care, reduces clinical risk and removes inefficiencies, releasing time for healthcare professionals. This guidance is the first step towards resolving the wider virtual wards interoperability and data sharing problems identified in the discovery. Our aim and intention is to iterate this standard going forward, with the ultimate goal being a fully structured output.
+Sharing data strengthens patient care, reduces clinical risk and removes inefficiencies, releasing time for healthcare professionals. This guidance is the first step towards resolving the wider virtual wards interoperability and data sharing problems identified in the discovery. Our intention is to iterate this standard going forward, to support an increase in interoperability maturity over time, with the ultimate aim to enable the sharing of fully-structured data.
 
 ## 1.2 Use Case
 Our focus use case is to support the sharing of Supplementary Remote Monitoring Data from a Virtual Ward Stay. This use case was formally referred to as the "Virtual Ward Care Record Summary - (End of Stay)".
