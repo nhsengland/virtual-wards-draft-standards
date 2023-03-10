@@ -17,7 +17,7 @@
 # 1. Background and Use Case
 
 ## 1.1 Background
-In Autumn 2022 an NHS England team undertook discovery research into the issues surrounding interoperability for Virtual Wards. The full Discovery Report is available on NHS Futures, and provides the context to this draft Implementation Guidance. 
+In Autumn 2022 an NHS England team undertook discovery research into the issues surrounding interoperability for Virtual Wards. The full Discovery Report is available on [NHS Futures](https://tinyurl.com/vw-interop), and provides the context to this draft Implementation Guidance. 
 
 The discovery research found that there are a large variety of integration options and the vast majority of virtual wards are at different levels of technical maturity, operating in different ways. 
 
