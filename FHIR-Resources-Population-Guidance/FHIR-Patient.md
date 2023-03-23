@@ -207,7 +207,7 @@ Further guidance on each element is outlined in the sections below.
       <td>Mandatory</td>
       <td>1:*</td>
       <td>Identifiers for this patient.</td>
-        <td>The NHS Number must be used as a unique identifier for the patient. Additional local identifiers are optional.</td>
+        <td>The NHS Number must be used as a unique identifier for the patient, and this will be populated in the nhsNumber slice, following the guidance below. Additional local identifiers are optional. </td>
       </tr>
        <tr>
        <td>Patient.identifier:NHSNumber</td>
