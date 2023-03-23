@@ -22,7 +22,7 @@
 
 # 3.4.1 FHIR UK Core Bundle Resource
 
-> *IMPORTANT – The UK Core Bundle profile is currently in draft status and has not undergone Clinical & Technical Assurance review, or been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core. *
+> IMPORTANT – The UK Core Bundle profile is currently in draft status and has not undergone Clinical & Technical Assurance review, or been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core.
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
