@@ -20,7 +20,7 @@
 
 <br>
 
-# 3.4.2 FHIR UK Core Patient Resource
+# 3.4.2 FHIR UK Core Patient Profile
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
