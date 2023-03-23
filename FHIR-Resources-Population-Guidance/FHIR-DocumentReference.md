@@ -22,6 +22,8 @@
 
 # 3.4.5 FHIR UK Core DocumentReference Resource
 
+>  IMPORTANT – The UK Core DocumentReference profile is currently in draft status and has not undergone Clinical & Technical Assurance review, or been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core. 
+
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
 ## Usage
