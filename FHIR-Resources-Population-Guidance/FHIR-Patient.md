@@ -210,14 +210,6 @@ Further guidance on each element is outlined in the sections below.
         <td>The NHS Number must be used as a unique identifier for the patient, and this will be populated in the nhsNumber slice, following the guidance below. Additional local identifiers are optional. </td>
       </tr>
        <tr>
-       <td>Patient.identifier:NHSNumber</td>
-      <td>identifier</td>
-      <td>Mandatory</td>
-      <td>1:1</td>
-      <td>NHS Number for the patient. </td>
-         <td>Formatted as 10 digits, with no spaces. </td>
-      </tr>
-       <tr>
          <td>Patient.identifier:nhsNumber.extension</td>
       <td>Extension(CodeableConcept)</td>
       <td>Optional</td>
@@ -246,7 +238,7 @@ Further guidance on each element is outlined in the sections below.
       <td>String</td>
       <td>Mandatory</th>
       <td>1:1</td>
-      <td>Unique identifier value</td>
+      <td>NHS Number for the patient.</td>
       <td> Formatting: 10 digit number with no spaces</td>
       </tr>
     </tbody>
