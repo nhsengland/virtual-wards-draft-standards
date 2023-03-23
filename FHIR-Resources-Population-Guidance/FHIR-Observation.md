@@ -21,6 +21,7 @@
 <br>
 
 # 3.4.6 FHIR UK Core Observation Resource
+> IMPORTANT – The UK Core Observation profile is currently in draft status and is currently undergoing Clinical & Technical Assurance review, and has not been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core.
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
