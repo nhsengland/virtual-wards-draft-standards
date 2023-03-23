@@ -259,7 +259,7 @@ A minimum viable content that all provider and consumer systems should support i
 
 **Example**
 ```json
- "status": "final"
+ "status": "finished"
 ```
 ****
 
@@ -475,10 +475,9 @@ A minimum viable content that all provider and consumer systems should support i
 
 **Example**
 ```json
-"serviceProvider:": [
+"serviceProvider:":
     {
         "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
     }
-]
 ```
 
