@@ -98,7 +98,7 @@ A minimum viable content that all provider and consumer systems should support i
         </tr>
     </tbody>
 </table>
-****
+
 <div id="ID"></div>
 
 ## Id
