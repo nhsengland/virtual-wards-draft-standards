@@ -20,7 +20,7 @@
 
 <br>
 
-# 3.4.4 FHIR UK Core Encounter Resource
+# 3.4.4 FHIR UK Core Encounter Profile
 
 >  IMPORTANT – The UK Core Encounter profile is currently in active status, having undergone Clinical & Technical Assurance review. It has not been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core.
 
