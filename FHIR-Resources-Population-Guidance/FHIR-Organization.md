@@ -20,7 +20,7 @@
 
 <br>
 
-# 3.4.3 FHIR UK Core Organization Resource
+# 3.4.3 FHIR UK Core Organization Profile
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -49,6 +49,7 @@ Note that the population guidance for this profile does not include all data ite
 |[meta](#meta)|mandatory|
 |[identifer](#identifier)|mandatory|
 |[name](#name)|required|
+|[telecom](#telecom)|optional|
 
 Further guidance on each element is outlined in the sections below. 
 
@@ -240,6 +241,53 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
 {
     "name": "NHS England"
 }
+```
+
+****
+
+### Telecom
+
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td> Telecom </td>
+      <td><a href= "https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/83048"> ContactPoint </a> </td>
+      <td>Optional</td>
+      <td>0:*</td>
+        <td>A contact detail for the organization</td>
+        <td> Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.</td>
+      </tr>
+    </tbody>
+</table>
+
+
+**Example (XML)**
+
+```xml
+ <telecom>
+        <system value="phone" />
+        <value value="0111 243 3144" />
+    </telecom>
+```
+
+**Example (JSON)**
+
+```json
+   "telecom":  [
+        {
+            "system": "phone",
+            "value": "0111 243 3144"
+        }
 ```
 
 ****
