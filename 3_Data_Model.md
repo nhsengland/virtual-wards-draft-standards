@@ -30,7 +30,7 @@ The model is intended for sharing data with organisations externally (regionally
 
 FHIR (Fast Healthcare Interoperability Resources) frameworks are built around the concept of resources - basic units of interoperability and modular components (FHIR Resources) that can be assembled into working systems to try to resolve clinical, administrative and infrastructural problems in healthcare. 
 
-This guidance uses [FHIR UK Core](https://digital.nhs.uk/services/fhir-uk-core) Resources, which are a set of specifications and standards for interoperability between health and care systems in the United Kingdom.  FHIR UK Core is built on the HL7 FHIR R4 release version. 
+This guidance uses [FHIR UK Core](https://digital.nhs.uk/services/fhir-uk-core) Resources, which are a set of specifications and standards for interoperability between health and care systems in the United Kingdom. FHIR UK Core is built on the HL7 FHIR R4 release version. 
 
 This implementation guidance outlines a specification for how to use FHIR resources to share Supplementary RM Data. It covers:
  - The FHIR resources to use (e.g. Bundle, Patient, Organization, DocumentReference etc.)
@@ -46,7 +46,7 @@ The data model for Supplementary RM Data consists of a FHIR Bundle, with mandato
 
 ![image](/Images/FHIR%20Bundle%20v6.png)
 
-At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource). 
+At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource).
 
 Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md#12-use-case) of this implementation guidance for an overview of the suggested PDF content. 
 
@@ -69,7 +69,7 @@ The table below provides information about the purpose of each FHIR profile, and
 
 ## 3.4 FHIR Resource Population Guidance
 
-Building on the FHIR UK Core resource definitions, this implementation guidance provides information on how to use the FHIR resources specifically for sharing Supplementary RM Data. 
+Building on the FHIR UK Core resource definitions, this implementation guidance provides information on how to use the FHIR resources specifically for sharing Supplementary RM Data.
 
 The pages linked below provide population guidance and examples for each individual resource: 
 
@@ -86,6 +86,6 @@ The population guidance uses the following definitions for data item optionality
 2. **Required** - if the system that is providing the data item contains this piece of data, then it should include it in the resource
 3. **Optional** - the system has the option to include this data if it is available
 
-Note that the population guidance for each profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resources can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.  
+Note that the population guidance for each profile does not include all data items available in the resource. As per FHIR guidance, all data items inherited from the base resources can be included and used as appropriate, however only those considered relevant to Supplementary RM Data are covered in this guidance.
 
 > *IMPORTANT - this is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
