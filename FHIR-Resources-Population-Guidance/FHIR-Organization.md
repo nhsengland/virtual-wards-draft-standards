@@ -48,7 +48,7 @@ Note that the population guidance for this profile does not include all data ite
 |[id](#id)|mandatory|
 |[meta](#meta)|mandatory|
 |[identifer](#identifier)|mandatory|
-|[name](#name)|optional|
+|[name](#name)|required|
 
 Further guidance on each element is outlined in the sections below. 
 
@@ -219,7 +219,7 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
       <tr>
       <td> Name </td>
       <td><a href= "https://hl7.org/fhir/R4/datatypes.html#string"> String </a> </td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:1</td>
         <td>The organisation's name.</td>
         <td> Name detailing the organisation </td>
