@@ -84,14 +84,14 @@ Further guidance on each element is outlined in the sections below.
 **Example (XML)**
 
 ```xml
-<id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546" />
+<id value="9c9ab2af-6df4-4b63-9c8d-249a3dcb033f" />
 ```
 
 **Example (JSON)**
 
 ```json
 {
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+    "id": "9c9ab2af-6df4-4b63-9c8d-249a3dcb033f"
 }
 ```
 
@@ -332,46 +332,46 @@ Further guidance on each element is outlined in the sections below.
 
 ```xml
 <entry>
-    <fullUrl value="urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
+    <fullUrl value="urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546">
     <resource>
         <Patient>
-            <id value="39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
+            <id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546">
             <!-- Patient resource -->
         </Patient>
     </resource>
 </entry>
 <entry>
-    <fullUrl value="urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
+    <fullUrl value="urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71">
     <resource>
         <Organization>
-            <id value="f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
+            <id value="9b9dfe0d-1747-424f-a739-35f7be8e8d71">
             <!-- Organization resource -->
         </Organization>
     </resource>
 </entry>
 <entry>
-    <fullUrl value="urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
+    <fullUrl value="urn:uuid:4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e">
     <resource>
         <Encounter>
-            <id value="8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
+            <id value="4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e">
             <!-- Encounter resource -->
         </Encounter>
     </resource>
 </entry>
 <entry>
-    <fullUrl value="urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
+    <fullUrl value="urn:uuid:eeef5be5-30c5-4d0a-aecc-91b5648e9c9f">
     <resource>
         <DocumentReference>
-            <id value="0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
+            <id value="eeef5be5-30c5-4d0a-aecc-91b5648e9c9f">
             <!-- DocumentReference resource -->
         </DocumentReference>
     </resource>
 </entry>
 <entry>
     <resource>
-        <fullUrl value="urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf">
+        <fullUrl value="urn:uuid:c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a">
         <Observation>
-            <id value="f8acb755-6e68-4ff0-9c82-46353e3cafbf">
+            <id value="c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a">
             <!-- Observation resource -->
         </Observation>
     </resource>
@@ -384,42 +384,42 @@ Further guidance on each element is outlined in the sections below.
 {
     "entry": [
         {
-            "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "fullUrl": "urn:uuid:"dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
             "resource" : {
                 "resourceType": "Patient",
-                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
+                "id": ""dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546",
                 // Patient resource
             }
         },
         {
-            "fullUrl": "urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87"
+            "fullUrl": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
             "resource" : {
                 "resourceType": "Organization",
-                "id": "f62a27e5-ff98-4f4b-8cf3-f86b694d8a87",
+                "id": "9b9dfe0d-1747-424f-a739-35f7be8e8d71",
                 // Organization resource
             }
         },
         {
-            "fullUrl": "urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622"
+            "fullUrl": "urn:uuid:4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e"
             "resource" : {
                 "resourceType": "Encounter",
-                "id": "8c2a52ec-e1c7-4129-8c8b-f8a79f017622",
+                "id": "4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e",
                 // Encounter resource
             }
         },
         {
-            "fullUrl": "urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+            "fullUrl": "urn:uuid:eeef5be5-30c5-4d0a-aecc-91b5648e9c9f",
             "resource" :{
                 "resourceType": "DocumentReference",
-                "id": "0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+                "id": "eeef5be5-30c5-4d0a-aecc-91b5648e9c9f",
                 // DocumentReference resource
             } 
         },
         {
-            "fullUrl": "urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+            "fullUrl": "urn:uuid:c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a",
             "resource" :{
                 "resourceType": "Observation",
-                "id": "f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+                "id": "c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a",
                 // Observation resource
             }
         }
@@ -493,69 +493,301 @@ Further guidance on each element is outlined in the sections below.
     </entry>
 </Bundle>
 ```
-> *For full Patient, DocumentReference and Observation resource examples, please see the individual profile pages.*
 
 ## Full Bundle Example (JSON)
 
 ```json
 {
     "resourceType": "Bundle",
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546",
+    "id": "9c9ab2af-6df4-4b63-9c8d-249a3dcb033f",
     "meta": {
         "profile": [
         "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle"
-        ]
+        ],
         "versionId": "1",
         "lastUpdated": "2023-01-02T12:48:23.413+00:00"
     },
     "identifier": {
-        "system: "https://tools.ietf.org/html/rfc4122",
+        "system": "https://tools.ietf.org/html/rfc4122",
         "value": "73c52d0f-8584-43fe-b492-3a4d3017ac2"
     },
     "type": "collection",
     "entry": [
         {
-            "fullUrl": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "fullUrl": "urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546",
             "resource" : {
                 "resourceType": "Patient",
-                "id": "39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f",
-                // Patient resource
+                "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546",
+                "meta": {
+                    "profile": [
+                      "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient"
+                    ]
+                  },
+                  "identifier": [
+                    {
+                      "extension": [
+                        {
+                          "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatus",
+                                "code": "number-present-and-verified",
+                                "display": "Number present and verified"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "system": "https://fhir.nhs.uk/Id/nhs-number",
+                      "value": "9912003890"
+                    }
+                  ],
+                  "name": [
+                    {
+                      "use": "official",
+                      "family": "SMITH",
+                      "given": [
+                        "Richard"
+                      ]
+                    }
+                  ],
+                  "telecom": [
+                    {
+                      "use": "home",
+                      "value": "01131231266"
+                    }
+                  ],
+                  "gender": "female",
+                  "birthDate": "2021-02-11",
+                  "deceasedBoolean": true,
+                  "deceasedDateTime": "2010-10-22T00:00:00+00:00",
+                  "address": [
+                    {
+                      "use": "home",
+                      "type": "both",
+                      "line": [
+                        "22 Brightside Crescent"
+                      ],
+                      "city": "Overtown",
+                      "district": "West Yorkshire",
+                      "postalCode": "LS10 4YU"
+                    }
+                  ],
+                  "contact": [
+                    {
+                      "relationship": [
+                        {
+                          "coding": [
+                            {
+                              "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-AdditionalPersonRelationshipRole",
+                              "code": "Personal",
+                              "display": "Personal relationship with the patient"
+                            }
+                          ]
+                        }
+                      ],
+                      "name": {
+                        "use": "official",
+                        "text": "JACKSON Jane (Miss)",
+                        "family": "Jackson",
+                        "given": [
+                          "Jane"
+                        ],
+                        "prefix": [
+                          "Miss"
+                        ]
+                      },
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "value": "07777123123",
+                          "use": "mobile"
+                        }
+                      ],
+                      "address": {
+                        "use": "home",
+                        "type": "physical",
+                        "line": [
+                          "5 Alwoodley Road",
+                          "LEEDS"
+                        ],
+                        "postalCode": "LS17 6EH"
+                      },
+                      "gender": "female"
+                    }
+                  ]
             }
         },
         {
-            "fullUrl": "urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87"
+            "fullUrl": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71",
             "resource" : {
                 "resourceType": "Organization",
-                "id": "f62a27e5-ff98-4f4b-8cf3-f86b694d8a87",
-                // Organization resource
+                "id": "9b9dfe0d-1747-424f-a739-35f7be8e8d71",
+                "meta": {
+                    "profile": [
+                      "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
+                    ]
+                  },
+                  "identifier": [
+                    {
+                      "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                      "value": "X26"
+                    }
+                  ],
+                  "name": "NHS England"
             }
         },
         {
-            "fullUrl": "urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622"
+            "fullUrl": "urn:uuid:4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e",
             "resource" : {
                 "resourceType": "Encounter",
-                "id": "8c2a52ec-e1c7-4129-8c8b-f8a79f017622",
-                // Encounter resource
+                "id": "4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e",
+                "meta": {
+                    "profile": [
+                        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://tools.ietf.org/html/rfc4122",
+                        "value": "3b1670c3-cad9-4202-9445-872030cec058"
+                    }
+                ],
+                "status": "final",
+                "class": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "HH",
+                    "display": "home health"
+                },
+                "type": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "270420001",
+                                "display": "Seen in own home"
+                            }
+                        ]
+                    }
+                ],
+                "subject": {
+                    "reference": "urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+                },
+                "period": {
+                    "start": "2023-01-07T13:34:00+01:00",
+                    "end": "2023-01-15T15:21:00+01:00"
+                },
+                "serviceProvider": [
+                    {
+                        "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
+                    }
+                ]
             }
         },
         {
-            "fullUrl": "urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
+            "fullUrl": "urn:uuid:eeef5be5-30c5-4d0a-aecc-91b5648e9c9f",
             "resource" :{
                 "resourceType": "DocumentReference",
-                "id": "0d13d4ad-efe8-464e-a3f2-b06eb94e7289",
-                // DocumentReference resource
+                "id": "eeef5be5-30c5-4d0a-aecc-91b5648e9c9f",
+                "meta": {
+                    "profile": [
+                        "https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference"
+                    ]
+                },
+                "masterIdentifier": {
+                    "system": "http://example.com/identifiers",
+                    "value": "12345"
+                },
+                "status": "current",
+                "docStatus": "final",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "371534008",
+                            "display": "Summary report (record artifact)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+                },
+                "author": [
+                    {
+                        "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
+                    }
+                ],
+                "custodian": {
+                    "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
+                },
+                "content": [
+                    {
+                        "attachment": {
+                            "contentType": "application/pdf",
+                            "data": "//base64encoded PDF",
+                            "title": "Care Plan Report",
+                            "creation": "2016-03-08T15:26:00+01:00"
+                        }
+                    }
+                ],
+                "context": {
+                    "encounter": {
+                        "reference": "urn:uuid:4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e"
+                    }
+                }
             } 
         },
         {
-            "fullUrl": "urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf",
+            "fullUrl": "urn:uuid:c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a",
             "resource" :{
                 "resourceType": "Observation",
-                "id": "f8acb755-6e68-4ff0-9c82-46353e3cafbf",
-                // Observation resource
+                "id": "c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a",
+                "meta": {
+                    "profile": [
+                      "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Observation"
+                    ]
+                  },
+                  "identifier": [
+                    {
+                      "system": "https://tools.ietf.org/html/rfc4122",
+                      "value": "3b1670c3-cad9-4202-9445-872030cec058"
+                    }
+                  ],
+                  "status": "final",
+                  "category": [
+                    {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                          "code": "survey",
+                          "display": "Survey"
+                        }
+                      ]
+                    }
+                  ],
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://snomed.info/sct",
+                        "code": "1104051000000101",
+                        "display": "Royal College of Physicians NEWS2 (National Early Warning Score 2) total score"
+                      }
+                    ]
+                  },
+                  "subject": {
+                    "reference": "urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+                  },
+                  "effectiveDateTime": "2018-10-04T14:17:59+01:00",
+                  "performer": [
+                    {
+                      "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
+                    }
+                  ],
+                  "valueInteger": "12",
+                  "note": "Patient presents with..."
             }
         }
     ]
 }
 ```
-
-> *For full Patient, DocumentReference and Observation resource examples, please see the individual profile pages.*
