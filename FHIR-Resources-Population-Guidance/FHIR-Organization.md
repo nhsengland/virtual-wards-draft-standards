@@ -83,14 +83,14 @@ Further guidance on each element is outlined in the sections below.
 **Example (XML)**
 
 ```xml
-<id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546" />
+<id value="9b9dfe0d-1747-424f-a739-35f7be8e8d71"/>
 ```
 
 **Example (JSON)**
 
 ```json
 {
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+    "id": "9b9dfe0d-1747-424f-a739-35f7be8e8d71"
 }
 ```
 
@@ -248,7 +248,7 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
 
 ```xml
 <Organization>
-    <id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546" />
+    <id value="9b9dfe0d-1747-424f-a739-35f7be8e8d71" />
     <meta>
         <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization" />
     </meta>
@@ -266,7 +266,7 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
 
 {
     "resourceType": "Organization",
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546",
+    "id": "9b9dfe0d-1747-424f-a739-35f7be8e8d71",
     "meta": {
         "profile": [
         "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
