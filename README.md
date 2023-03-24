@@ -19,7 +19,7 @@ This draft implementation guidance is being developed to improve interoperabilit
 
 Our intention is to develop a draft interoperability standard and iterate this standard over time with our stakeholders, through weekly touchpoints and agile ways of working. Our key stakeholder groups are:
 - Remote Monitoring Suppliers
-- ICS/ICBs
+- Integrated Care Systems (ICS)/Integrated Care Boards (ICBs)
 - NHS Healthcare Providers
 - Destination System Suppliers
 
