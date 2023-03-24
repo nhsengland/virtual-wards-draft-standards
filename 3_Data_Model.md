@@ -73,12 +73,12 @@ Building on the FHIR UK Core profile definitions, this implementation guidance p
 
 The pages linked below provide population guidance and examples for each individual resource: 
 
-- [FHIR Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
-- [FHIR Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
-- [FHIR Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)
-- [FHIR Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md)
-- [FHIR DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
-- [FHIR Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md)
+- [UKCore-Bundle](/FHIR-Resources-Population-Guidance/FHIR-Bundle.md)
+- [UKCore-Patient](/FHIR-Resources-Population-Guidance/FHIR-Patient.md)
+- [UKCore-Organization](/FHIR-Resources-Population-Guidance/FHIR-Organization.md)
+- [UKCore-Encounter](/FHIR-Resources-Population-Guidance/FHIR-Encounter.md)
+- [UKCore-DocumentReference](/FHIR-Resources-Population-Guidance/FHIR-DocumentReference.md)
+- [UKCore-Observation](/FHIR-Resources-Population-Guidance/FHIR-Observation.md)
 
 The population guidance uses the following definitions for data item optionality:
 
