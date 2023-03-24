@@ -23,7 +23,7 @@ The discovery research found that there is a large variety of integration option
 
 We are looking to support the development of a 'first of type' which demonstrates the technical feasibility of a standards based approach to interoperability, and builds momentum for future phases of development.
 
-Sharing data strengthens patient care, reduces clinical risks and reduces inefficiencies. This guidance is the first step towards resolving the wider virtual wards interoperability and data sharing problems identified in the discovery. Our intention is to iterate this standard  over time, facilitate improvements in data sharing for virtual wards models of care with the ultimate aim to enable the sharing of fully structured data.
+Sharing timely and accurate data strengthens patient care, reduces clinical risks and reduces inefficiencies. This guidance is the first step towards resolving the wider virtual wards interoperability and data sharing problems identified in the discovery. Our intention is to iterate this standard  over time, facilitate improvements in data sharing for virtual wards models of care with the ultimate aim to enable the sharing of fully structured data.
 
 ## 1.2 Use Case
 Our focus use case is the transfer of the “Supplementary remote monitoring data from a virtual ward stay”. In the rest of the guidance we will refer to it as “the Supplementary RM Data”.
