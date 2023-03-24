@@ -437,62 +437,227 @@ Further guidance on each element is outlined in the sections below.
 
 ```xml
 <Bundle>
-    <id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546" />
-    <meta>
-        <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle" />
-        <version value="1" />
-        <lastUpdated value="2023-01-02T12:48:23.413+00:00" />
-    </meta>
-    <identifier>
-        <system value="https://tools.ietf.org/html/rfc4122" />
-        <value value="73c52d0f-8584-43fe-b492-3a4d3017ac22" />
-    </identifier>
-    <type value="collection" />
-    <entry>
-        <fullUrl value="urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
-        <resource>
-            <Patient>
-                <id value="39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f">
-                <!-- Patient resource -->
-            </Patient>
-        </resource>
-    </entry>
-    <entry>
-        <fullUrl value="urn:uuid:f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
-        <resource>
-            <Organization>
-                <id value="f62a27e5-ff98-4f4b-8cf3-f86b694d8a87">
-                <!-- Organization resource -->
-            </Organization>
-        </resource>
-    </entry>
-    <entry>
-        <fullUrl value="urn:uuid:8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
-        <resource>
-            <Encounter>
-                <id value="8c2a52ec-e1c7-4129-8c8b-f8a79f017622">
-                <!-- Encounter resource -->
-            </Encounter>
-        </resource>
-    </entry>
-    <entry>
-        <fullUrl value="urn:uuid:0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
-        <resource>
-            <DocumentReference>
-                <id value="0d13d4ad-efe8-464e-a3f2-b06eb94e7289">
-                <!-- DocumentReference resource -->
-            </DocumentReference>
-        </resource>
-    </entry>
-    <entry>
-        <resource>
-            <fullUrl value="urn:uuid:f8acb755-6e68-4ff0-9c82-46353e3cafbf">
-            <Observation>
-                <id value="f8acb755-6e68-4ff0-9c82-46353e3cafbf">
-                <!-- Observation resource -->
-            </Observation>
-        </resource>
-    </entry>
+	<resourceType>Bundle</resourceType>
+	<id>9c9ab2af-6df4-4b63-9c8d-249a3dcb033f</id>
+	<meta>
+		<profile>https://fhir.hl7.org.uk/StructureDefinition/UKCore-Bundle</profile>
+		<versionId>1</versionId>
+		<lastUpdated>2023-01-02T12:48:23.413+00:00</lastUpdated>
+	</meta>
+	<identifier>
+		<system>https://tools.ietf.org/html/rfc4122</system>
+		<value>73c52d0f-8584-43fe-b492-3a4d3017ac2</value>
+	</identifier>
+	<type>collection</type>
+	<entry>
+		<fullUrl>urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546</fullUrl>
+		<resource>
+			<resourceType>Patient</resourceType>
+			<id>dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546</id>
+			<meta>
+				<profile>https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient</profile>
+			</meta>
+			<identifier>
+				<extension>
+					<url>https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus</url>
+					<valueCodeableConcept>
+						<coding>
+							<system>https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatus</system>
+							<code>number-present-and-verified</code>
+							<display>Number present and verified</display>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<system>https://fhir.nhs.uk/Id/nhs-number</system>
+				<value>9912003890</value>
+			</identifier>
+			<name>
+				<use>official</use>
+				<family>SMITH</family>
+				<given>Richard</given>
+			</name>
+			<telecom>
+				<use>home</use>
+				<value>01131231266</value>
+			</telecom>
+			<gender>female</gender>
+			<birthDate>2021-02-11</birthDate>
+			<deceasedBoolean>true</deceasedBoolean>
+			<deceasedDateTime>2010-10-22T00:00:00+00:00</deceasedDateTime>
+			<address>
+				<use>home</use>
+				<type>both</type>
+				<line>22 Brightside Crescent</line>
+				<city>Overtown</city>
+				<district>West Yorkshire</district>
+				<postalCode>LS10 4YU</postalCode>
+			</address>
+			<contact>
+				<relationship>
+					<coding>
+						<system>https://fhir.hl7.org.uk/CodeSystem/UKCore-AdditionalPersonRelationshipRole</system>
+						<code>Personal</code>
+						<display>Personal relationship with the patient</display>
+					</coding>
+				</relationship>
+				<name>
+					<use>official</use>
+					<text>JACKSON Jane (Miss)</text>
+					<family>Jackson</family>
+					<given>Jane</given>
+					<prefix>Miss</prefix>
+				</name>
+				<telecom>
+					<system>phone</system>
+					<value>07777123123</value>
+					<use>mobile</use>
+				</telecom>
+				<address>
+					<use>home</use>
+					<type>physical</type>
+					<line>5 Alwoodley Road</line>
+					<line>LEEDS</line>
+					<postalCode>LS17 6EH</postalCode>
+				</address>
+				<gender>female</gender>
+			</contact>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl>urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71</fullUrl>
+		<resource>
+			<resourceType>Organization</resourceType>
+			<id>9b9dfe0d-1747-424f-a739-35f7be8e8d71</id>
+			<meta>
+				<profile>https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization</profile>
+			</meta>
+			<identifier>
+				<system>https://fhir.nhs.uk/Id/ods-organization-code</system>
+				<value>X26</value>
+			</identifier>
+			<name>NHS England</name>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl>urn:uuid:4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e</fullUrl>
+		<resource>
+			<resourceType>Encounter</resourceType>
+			<id>4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e</id>
+			<meta>
+				<profile>https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter</profile>
+			</meta>
+			<identifier>
+				<system>https://tools.ietf.org/html/rfc4122</system>
+				<value>3b1670c3-cad9-4202-9445-872030cec058</value>
+			</identifier>
+			<status>final</status>
+			<class>
+				<system>http://terminology.hl7.org/CodeSystem/v3-ActCode</system>
+				<code>HH</code>
+				<display>home health</display>
+			</class>
+			<type>
+				<coding>
+					<system>http://snomed.info/sct</system>
+					<code>270420001</code>
+					<display>Seen in own home</display>
+				</coding>
+			</type>
+			<subject>
+				<reference>urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546</reference>
+			</subject>
+			<period>
+				<start>2023-01-07T13:34:00+01:00</start>
+				<end>2023-01-15T15:21:00+01:00</end>
+			</period>
+			<serviceProvider>
+				<reference>urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71</reference>
+			</serviceProvider>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl>urn:uuid:eeef5be5-30c5-4d0a-aecc-91b5648e9c9f</fullUrl>
+		<resource>
+			<resourceType>DocumentReference</resourceType>
+			<id>eeef5be5-30c5-4d0a-aecc-91b5648e9c9f</id>
+			<meta>
+				<profile>https://fhir.hl7.org.uk/StructureDefinition/UKCore-DocumentReference</profile>
+			</meta>
+			<masterIdentifier>
+				<system>http://example.com/identifiers</system>
+				<value>12345</value>
+			</masterIdentifier>
+			<status>current</status>
+			<docStatus>final</docStatus>
+			<type>
+				<coding>
+					<system>http://snomed.info/sct</system>
+					<code>371534008</code>
+					<display>Summary report (record artifact)</display>
+				</coding>
+			</type>
+			<subject>
+				<reference>urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546</reference>
+			</subject>
+			<author>
+				<reference>urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71</reference>
+			</author>
+			<custodian>
+				<reference>urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71</reference>
+			</custodian>
+			<content>
+				<attachment>
+					<contentType>application/pdf</contentType>
+					<data>//base64encoded PDF</data>
+					<title>Care Plan Report</title>
+					<creation>2016-03-08T15:26:00+01:00</creation>
+				</attachment>
+			</content>
+			<context>
+				<encounter>
+					<reference>urn:uuid:4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e</reference>
+				</encounter>
+			</context>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl>urn:uuid:c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a</fullUrl>
+		<resource>
+			<resourceType>Observation</resourceType>
+			<id>c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a</id>
+			<meta>
+				<profile>https://fhir.hl7.org.uk/StructureDefinition/UKCore-Observation</profile>
+			</meta>
+			<identifier>
+				<system>https://tools.ietf.org/html/rfc4122</system>
+				<value>3b1670c3-cad9-4202-9445-872030cec058</value>
+			</identifier>
+			<status>final</status>
+			<category>
+				<coding>
+					<system>http://terminology.hl7.org/CodeSystem/observation-category</system>
+					<code>survey</code>
+					<display>Survey</display>
+				</coding>
+			</category>
+			<code>
+				<coding>
+					<system>http://snomed.info/sct</system>
+					<code>1104051000000101</code>
+					<display>Royal College of Physicians NEWS2 (National Early Warning Score 2) total score</display>
+				</coding>
+			</code>
+			<subject>
+				<reference>urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546</reference>
+			</subject>
+			<effectiveDateTime>2018-10-04T14:17:59+01:00</effectiveDateTime>
+			<performer>
+				<reference>urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71</reference>
+			</performer>
+			<valueInteger>12</valueInteger>
+			<note>Patient presents with...</note>
+		</resource>
+	</entry>
 </Bundle>
 ```
 
