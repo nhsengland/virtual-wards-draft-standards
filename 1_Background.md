@@ -42,7 +42,7 @@ The destination systems for transfer of the Supplementary RM Data document and o
 - D - Data from the RM platform is sent to or viewed in external clinical IT systems via regional initiatives such as a Shared Care Record
 - E - Data from the RM platform is sent to or viewed in external clinical IT systems via national initiatives such as National Record Locator
 
-![Destination Diagram v3](https://user-images.githubusercontent.com/122816374/215752949-8f801085-7dfc-4895-b640-ee0fbfe6dec9.png)
+![Destination Diagram v3](https://user-images.githubusercontent.com/122816374/227579270-fdfb2c17-d6d7-4fee-93b1-52579577185a.png)
 
 Our focus is getting the Supplementary RM Data from the Remote Monitoring platform and/or host clinical system (in destination A and/or B) and developing a standard for sending that data to the local and/or regional platforms (in destination C and/or D).
 
