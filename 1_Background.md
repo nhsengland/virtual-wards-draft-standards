@@ -28,7 +28,7 @@ Sharing data strengthens patient care, reduces clinical risks and reduces ineffi
 ## 1.2 Use Case
 Our focus use case is the transfer of the “Supplementary remote monitoring data from a virtual ward stay”. In the rest of the guidance we will refer to it as “the Supplementary RM Data”.
 
-The aim is to share this supplementary data from remote monitoring (RM) platforms to external clinical IT systems. This is not a discharge summary, nor it is a replacement for the official PRSB discharge summary.
+The aim is to share this supplementary data from remote monitoring (RM) platforms to external clinical IT systems. This is not a discharge summary, nor it is a replacement for the official Professional Records Standards Body [(PRSB)](https://theprsb.org/) discharge summary.
 
 The intention is that when a patient would be discharged from a virtual ward the Supplementary RM data would be generated in a PDF format and safely transferred to an external clinical system, or to a regional/national solution like a Shared Care Record or the National Record Locator (NRL). This transfer should ensure that the appropriate data from the virtual ward stay is made available at the point of discharge for clinicians in other organisations who go on to care for the patient. This data will be supplementary to the official discharge letter issued at the end of the virtual ward stay.
 
