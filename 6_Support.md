@@ -31,6 +31,8 @@ Glossary of common terms and abbreviations used throughout this documentation si
 | EPR | Electronic Patient Record |
 | DTAC | Digital Technology Assessment Criteria  |
 | FHIR | Fast Healthcare Interoperability Resources |
+| ICB | Integrated Care Board |
+| ICS | Integrated Care Systems |
 | IG | Information Governance |
 | IM1 | Interface Mechanism 1 (GP System Pairing Integration) |
 | MESH | Messaging Exchange for Social Care |
