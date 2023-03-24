@@ -82,7 +82,7 @@ The pages linked below provide population guidance and examples for each individ
 
 The population guidance uses the following definitions for data item optionality:
 
-1. **Mandatory** - the data item MUST be recorded in the resource every time it is produced
+1. **Mandatory** - the data item SHALL be recorded in the resource every time it is produced
 2. **Required** - if the system that is providing the data item contains this piece of data, then it should include it in the resource
 3. **Optional** - the system has the option to include this data if it is available
 
