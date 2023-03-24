@@ -69,7 +69,7 @@ The table below provides information about the purpose of each FHIR profile, and
 
 ## 3.4 FHIR Resource Population Guidance
 
-Building on the FHIR UK Core resource definitions, this implementation guidance provides information on how to use the FHIR resources specifically for sharing Supplementary RM Data.
+Building on the FHIR UK Core profile definitions, this implementation guidance provides information on how to use the FHIR resources specifically for sharing Supplementary RM Data.
 
 The pages linked below provide population guidance and examples for each individual resource: 
 
