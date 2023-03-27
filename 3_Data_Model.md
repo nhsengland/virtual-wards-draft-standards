@@ -67,7 +67,7 @@ The view from RM platform suppliers is that very few clinicians just want the ag
 
 ![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/ObsDiagramCropped.png)
 
-*Total NEWS2 Score: Royal College of Physicians National Early Warning Score 2 - total score (observable entity) SCTID: 1104051000000101*
+**Total NEWS2 Score: Royal College of Physicians National Early Warning Score 2 - total score (observable entity) SCTID: 1104051000000101**
 
 |       NEWS 2 Individual Scores                                                                                                                                                                                                                                                                    |                         Raw Clinical Observation Reading                      |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------:|
