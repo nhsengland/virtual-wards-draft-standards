@@ -378,6 +378,18 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
+**Total NEWS2 Score: Royal College of Physicians National Early Warning Score 2 - total score (observable entity) SCTID: 1104051000000101**
+
+|       NEWS 2 Individual Scores                                                                                                                                                                                                                                                                    |                         Raw Clinical Observation Reading                      |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------:|
+|     Royal College of Physicians National Early Warning Score 2 - pulse score (observable entity) SCTID: 1104351000000103                                                                                                                                                                          |   Pulse rate   SCTID: 78564009                                                |
+|     Royal College of Physicians National Early  Warning Score 2 - temperature score (observable entity) SCTID:  1104371000000107                                                                                                                                                                  |   Core body temperature   SCTID: 276885007                                    |
+|     Royal College of Physicians National Early  Warning Score 2 - air or oxygen score (observable entity) SCTID:  1104331000000105                                                                                                                                                                |   Haemoglobin Saturation with oxygen  SCTID: 103228002                        |
+|     Royal College of Physicians National Early  Warning Score 2 - consciousness score (observable entity) SCTID  1104361000000100                                                                                                                                                                 |   ACVPU (Alert Confusion Voice Pain Unresponsive)  SCTID: 1104441000000107    |
+|     Royal College of Physicians National Early  Warning Score 2 - respiration rate score (observable entity) SCTID:  1104301000000104                                                                                                                                                             |   Respiratory rate  SCTID: 86290005                                           |
+|     Royal College of Physicians National Early  Warning Score 2 - systolic blood pressure score (observable entity) SCTID:  1104341000000101                                                                                                                                                      |   Systolic arterial pressure  SCTID: 72313002                                 |
+|     Royal College of Physicians National Early  Warning Score 2 - oxygen saturation scale 2 score (observable entity) SCTID:  1104321000000108  OR   Royal College of Physicians National Early Warning Score 2 - oxygen saturation scale 1 score (observable entity) SCTID:  1104311000000102    |   Haemoglobin Saturation with oxygen  SCTID: 103228002    
+
 **Example**
 ```json
  "code": {
