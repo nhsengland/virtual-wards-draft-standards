@@ -48,7 +48,18 @@ The data model for Supplementary RM Data consists of a FHIR Bundle, with mandato
 
 At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource).
 
-Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md#12-use-case) of this implementation guidance for an overview of the suggested PDF content. 
+Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md#12-use-case) of this implementation guidance for an overview of the suggested PDF content.
+
+When calculating NEWS(2) scores, there are four different levels at which a data point could be coded and shared:
+
+Level 1. Total NEWS2 score: aggregated score of 0-18, summarising 6 individual parameters
+Level 2. Individual component NEWS2 scores: sub-scores of 1-3 for each individual clinical parameter
+Level 3. Raw clinical observation reading for each NEWS2 component (in the units appropriate to that individual clinical parameter)
+Level 4. Child codes for variations in the raw observation readings (e.g. different types of temperature readings, all under one parent code).
+
+The view from RM platform suppliers is that very few clinicians just want the aggregated NEWS 2 score and sub-scores (Levels 1 and 2) without the raw observation data as well (Level 3). It is this raw data that demonstrates trends over time and provides a more granular view of a patient’s health, and possible deterioration. Any standardised report would need to include the NEWS 2 sub-scores alongside and the raw observations – and with a standardised set of SNOMED CT codes used nationally. We are proposing a FHIR bundle that links the first three of these levels together.
+
+![image](/Images/Observations%diagram.drawio.png)
 
 In future phases, the intention is that this guidance will be iterated upon to include additional FHIR resources, supporting further structured data and a wider range of use cases.
 
