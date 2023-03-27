@@ -18,15 +18,19 @@
 
 Supplementary RM data is created at the end of a patient's stay on a virtual ward and is transferred to clinical systems such as the one that is used to operate a virtual ward as well as those used by local sites in the region (e.g. GP systems or Shared Care Records). The details of the virtual ward stay are then easily accessible by other clinicians caring for the patient. 
 
-The diagram below provides an overview of the solution and scope of these standards.
+The diagram below provides an overview of the solution and scope of this guidance.
 
 ![image](/Images/Architecture%20Diagram%20-%20RM%20Platform%20to%20Destination%20System%20v3.png)
 
 1. Patient data is captured by remote monitoring devices*
 2. Data is uploaded to the remote monitoring platform*
-3. The virtual ward clinician monitors the data on the virtual ward platform during the patient's time on the virtual ward 
-4. When the patient is discharged from a virtual ward, the clinician will trigger a transfer of the Supplementary RM Data from the remote monitoring platform to the destination clinical system
-5. The Supplementary RM Data is available outside the remote monitoring platforms in other clinical systems to be viewed by clinicians caring for the patient
+3. The virtual ward clinician monitors the data on the remote monitoring platform during the patient's time on the virtual ward.  
+4. When the patient is discharged from a virtual ward a clinical will trigger the transfer of the Supplementary RM Data from the remote monitoring platform to the destination clinical system:
+- Within the Trust hosting the virtual ward (e.g. the Trust EPR)
+- Local site systems (e.g. GP systems)
+- Shared Care Records
+
+6. The Supplementary RM Data is available outside the remote monitoring platforms in other clinical systems to be viewed by clinicians caring for the patient
 
 *\*Note that points 1 & 2 are only included to provide context. Data sharing from remote monitoring devices is out of scope for these standards*
 
@@ -65,7 +69,7 @@ Where there are existing integrations between the remote monitoring platform and
 
     >*Note that, as described in the [Use Case section](/1_Background.md), the Supplementary RM Data is not a replacement for the discharge summary. Depending on the processes within the Trust, the Supplementary RM Data may be sent alongside the discharge summary (as shown in the diagram).*
 
-6. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward. 
+6. The Supplementary RM Data is available to be viewed by other clinicians caring for the patient, outside of the virtual ward.
 
 ## 2.2 Technical Solution Scope
 
