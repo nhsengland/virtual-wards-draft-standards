@@ -1,6 +1,6 @@
 > *This draft implementation guidance is provided for information only, and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
-> *If you are not participating in the First-of-Type, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
+> *If you are not participating in the Discovery, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
 
 ## Contents
@@ -16,12 +16,12 @@
 
 # 4. Data Transfer Mechanisms
 
-The scope of these interoperability standards and implementation guidance covers the data structure for sharing Supplementary RM Data, including the type of information and the format in which it is to be shared and received. **The mechanism for transferring the data between organisations is to be determined by organisations locally**. 
+The scope of this interoperability standard and implementation guidance covers the data structure for sharing Supplementary RM Data, including the type of information and the format in which it is to be shared and received. **The mechanism for transferring the data between organisations is to be determined by organisations locally**. 
 
 
 ![image](/Images/Architecture%20Diagram%20-%20Technical%20Solution%20Scope%20v2.png)
 
-It is recommended that existing solutions for transferring the FHIR Bundle are used, where possible and where appropriate. 
+It is recommended that existing solutions for transferring the FHIR Bundle are used, where possible and where appropriate.
 
 > *IMPORTANT - All information on this page is considered to be **guidance only**. Any data transfer mechanism MUST be assured locally within organisations from clinical, information governance and security perspectives before being deployed to a live environment.*
 
@@ -31,9 +31,9 @@ Mechanisms which could be used for transferring data between systems include:
 
 - [MESH (Message Exchange for Social Care and Health)](https://digital.nhs.uk/services/message-exchange-for-social-care-and-health-mesh) - MESH is the main secure large file transfer service used across health and care organisations. MESH is used in NHS services/standards such as **GP Connect Send Document** and the **Transfer of Care APIs**.
 
-- [FHIR Exchange Module](https://www.hl7.org/fhir/exchange-module.html) - the FHIR standard defines methods for exchanging data between systems. 
+- [FHIR Exchange Module](https://www.hl7.org/fhir/exchange-module.html) - the FHIR standard defines methods for exchanging data between systems
 
-- Bespoke local integrations - e.g. via a Trust Integration Engine.
+- Bespoke local integrations - e.g. via a Trust Integration Engine
 
 ## 4.2 Triggers for Data Transfer
 
@@ -41,7 +41,7 @@ Triggers for generating and transferring Supplementary RM Data are out of scope 
 
 For example:
  - Manual triggers may require a clinician to create the Supplementary RM Data and send it to the destination system
- - Automated triggers may create the Supplementary RM Data based on an event in the system, such as reaching a specific date or time, or as part of a wider discharge process.
+ - Automated triggers may create the Supplementary RM Data based on an event in the system, such as reaching a specific date or time, or as part of a wider discharge process
 
  ## 4.3 Receipt of Data Transfer 
 

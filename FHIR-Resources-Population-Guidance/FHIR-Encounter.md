@@ -20,7 +20,9 @@
 
 <br>
 
-# 3.4.4 FHIR UK Core Encounter Resource
+# 3.4.4 FHIR UK Core Encounter Profile
+
+>  *IMPORTANT – The UK Core Encounter profile is currently in active status, having undergone Clinical & Technical Assurance review. It has not been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core.*
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -127,7 +129,7 @@ A minimum viable content that all provider and consumer systems should support i
 #### Example
 ```json
 {
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+     "id": "4f28e0c6-17d6-4f52-b0a6-3bb88b1f6c9e"
 }
 ```
 
@@ -257,7 +259,7 @@ A minimum viable content that all provider and consumer systems should support i
 
 **Example**
 ```json
- "status": "final"
+ "status": "finished"
 ```
 ****
 
@@ -378,7 +380,7 @@ A minimum viable content that all provider and consumer systems should support i
 **Example**
 ```json
 "subject" : {
-    "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+    "reference": "urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
 }
 
 ```
@@ -473,10 +475,9 @@ A minimum viable content that all provider and consumer systems should support i
 
 **Example**
 ```json
-"serviceProvider:": [
+"serviceProvider:":
     {
-        "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+        "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
     }
-]
 ```
 

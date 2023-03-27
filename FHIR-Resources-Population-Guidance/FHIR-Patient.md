@@ -20,7 +20,7 @@
 
 <br>
 
-# 3.4.2 FHIR UK Core Patient Resource
+# 3.4.2 FHIR UK Core Patient Profile
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -207,15 +207,7 @@ Further guidance on each element is outlined in the sections below.
       <td>Mandatory</td>
       <td>1:*</td>
       <td>Identifiers for this patient.</td>
-        <td>The NHS Number must be used as a unique identifier for the patient. Additional local identifiers are optional.</td>
-      </tr>
-       <tr>
-       <td>Patient.identifier:NHSNumber</td>
-      <td>identifier</td>
-      <td>Mandatory</td>
-      <td>1:1</td>
-      <td>NHS Number for the patient. </td>
-         <td>Formatted as 10 digits, with no spaces. </td>
+        <td>The NHS Number must be used as a unique identifier for the patient, and this will be populated in the nhsNumber slice, following the guidance below. Additional local identifiers are optional. </td>
       </tr>
        <tr>
          <td>Patient.identifier:nhsNumber.extension</td>
@@ -246,11 +238,15 @@ Further guidance on each element is outlined in the sections below.
       <td>String</td>
       <td>Mandatory</th>
       <td>1:1</td>
-      <td>Unique identifier value</td>
+      <td>NHS Number for the patient.</td>
       <td> Formatting: 10 digit number with no spaces</td>
       </tr>
     </tbody>
 </table>
+
+**Additional Guidance**
+
+NHS Numbers SHOULD be verified using the Personal Demographic Service (PDS), before sending Supplementary RM Data. To integrate with PDS to verify NHS numbers, please see the [PDS FHIR API specification](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir).
 
 **Example**
 

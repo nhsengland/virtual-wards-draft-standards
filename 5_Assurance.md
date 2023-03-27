@@ -1,6 +1,6 @@
 > *This draft implementation guidance is provided for information only, and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
 >
-> *If you are not participating in the First-of-Type, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
+> *If you are not participating in the Discovery, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
 
 ## Contents
@@ -22,11 +22,17 @@ Implementations of this guidance are to be owned and assured locally by the orga
 
 ## 5.1 Clinical Safety
 
-Clinical safety must be ensured in development and during implementation. Solutions must be assured by the local organisation's Clinical Safety Officer (CSO). Local organisations may wish to involve local clinicians in the design of the solution, to further mitigate clinical risk and ensure buy-in from system users. 
+Numerous benefits for clinicians, systems and patients can be delivered from the development and implementation of models and mechanisms for the flow of data between clinical systems. However, there is the potential to cause patient harm through shortcomings in the design, system failures or incorrect use of such models and mechanisms. Appropriate clinical risk management activities during development, implementation and transition can mitigate this potential harm.
 
-The Virtual Wards Interoperability Discovery Report (available on [NHS Futures](https://tinyurl.com/vw-interop)) includes an overview of some key clinical risks local organisations should consider, however, this list may not be exhaustive.
+To ensure effective clinical risk management during the development and implementation of Health IT, NHS Digital developed two clinical risk management standards, the DCB 0129 and DCB 0160.
 
-For further information on clinical safety and risk management, please see the [NHS Clinical Risk Management Standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards).
+Conformance with these standards is mandated by NHS England and responsibility for compliance lies with individual organisations.
+
+The DCB 0129 standard requires manufacturers of health IT systems to demonstrate clinical risk management activities. The DCB 0160 standard requires the health organisation to define and document a clinical risk management process.
+
+For further information on clinical safety and risk , please see the [NHS Clinical Risk Management Standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards)
+
+Clinical risk management should be considered early during the development and implementation of data models and transfer mechanisms for sharing of the Supplementary RM Data, and assured by the clinical safety officers (CSO) and relevant clinical governance boards. Both the suppliers of the remote monitoring platform developing the data model, and the implementing NHS organisation, should appoint suitable CSOs to lead on their clinical risk management activities. A CSO will provide a recommendation of whether the data model and transfer mechanisms used are safe for go-live, which cannot proceed until then. We advise the suppliers of remote monitoring platforms and NHS organisations to work cooperatively in their clinical risk management activities. 
 
 ## 5.2 Information Governance
 

@@ -20,7 +20,8 @@
 
 <br>
 
-# 3.4.6 FHIR UK Core Observation Resource
+# 3.4.6 FHIR UK Core Observation Profile
+> *IMPORTANT – The UK Core Observation profile is currently in draft status and is currently undergoing Clinical & Technical Assurance review, and has not been part of the HL7 UK Ballot process. This profile may change in future releases of the UK Core.*
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -95,10 +96,20 @@ A minimum viable content that all provider and consumer systems should support i
             <td><a href="#Note">Observation.note</a></td>
             <td>Optional</td>
         </tr>
+          <tr>
+            <td><a href="#HasMember">Observation.hasMember</a></td>
+            <td>Optional</td>
+        </tr>
+          <tr>
+            <td><a href="#DerivedFrom">Observation.derivedFrom</a></td>
+            <td>Optional</td>
+        </tr>
     </tbody>
 </table>
-****
+
 <div id="ID"></div>
+
+****
 
 ## Id
 
@@ -131,7 +142,7 @@ A minimum viable content that all provider and consumer systems should support i
 **Example**
 ```json
 {
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+    "id": "c29b0ed6-0a6b-4606-a8b6-99a6b1736c7a"
 }
 ```
 ****
@@ -377,6 +388,30 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
+### **SNOMED CT Codes (Total Score, Individual Component NEWS2 Score and Raw Clinical Observation Reading)**
+
+> *For further information on how the SNOMED CT codes should be used in nested observations representing the NEWS2 scores and the observations from which they were derived, please see [section 3 on the Data Model](/3_Data_Model.md)*
+
+|SNOMED CT ID|Description|Purpose|
+|------------|-----------|-------|
+|1104051000000101|Royal College of Physicians National Early Warning Score 2 - total score (observable entity)|Total NEWS2 Score|
+|1104351000000103|Royal College of Physicians National Early Warning Score 2 - pulse score (observable entity)|Individual Component NEWS2 Score|
+|1104371000000107|Royal College of Physicians National Early Warning Score 2 - temperature score (observable entity)|Individual Component NEWS2 Score|
+|1104331000000105|Royal College of Physicians National Early Warning Score 2 - air or oxygen score (observable entity)|Individual Component NEWS2 Score|
+|1104361000000100|Royal College of Physicians National Early Warning Score 2 - consciousness score (observable entity)|Individual Component NEWS2 Score|
+|1104301000000104|Royal College of Physicians National Early Warning Score 2 - respiration rate score (observable entity)|Individual Component NEWS2 Score|
+|1104341000000101|Royal College of Physicians National Early Warning Score 2 - systolic blood pressure score (observable entity)|Individual Component NEWS2 Score|
+|1104321000000108|Royal College of Physicians National Early Warning Score 2 - oxygen saturation scale 2 score (observable entity)|Individual Component NEWS2 Score|
+|1104311000000102|Royal College of Physicians National Early Warning Score 2 - oxygen saturation scale 1 score (observable entity)|Individual Component NEWS2 Score|
+|78564009|Pulse rate|Raw Clinical Observation Reading|
+|276885007|Core body temperature|Raw Clinical Observation Reading|  
+|103228002|Haemoglobin saturation with oxygen|Raw Clinical Observation Reading|  
+|104441000000107|ACVPU (Alert Confusion Voice Pain Unresponsive) scale score|Raw Clinical Observation Reading|  
+|86290005|Respiratory rate|Raw Clinical Observation Reading|  
+|72313002|Systolic arterial pressure|Raw Clinical Observation Reading|  
+|103228002|Haemoglobin saturation with oxygen|Raw Clinical Observation Reading|  
+
+
 **Example**
 ```json
  "code": {
@@ -429,7 +464,7 @@ A minimum viable content that all provider and consumer systems should support i
 **Example**
 ```json
 "subject" : {
-    "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+    "reference": "urn:uuid:dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
 }
 ```
 
@@ -504,7 +539,7 @@ A minimum viable content that all provider and consumer systems should support i
 ```json
  "performer":  [
         {
-            "reference": "urn:uuid:39fe5f8b-c6a8-44b7-b351-bf0b35bbd11f"
+            "reference": "urn:uuid:9b9dfe0d-1747-424f-a739-35f7be8e8d71"
         }
     ]
 
@@ -584,3 +619,91 @@ A minimum viable content that all provider and consumer systems should support i
 }
 ```
 
+****
+<div id="HasMember"></div>
+
+## Observation.hasMember
+
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Observation.hasMember</td>
+      <td>Reference</td>
+      <td>Optional</td>
+      <td>0:*</td>
+       <td>Related resource that belongs to the Observation group</td>
+       <td>This field should be used on Observations which represent the NEWS2 total score, to reference the subscores from which the total score has been calculated.</td>
+      </tr>
+      <tr>
+      <td>Observation.hasMember.reference</td>
+      <td>String</td>
+      <td>Optional</td>
+      <td>0:*</td>
+       <td>A reference to a location at which the referenced resource is found.</td>
+       <td>This should reference the logical ID of another Observation resource within the bundle (Observation.id)</td>
+      </tr>
+    </tbody>
+</table>
+
+**Example**
+```json
+{
+  "reference": "889817f6-e67b-451a-b66a-9093197b3bbe" 
+}
+```
+> *For further information on how the `hasMember` and `derivedFrom` fields should be used to nest observations, please see [section 3 on the Data Model](/3_Data_Model.md)*
+
+****
+<div id="HasMember"></div>
+
+## Observation.derivedFrom
+
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Observation.derivedFrom</td>
+      <td>Reference</td>
+      <td>Optional</td>
+      <td>0:*</td>
+       <td>Related measurements the observation is made from</td>
+       <td>This field should be used on Observations which represent the NEWS2 subscores, to reference the raw Observation values from which the scores have been calculated.</td>
+      </tr>
+      <tr>
+      <td>Observation.derivedFrom.reference</td>
+      <td>String</td>
+      <td>Optional</td>
+      <td>0:*</td>
+       <td>A reference to a location at which the referenced resource is found.</td>
+       <td>This should reference the logical ID of another Observation resource within the bundle (Observation.id)</td>
+      </tr>
+    </tbody>
+</table>
+
+**Example**
+```json
+{
+  "reference": "23c84ed9-4b3c-4cdd-be0d-3c7fab95b3d3" 
+}
+```
+
+> *For further information on how the `hasMember` and `derivedFrom` fields should be used to nest observations, please see [section 3 on the Data Model](/3_Data_Model.md)*

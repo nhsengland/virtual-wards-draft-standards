@@ -20,7 +20,7 @@
 
 <br>
 
-# 3.4.3 FHIR UK Core Organization Resource
+# 3.4.3 FHIR UK Core Organization Profile
 
 > *IMPORTANT - this page is intended as **guidance** only, solutions must be clinically assured locally within organisations before deployment into a live environment.*
 
@@ -48,7 +48,8 @@ Note that the population guidance for this profile does not include all data ite
 |[id](#id)|mandatory|
 |[meta](#meta)|mandatory|
 |[identifer](#identifier)|mandatory|
-|[name](#name)|optional|
+|[name](#name)|required|
+|[telecom](#telecom)|optional|
 
 Further guidance on each element is outlined in the sections below. 
 
@@ -83,14 +84,14 @@ Further guidance on each element is outlined in the sections below.
 **Example (XML)**
 
 ```xml
-<id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546" />
+<id value="9b9dfe0d-1747-424f-a739-35f7be8e8d71"/>
 ```
 
 **Example (JSON)**
 
 ```json
 {
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546"
+    "id": "9b9dfe0d-1747-424f-a739-35f7be8e8d71"
 }
 ```
 
@@ -219,7 +220,7 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
       <tr>
       <td> Name </td>
       <td><a href= "https://hl7.org/fhir/R4/datatypes.html#string"> String </a> </td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>0:1</td>
         <td>The organisation's name.</td>
         <td> Name detailing the organisation </td>
@@ -244,11 +245,58 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
 
 ****
 
+### Telecom
+
+<table data-responsive>
+    <thead>
+        <tr>
+        <th>FHIR Attribute</th>
+            <th>DataType</th>
+            <th>Optionality</th>
+            <th>Cardinality</th>
+            <th>Usage</th>
+            <th>Guidance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td> Telecom </td>
+      <td><a href= "https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/83048"> ContactPoint </a> </td>
+      <td>Optional</td>
+      <td>0:*</td>
+        <td>A contact detail for the organization</td>
+        <td> Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.</td>
+      </tr>
+    </tbody>
+</table>
+
+
+**Example (XML)**
+
+```xml
+ <telecom>
+        <system value="phone" />
+        <value value="0111 243 3144" />
+    </telecom>
+```
+
+**Example (JSON)**
+
+```json
+   "telecom":  [
+        {
+            "system": "phone",
+            "value": "0111 243 3144"
+        }
+```
+
+****
+
 ## Full Organization Resource Example (XML)
 
 ```xml
 <Organization>
-    <id value="dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546" />
+    <id value="9b9dfe0d-1747-424f-a739-35f7be8e8d71" />
     <meta>
         <profile value="https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization" />
     </meta>
@@ -266,7 +314,7 @@ To look up an organisation's ODS code, you can use the <a href ="https://odsport
 
 {
     "resourceType": "Organization",
-    "id": "dd9724d1-7b61-44e2-9023-b72e6b966018-76563212455590986546",
+    "id": "9b9dfe0d-1747-424f-a739-35f7be8e8d71",
     "meta": {
         "profile": [
         "https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization"
