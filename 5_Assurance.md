@@ -30,6 +30,8 @@ Conformance with these standards is mandated by NHS England and responsibility f
 
 The DCB 0129 standard requires manufacturers of health IT systems to demonstrate clinical risk management activities. The DCB 0160 standard requires the health organisation to define and document a clinical risk management process.
 
+For further information on clinical safety and risk , please see the [NHS Clinical Risk Management Standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards)
+
 Clinical risk management should be considered early during the development and implementation of data models and transfer mechanisms for sharing of the Supplementary RM Data, and assured by the clinical safety officers (CSO) and relevant clinical governance boards. Both the suppliers of the remote monitoring platform developing the data model, and the implementing NHS organisation, should appoint suitable CSOs to lead on their clinical risk management activities. A CSO will provide a recommendation of whether the data model and transfer mechanisms used are safe for go-live, which cannot proceed until then. We advise the suppliers of remote monitoring platforms and NHS organisations to work cooperatively in their clinical risk management activities. 
 
 ## 5.2 Information Governance

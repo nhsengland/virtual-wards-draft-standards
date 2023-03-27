@@ -244,6 +244,10 @@ Further guidance on each element is outlined in the sections below.
     </tbody>
 </table>
 
+**Additional Guidance**
+
+NHS Numbers SHOULD be verified using the Personal Demographic Service (PDS), before sending Supplementary RM Data. To integrate with PDS to verify NHS numbers, please see the [PDS FHIR API specification](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir).
+
 **Example**
 
 ```json

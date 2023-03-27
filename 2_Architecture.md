@@ -16,7 +16,7 @@
 
 # 2. Architecture Overview
 
-Supplementary RM data is created at the end of a patient's stay on a virtual ward and is transferred to clinical systems such as the one that is used to operate a virtual ward as well as those used by local sites in the region (e.g. GP systems or Shared Care Records). The details of the virtual ward stay are then easily accessible by other clinicians caring for the patient. 
+This implementation guidance provides interoperability standards for sharing Supplementary RM Data between clinical systems. Supplementary RM data is created at the end of a patient's stay on a virtual ward and is transferred to clinical systems such as the one that is used to operate a virtual ward as well as those used by local sites in the region (e.g. GP systems or Shared Care Records). The details of the virtual ward stay are then easily accessible by other clinicians caring for the patient. 
 
 The diagram below provides an overview of the solution and scope of this guidance.
 
@@ -73,14 +73,12 @@ Where there are existing integrations between the remote monitoring platform and
 
 ## 2.2 Technical Solution Scope
 
-There are two key points to the technical solution for sharing data:
+There are two key elements to the technical solution for sharing data:
  1. The data model i.e the structure: what data is shared and the format in which it is shared
  2. The data transfer mechanism: how the data is shared from one system to another
 
-The scope of this interoperability standard and the implementation guidance covers the data structure for sharing virtual ward data, including the type of information and the format in which it is to be shared and received (point 1). Please see Section 3 (Data Model). 
+The scope of this interoperability standard and the implementation guidance covers the data structure for sharing virtual ward data, including the type of information and the format in which it is to be shared and received (point 1). For the [data model specification, please see section 3](/3_Data_Model.md). 
 
 The mechanism for transferring the data within or between organisations (point 2) is to be determined by organisations locally. Some information on this is provided in [section 4 on Data Transfer Mechanisms](/4_Data_Transfer_Mechanisms.md). 
 
 ![image](/Images/Architecture%20Diagram%20-%20Technical%20Solution%20Scope%20v2.png)
-
-For the [data model specification, please see section 3](/3_Data_Model.md). 
