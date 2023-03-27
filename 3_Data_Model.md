@@ -52,10 +52,10 @@ Optionally, the FHIR Bundle can include other structured data items such as NEWS
 
 When calculating NEWS(2) scores, there are four different levels at which a data point could be coded and shared:
 
-Level 1. Total NEWS2 score: aggregated score of 0-18, summarising 6 individual parameters
-Level 2. Individual component NEWS2 scores: sub-scores of 1-3 for each individual clinical parameter
-Level 3. Raw clinical observation reading for each NEWS2 component (in the units appropriate to that individual clinical parameter)
-Level 4. Child codes for variations in the raw observation readings (e.g. different types of temperature readings, all under one parent code).
+-Level 1. Total NEWS2 score: aggregated score of 0-18, summarising 6 individual parameters
+-Level 2. Individual component NEWS2 scores: sub-scores of 1-3 for each individual clinical parameter
+-Level 3. Raw clinical observation reading for each NEWS2 component (in the units appropriate to that individual clinical parameter)
+-Level 4. Child codes for variations in the raw observation readings (e.g. different types of temperature readings, all under one parent code).
 
 The view from RM platform suppliers is that very few clinicians just want the aggregated NEWS 2 score and sub-scores (Levels 1 and 2) without the raw observation data as well (Level 3). It is this raw data that demonstrates trends over time and provides a more granular view of a patient’s health, and possible deterioration. Any standardised report would need to include the NEWS 2 sub-scores alongside and the raw observations – and with a standardised set of SNOMED CT codes used nationally. We are proposing a FHIR bundle that links the first three of these levels together.
 
