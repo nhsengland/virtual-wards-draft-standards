@@ -22,7 +22,7 @@
 
 # 3. Data Model
 
-The data model for Supplementary Remote Monitoring Data from a Virtual Ward Stay (Supplementary RM Data) uses [HL7 FHIR® release 4](https://hl7.org/fhir/R4/overview.html) as an interoperability standard, and is comprised of both structured and unstructured data. 
+The data model for The Supplementary RM Data uses [HL7 FHIR® release 4](https://hl7.org/fhir/R4/overview.html) as an interoperability standard, and is comprised of both structured and unstructured data.
 
 The model is intended for sharing data with organisations externally (regionally and nationally), and therefore incorporates guidance on implementing standard identifiers (e.g. NHS number) and terminology (e.g. SNOMED CT codes).
 
