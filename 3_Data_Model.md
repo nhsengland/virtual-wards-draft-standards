@@ -44,7 +44,7 @@ This implementation guidance outlines a specification for how to use FHIR resour
 
 The data model for Supplementary RM Data consists of a FHIR Bundle, with mandatory and optional components as shown in the diagram below. 
 
-![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/Observations%20diagram.drawio.png)
+![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/FHIR%20Bundle%20v6.png)
 
 At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource).
 
