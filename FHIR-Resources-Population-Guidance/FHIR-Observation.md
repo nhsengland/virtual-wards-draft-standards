@@ -378,7 +378,7 @@ A minimum viable content that all provider and consumer systems should support i
     </tbody>
 </table>
 
-**SNOMED CT CODE EXAMPLES (Total Score, Individual Component NEWS2 Score and Raw Clinical Observation Reading)**
+###SNOMED CT CODE EXAMPLES (Total Score, Individual Component NEWS2 Score and Raw Clinical Observation Reading)
 
 Total NEWS2 Score: Royal College of Physicians National Early Warning Score 2 - total score (observable entity) SCTID: 1104051000000101
 
