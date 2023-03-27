@@ -48,6 +48,12 @@ The data model for Supplementary RM Data consists of a FHIR Bundle, with mandato
 
 At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource).
 
+In a FHIR bundle, references to other profiles are used to link profiles together. These references can be used to identify related profiles or to provide context for a resource within a specific workflow. For example, a bundle might contain a patient profile, an encounter profile, and an observation profile. The observation profile might reference the patient profile and the encounter profile to indicate that the observation was taken during that specific encounter with that specific patient.
+
+The references to other profiles in a FHIR bundle are typically represented using URLs. These URLs can be used to locate the referenced profiles within a FHIR server or other system. In addition to URLs, references may also include a display value, which is a human-readable label that can be used to describe the referenced profile.
+
+![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/FHIR%20Bundle%20Reference_Links.drawio%20(3).png)
+
 Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md#12-use-case) of this implementation guidance for an overview of the suggested PDF content.
 
 When calculating NEWS(2) scores, there are four different levels at which a data point could be coded and shared:
