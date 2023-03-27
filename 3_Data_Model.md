@@ -59,7 +59,7 @@ When calculating NEWS(2) scores, there are four different levels at which a data
 
 The view from RM platform suppliers is that very few clinicians just want the aggregated NEWS 2 score and sub-scores (Levels 1 and 2) without the raw observation data as well (Level 3). It is this raw data that demonstrates trends over time and provides a more granular view of a patient’s health, and possible deterioration. Any standardised report would need to include the NEWS 2 sub-scores alongside and the raw observations – and with a standardised set of SNOMED CT codes used nationally. We are proposing a FHIR bundle that links the first three of these levels together.
 
-![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/Observations%20diagram.drawio.png)
+![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/Observations%20diagram.drawio%20(1).png)
 
 In future phases, the intention is that this guidance will be iterated upon to include additional FHIR resources, supporting further structured data and a wider range of use cases.
 
