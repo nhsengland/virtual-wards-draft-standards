@@ -405,11 +405,11 @@ A minimum viable content that all provider and consumer systems should support i
 |1104311000000102|Royal College of Physicians National Early Warning Score 2 - oxygen saturation scale 1 score (observable entity)|Individual Component NEWS2 Score|
 |78564009|Pulse rate|Raw Clinical Observation Reading|
 |276885007|Core body temperature|Raw Clinical Observation Reading|  
-|103228002|Haemoglobin saturation with oxygen|Raw Clinical Observation Reading|  
+|447755005|Finding of oxygen saturation (finding)|Raw Clinical Observation Reading|  
 |104441000000107|ACVPU (Alert Confusion Voice Pain Unresponsive) scale score|Raw Clinical Observation Reading|  
 |86290005|Respiratory rate|Raw Clinical Observation Reading|  
 |72313002|Systolic arterial pressure|Raw Clinical Observation Reading|  
-|103228002|Haemoglobin saturation with oxygen|Raw Clinical Observation Reading|  
+|1091811000000102|Diastolic arterial pressure|Raw Clinical Observation Reading|  
 
 
 **Example**
@@ -607,7 +607,7 @@ A minimum viable content that all provider and consumer systems should support i
       <td>Optional</td>
       <td>0:*</td>
        <td>Comments about the observation. May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.</td>
-       <td></td>
+       <td>When using Observation Profile for Oxygen Raw Observation (SNOMED CT: Finding of oxygen saturation (finding) SCTID:447755005) Specify in the notes whether this is reading 1 or reading 2. Ie "Use Scale 2 if target range is 88–92%, eg COPD, in hypercapnic respiratory failure" </td>
       </tr>
     </tbody>
 </table>

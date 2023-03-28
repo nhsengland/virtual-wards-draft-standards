@@ -44,7 +44,7 @@ This implementation guidance outlines a specification for how to use FHIR resour
 
 The data model for Supplementary RM Data consists of a FHIR Bundle, with mandatory and optional components as shown in the diagram below. 
 
-![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/FHIR%20Bundle%20v6.png)
+![image](/Images/FHIR%20Bundle%20v6.png)
 
 At a minimum, the FHIR Bundle will contain structured demographic data (FHIR Patient resource), structured organisation data representing the data source organisation (FHIR Organization resource), structured encounter data (FHIR Encounter resource) and the Supplementary RM Data PDF (FHIR DocumentReference resource).
 
@@ -52,7 +52,7 @@ In a FHIR bundle, references to other profiles are used to link profiles togethe
 
 The references to other profiles in a FHIR bundle are typically represented using URLs. These URLs can be used to locate the referenced profiles within a FHIR server or other system. In addition to URLs, references may also include a display value, which is a human-readable label that can be used to describe the referenced profile.
 
-![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/FHIR%20Bundle%20Reference_Links.drawio%20(3).png)
+![image](/Images/FHIR%20Bundle%20Reference_Links.drawio%20(3).png)
 
 Optionally, the FHIR Bundle can include other structured data items such as NEWS2 Scores, and/or the individual observations necessary to calculate the NEWS2 Score (FHIR Observation resources). See [Section 1.2](/1_Background.md#12-use-case) of this implementation guidance for an overview of the suggested PDF content.
 
@@ -65,7 +65,7 @@ When calculating NEWS(2) scores, there are four different levels at which a data
 
 The view from RM platform suppliers is that very few clinicians just want the aggregated NEWS 2 score and sub-scores (Levels 1 and 2) without the raw observation data as well (Level 3). It is this raw data that demonstrates trends over time and provides a more granular view of a patient’s health, and possible deterioration. Any standardised report would need to include the NEWS 2 sub-scores alongside and the raw observations – and with a standardised set of SNOMED CT codes used nationally. We are proposing a FHIR bundle that links the first three of these levels together.
 
-![image](https://github.com/nhsengland/virtual-wards-draft-standards/blob/v0.6/Images/ObsDiagramCropped.png)
+![image](/Images/ObsDiagramCropped.png)
 
 **Total NEWS2 Score: Royal College of Physicians National Early Warning Score 2 - total score (observable entity) SCTID: 1104051000000101**
 
