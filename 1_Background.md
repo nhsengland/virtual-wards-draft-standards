@@ -1,6 +1,6 @@
-> *This draft implementation guidance is provided for information only and is intended for use only by those engaged with NHS England on the Virtual Wards Interoperability Discovery. The first iteration of this guidance is being developed between February and March 2023.* 
+> *This draft implementation guidance was developed between February and March 2023 as part of the NHS England Virtual Wards Interoperability Discovery. It is provided for information only and is not currently being updated.* 
 >
-> *If you are not participating in the Discovery, it is advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
+> *If you are not participating in the Discovery, you are advised not to develop against this guidance until a formal announcement has been made. The team can be contacted by emailing england.virtualward.interoperability@nhs.net.*
 
 
 ## Contents
